@@ -6,7 +6,6 @@ import VoalaAwardProjects from '@/components/VoalaAwardProjects';
 import ServicesSection from '@/components/ServicesSection';
 import TimelineSection from '@/components/TimelineSection';
 import BackToTop from '@/components/BackToTop';
-import Service from '@/components/Service';
 import Footer from '@/components/Footer'; // ← add this import
 import {
   LazyAboutSection,

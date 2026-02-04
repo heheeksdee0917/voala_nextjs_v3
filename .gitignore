@@ -22,3 +22,5 @@ Thumbs.db
 # Editor directories
 .vscode/
 .idea/
+
+next-env.d.ts

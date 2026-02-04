@@ -3,7 +3,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Grid, Building2, Home } from "lucide-react";
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/navigation';
 import { MapPin, Calendar, Maximize2 } from 'lucide-react';
 import { projectsData, Project } from '../../data/projectsData';
 
@@ -15,14 +15,14 @@ interface PortfolioTabsProps {
 
 export function PortfolioTabs({ className }: PortfolioTabsProps) {
   const [activeTab, setActiveTab] = React.useState<TabType>('all');
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const handleProjectClick = (projectId: string) => {
     // Special handling for Aria award-winning project
     if (projectId === 'aria-residence-award') {
-      navigate(`/award-winning-projects/${projectId}`);
+      router.push(`/award-winning-projects/${projectId}`);
     } else {
-      navigate(`/projects/${projectId}`);
+      router.push(`/projects/${projectId}`);
     }
   };
 

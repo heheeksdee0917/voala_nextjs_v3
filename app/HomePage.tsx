@@ -1,7 +1,6 @@
 import React, { useState, Suspense } from 'react';
 import HeroSection from '../components/HeroSection';
 import VoalaAwardProjects from '../components/VoalaAwardProjects';
-import ServicesSection from '../components/ServicesSection';
 import TimelineSection from '../components/TimelineSection';
 import BackToTop from '../components/BackToTop';
 import Service from '../components/Service';
@@ -29,7 +28,6 @@ const HomePage: React.FC = ({
   return (
     <>
       <HeroSection />
-      <ServicesSection />
       <TimelineSection />
       <VoalaAwardProjects />
       <Suspense fallback={<ComponentLoader />}>
