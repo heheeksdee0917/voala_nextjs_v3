@@ -16,7 +16,6 @@ const SignatureProjects: React.FC = () => {
     name: project.name,
     location: project.location,
     image: project.image,
-    imageAlt: project.imageAlt
   }));
 
   useEffect(() => {
