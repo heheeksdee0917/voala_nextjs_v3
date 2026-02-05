@@ -4,7 +4,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowLeft } from 'lucide-react';
 import { useRouter } from 'next/navigation';
-import Footer from '../../components/Footer';
 import BackToTop from '../../components/BackToTop';
 import StandardButton from '../../components/ui/standard-button';
 import { PortfolioTabs } from '../../components/ui/portfolio-tabs';

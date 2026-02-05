@@ -1,8 +1,7 @@
 import React from 'react';
 import { CheckCircle, Clock, FileText, Users, Home, TrendingUp } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import StandardButton from '../../../components/ui/standard-button';
-import SEO from '../../../components/SEO';
 
 const Consultation: React.FC = () => {
   const consultationSteps = [
@@ -52,12 +51,6 @@ const Consultation: React.FC = () => {
   ];
 
   return (
-    <><SEO
-      title="Interior Design Consultation"
-      description="Professional interior design consultation to kickstart your dream space transformation. Expert guidance tailored to your needs and budget in KL."
-      keywords="design consultation KL, interior design advice, home consultation Malaysia"
-      ogImage="/Voala/1.avif"
-    />
       <div className="bg-white rounded-2xl border border-gray-200 p-8 md:p-12 shadow-lg">
         {/* Header */}
         <div className="mb-8">
@@ -179,7 +172,7 @@ const Consultation: React.FC = () => {
               Book your consultation today and get an honest assessment of what's possible for your KL home.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link to="/contact">
+              <Link href="/contact">
                 <StandardButton variant="primary" showArrow>
                   Book Consultation
                 </StandardButton>
@@ -197,7 +190,6 @@ const Consultation: React.FC = () => {
           </div>
         </div>
       </div>
-    </>
   );
 };
 

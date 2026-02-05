@@ -1,9 +1,8 @@
 // pages/services/LivingRoom.tsx
 import React from 'react';
 import { Sofa, Tv, Paintbrush, Lightbulb, Package, CheckCircle, Heart } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import StandardButton from '../../../components/ui/standard-button';
-import SEO from '../../../components/SEO';
 
 const LivingRoom: React.FC = () => {
   const coreElements = [
@@ -62,12 +61,6 @@ const LivingRoom: React.FC = () => {
   ];
 
   return (
-    <><SEO
-      title="Living Room Design Services"
-      description="Create family spaces that balance comfort, style, and entertainment. Expert living room design for Malaysian homes."
-      keywords="living room design Malaysia, family room interior, lounge design KL"
-      ogImage="/images/living-room-og.jpg"
-    />
       <div className="bg-white rounded-2xl border border-gray-200 p-8 md:p-12 shadow-lg">
         {/* Header */}
         <div className="mb-8">
@@ -295,7 +288,7 @@ const LivingRoom: React.FC = () => {
               poorly lit space. Let's create a layout that actually works for your family.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-              <Link to="/contact">
+              <Link href="/contact">
                 <StandardButton variant="primary" showArrow>
                   Book Living Room Consultation
                 </StandardButton>
@@ -313,7 +306,6 @@ const LivingRoom: React.FC = () => {
           </div>
         </div>
       </div>
-    </>
   );
 };
 

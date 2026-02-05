@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import './globals.css'
+import Footer from '@/components/Footer' 
 
 // Load custom fonts
 const louisGeorgeCafe = localFont({
@@ -114,6 +115,7 @@ export default function RootLayout({
         </main>
         
         {/* Footer will go here once we migrate it */}
+        <Footer />
       </body>
     </html>
   )

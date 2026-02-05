@@ -1,3 +1,4 @@
+"use client"
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
@@ -15,13 +16,13 @@ const Service: React.FC = () => {
       id: 'consultation',
       name: 'Design Consultation',
       shortDescription: 'Professional guidance to kickstart your dream space transformation.',
-      route: '/Services/consultation'
+      route: '/services/consultation'
     },
     {
       id: 'space-planning',
       name: 'Space Planning',
       shortDescription: 'Optimize every square foot for maximum functionality and flow.',
-      route: '/services/spaceplanning'
+      route: '/services/space-planning'
     },
     {
       id: '3d-visualization',
@@ -128,9 +129,9 @@ const Service: React.FC = () => {
                   className="group block"
                 >
                   <div className="bg-white rounded-2xl border border-gray-200 p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full flex flex-col">
-                    <h3 className="text-xl font-bold text-[#59514e] mb-4 group-hover:text-[#453e3b] transition-colors">
+                    <h2 className="text-xl font-bold text-[#59514e] mb-4 group-hover:text-[#453e3b] transition-colors">
                       {service.name}
-                    </h3>
+                    </h2>
                     <p className="text-gray-600 leading-relaxed mb-6 flex-grow">
                       {service.shortDescription}
                     </p>

@@ -1,9 +1,8 @@
 // pages/services/ThreeDVisualizationPage.tsx
 import React from 'react';
 import { Box, Eye, Rotate3D, Palette, Sun, RefreshCw, CheckCircle, Sparkles } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import StandardButton from '../../../components/ui/standard-button';
-import SEO from '../../../components/SEO';
 
 const ThreeDVisualizationPage: React.FC = () => {
   const visualServices = [
@@ -67,13 +66,6 @@ const ThreeDVisualizationPage: React.FC = () => {
   ];
 
   return (
-    <>
-      <SEO
-        title="3D Visualization & Rendering"
-        description="See your future home in stunning photorealistic 3D before construction begins. Professional 3D rendering services for interior design projects in Malaysia."
-        keywords="3D rendering Malaysia, interior visualization, photorealistic rendering, 3D home design"
-        ogImage="/images/3d-viz-og.jpg"
-      />
       <div className="min-h-screen bg-white">
         <div className="max-w-7xl mx-auto px-4 py-16 md:py-24">
           <div className="bg-white rounded-2xl border border-gray-200 p-8 md:p-12 shadow-lg">
@@ -264,7 +256,7 @@ const ThreeDVisualizationPage: React.FC = () => {
                   Stop imagining—start seeing your future home clearly.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                  <Link to="/contact">
+                  <Link href  ="/contact">
                     <StandardButton variant="primary" showArrow>
                       Book 3D Visualisation
                     </StandardButton>
@@ -284,7 +276,6 @@ const ThreeDVisualizationPage: React.FC = () => {
           </div>
         </div>
       </div>
-    </>
   );
 };
 
