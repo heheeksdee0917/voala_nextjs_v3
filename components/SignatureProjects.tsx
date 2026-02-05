@@ -85,7 +85,6 @@ const ProjectCard: React.FC<{ project: any; onClick: () => void }> = memo(({ pro
     >
       <img
         src={project.image}
-        alt={project.imageAlt}
         loading="lazy"
         ref={imageRef as React.RefObject<HTMLImageElement>}
         className={`w-full h-80 transition-transform duration-300 group-hover:scale-110 ${
