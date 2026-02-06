@@ -25,12 +25,15 @@ const samsungSharpSans = localFont({
 })
 
 export const metadata: Metadata = {
-  title: 'The best interior design in KL. If you\'re looking for Interior Designer in KL for commercial and residential, Voala Interior will be your best choice',
-  description: 'Award-winning interior design studio in Kuala Lumpur, Malaysia',
+  title: {
+    default: 'Best Interior Design in KL - If you are looking for the BEST Interior Designer in KL for Commercial or Residential Design - Voala Interior it is',
+    template: '%s | Voala Interior' // This adds "| Voala Interior" to all page titles
+  },
+  description: "We are Malaysia's award-winning interior design & build studio in KL with 15+ years of heart-led experience.",
   keywords: 'interior design, home design, renovation, Malaysia interior designer',
   openGraph: {
-    title: 'Voala Interior Design',
-    description: 'Award-winning interior design studio in Kuala Lumpur, Malaysia',
+    title: 'Best Interior Design in KL - Voala Interior Design',
+    description: 'We are Malaysia‘s award-winning interior design & build studio in KL with 15+ years of heart-led experience.',
     url: 'https://voalainterior.com',
     siteName: 'Voala Interior',
     images: [
@@ -46,7 +49,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Voala Interior Design',
-    description: 'Award-winning interior design studio in Kuala Lumpur, Malaysia',
+    description: 'We are Malaysia‘s award-winning interior design & build studio in KL with 15+ years of heart-led experience.',
     images: ['/Voala/1.avif'],
   },
   icons: {
