@@ -1,11 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // ... your existing config (like output: 'export' if you have it)
-
-
-  // If you have src/ folder, ensure Next.js knows the app dir location
-  // (optional but helps in hybrid migrations)
-  pageExtensions: ['tsx', 'ts', 'jsx', 'js'],  // no .page.tsx or similar
+  // For static export (if you want static site)
+  output: 'export',
+  
+  // Optimize images for static export
+  images: {
+    unoptimized: true,
+  },
+  
+  // Ensure proper page extensions
+  pageExtensions: ['tsx', 'ts', 'jsx', 'js'],
 };
 
 export default nextConfig;
