@@ -76,7 +76,7 @@ const Footer: React.FC = () => {
                     rel="noopener noreferrer"
                     className="text-white/80 text-sm font-louis-george-cafe hover:text-white transition-colors cursor-pointer"
                   >
-                    L2-29&30, The Link 2, Jalan Jalil Perkasa 3, Bukit Jalil, 57000, Bukit Jalil, Kuala Lumpur.
+                     L2-29 & 30, The Link, 2, Jalan Jalil Perkasa 3, Bukit Jalil, 57000 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur
                   </a>
                 </div>
               </div>

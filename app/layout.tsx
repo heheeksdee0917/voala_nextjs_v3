@@ -85,7 +85,7 @@ export default function RootLayout({
                 "streetAddress": "L2-29 & 30, The Link, 2, Jalan Jalil Perkasa 3",
                 "addressLocality": "Bukit Jalil",
                 "postalCode": "57000",
-                "addressRegion": "Kuala Lumpur",
+                "addressRegion": "Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
                 "addressCountry": "MY"
               },
               "geo": {
