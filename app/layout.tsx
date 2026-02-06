@@ -3,21 +3,25 @@ import localFont from 'next/font/local'
 import './globals.css'
 import Footer from '@/components/Footer' 
 
-// Load custom fonts
-const louisGeorgeCafe = localFont({
+const samsungSharpSans = localFont({
   src: [
     {
-      path: '../public/Voala/ProjectSource/fonts/Louis George Cafe.ttf',
+      path: '../public/Voala/ProjectSource/fonts/samsungsharpsans.otf',
       weight: '400',
       style: 'normal',
     },
     {
-      path: '../public/Voala/ProjectSource/fonts/Louis George Cafe Bold.ttf',
+      path: '../public/Voala/ProjectSource/fonts/samsungsharpsans-medium.otf',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: '../public/Voala/ProjectSource/fonts/samsungsharpsans-bold.otf',
       weight: '700',
       style: 'normal',
     },
   ],
-  variable: '--font-louis-george-cafe',
+  variable: '--font-samsung-sharp-sans',
 })
 
 export const metadata: Metadata = {
@@ -31,7 +35,7 @@ export const metadata: Metadata = {
     siteName: 'Voala Interior',
     images: [
       {
-        url: '/Voala/ProjectSource/Logo/VOALA NEW_BLACK.png',
+        url: '/Voala/1.avif',
         width: 1200,
         height: 630,
       },
@@ -43,12 +47,12 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Voala Interior Design',
     description: 'Award-winning interior design studio in Kuala Lumpur, Malaysia',
-    images: ['/Voala/ProjectSource/Logo/VOALA NEW_BLACK.png'],
+    images: ['/Voala/1.avif'],
   },
   icons: {
-    icon: '/Logo/VOALA NEW_WHITE.png',
-    shortcut: '/Logo/VOALA NEW_WHITE.png',
-    apple: '/Logo/VOALA NEW_WHITE.png',
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/favicon.ico',
   },
 }
 
@@ -68,7 +72,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "HomeAndConstructionBusiness",
               "name": "Voala Interior",
-              "image": "https://voalainterior.com/Voala/ProjectSource/Logo/VOALA%20NEW_BLACK.png",
+              "image": "https://voalainterior.com/Voala/1.avif",
               "@id": "https://voalainterior.com",
               "url": "https://voalainterior.com",
               "telephone": "+60125053395",
@@ -107,7 +111,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${louisGeorgeCafe.variable} min-h-screen bg-white font-louis-george-cafe antialiased`}>
+      <body className={`${samsungSharpSans.variable} min-h-screen bg-white font-sans antialiased`}>
         {/* Navigation will go here once we migrate it */}
         
         <main>

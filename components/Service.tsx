@@ -34,7 +34,7 @@ const Service: React.FC = () => {
       id: 'bedroom-design',
       name: 'Bedroom Design',
       shortDescription: 'Create serene sanctuaries built for rest and relaxation.',
-      route: '/services/bedroom-design'
+      route: '/services/bedroom'
     },
     {
       id: 'living-room',

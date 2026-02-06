@@ -152,7 +152,7 @@ ${formData.message}
                   required
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#59514e]/20 focus:border-[#59514e] transition-all"
                 >
-                  <option value="" disabled selected>Select a subject</option>
+                  <option value="" disabled>Select a subject</option>
                   <option value="New Project Inquiry">New Project Inquiry</option>
                   <option value="Book a Consultation">Book a Consultation</option>
                   <option value="General Question">General Question</option>
@@ -172,7 +172,7 @@ ${formData.message}
                   onChange={handleInputChange}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#59514e]/20 focus:border-[#59514e] transition-all"
                 >
-                  <option value="" disabled selected>Budget range</option>
+                  <option value="" disabled>Budget range</option>
                   <option value="Below RM50K">Below RM50K</option>
                   <option value="RM50 - RM100k">RM50 - RM100k</option>
                   <option value="RM100K - RM250K">RM100K - RM250K</option>

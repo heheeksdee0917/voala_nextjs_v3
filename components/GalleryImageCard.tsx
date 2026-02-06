@@ -40,6 +40,7 @@ const GalleryImageCard: React.FC<GalleryImageCardProps> = ({ imageSrc, onClick }
       {/* Actual image - always render but control visibility */}
       <img
         src={imageSrc}
+        alt="Gallery image"
         onLoad={() => setImageLoaded(true)}
         onError={() => setImageError(true)}
         className={`w-full h-64 object-cover object-center transition-all duration-500 ease-out group-hover:scale-110 ${

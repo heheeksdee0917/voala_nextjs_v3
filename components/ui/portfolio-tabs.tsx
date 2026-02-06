@@ -70,6 +70,7 @@ export function PortfolioTabs({ className }: PortfolioTabsProps) {
                 {/* Main Image with hover effects */}
                 <img
                   src={project.image}
+                  alt={`${project.name} project`}
                   className="w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-110 group-hover:brightness-75"
                   loading="lazy"
                 />

@@ -9,9 +9,10 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        'louis-george-cafe': ['var(--font-louis-george-cafe)', 'Inter', 'sans-serif'],
-        'sans': ['var(--font-louis-george-cafe)', 'Inter', 'sans-serif'],
-        'linik': ['var(--font-louis-george-cafe)', 'Inter', 'sans-serif'], // Keep linik as alias for backward compatibility
+        'samsung-sharp-sans': ['var(--font-samsung-sharp-sans)', 'Inter', 'sans-serif'],
+        'sans': ['var(--font-samsung-sharp-sans)', 'Inter', 'sans-serif'],
+        'linik': ['var(--font-samsung-sharp-sans)', 'Inter', 'sans-serif'],
+        'louis-george-cafe': ['var(--font-samsung-sharp-sans)', 'Inter', 'sans-serif'],
       },
       colors: {
         'voala': {

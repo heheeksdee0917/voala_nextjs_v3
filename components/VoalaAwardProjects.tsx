@@ -121,15 +121,12 @@ const VoalaAwardProjects: React.FC = () => {
         <div className="absolute inset-0 flex flex-col justify-center items-center pointer-events-none z-20">
           <div className="text-center text-white flex flex-col items-center">
             {/* VOALA Logo */}
-            <img
-              src="Voala/ProjectSource/Logo/VOALA NEW_WHITE.png"
-              alt="VOALA"
-              className="h-24 md:h-32 lg:h-40 mb-4 object-contain"
-             loading="lazy"
+            <span
+              className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-[0.15em] mb-4"
               style={{
-                filter: 'drop-shadow(0 8px 32px rgba(0, 0, 0, 0.8)) drop-shadow(0 4px 16px rgba(0, 0, 0, 0.6))'
+                textShadow: '0 8px 32px rgba(0, 0, 0, 0.8), 0 4px 16px rgba(0, 0, 0, 0.6)'
               }}
-            />
+            >VOALA</span>
             
             {/* Award Winning Projects Text */}
             <h2 
@@ -180,15 +177,12 @@ const VoalaAwardProjects: React.FC = () => {
         <div className="absolute inset-0 flex flex-col justify-center items-center pointer-events-none">
           <div className="text-center text-white flex flex-col items-center">
             {/* Mobile VOALA Logo */}
-            <img
-              src="Voala/ProjectSource/Logo/VOALA NEW_WHITE.png"
-              alt="VOALA"
-              className="h-12 mb-2 object-contain"
-             loading="lazy"
+            <span
+              className="text-3xl font-bold tracking-[0.15em] mb-2"
               style={{
-                filter: 'drop-shadow(0 4px 16px rgba(0, 0, 0, 0.8))'
+                textShadow: '0 4px 16px rgba(0, 0, 0, 0.8)'
               }}
-            />
+            >VOALA</span>
             
             {/* Mobile Award Winning Projects Text */}
             <h2 

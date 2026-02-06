@@ -1,3 +1,5 @@
+"use client"
+
 import React, { useState, useEffect } from 'react';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -159,6 +161,7 @@ const ImageGalleryModal: React.FC<ImageGalleryModalProps> = ({
               >
                 <img
                   src={image.src}
+                  alt={`Gallery thumbnail ${index + 1}`}
                   className="w-full h-full object-cover"
                   loading="lazy"
                 />
