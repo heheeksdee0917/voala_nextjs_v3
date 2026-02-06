@@ -18,8 +18,9 @@ export function PortfolioTabs({ className }: PortfolioTabsProps) {
   const router = useRouter();
 
   const handleProjectClick = (projectId: string) => {
-    // Special handling for Aria award-winning project
-    if (projectId === 'aria-residence-award') {
+    // Special handling for award-winning projects
+    const project = projectsData.find(p => p.id === projectId);
+    if (project && project.category === 'Award-Winning') {
       router.push(`/award-winning-projects/${projectId}`);
     } else {
       router.push(`/projects/${projectId}`);

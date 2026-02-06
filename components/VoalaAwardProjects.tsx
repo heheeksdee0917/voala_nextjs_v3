@@ -39,8 +39,8 @@ const VoalaAwardProjects: React.FC = () => {
   }, []);
 
   const handleViewProjects = () => {
-    // Navigate to The Edge award-winning project detail page using the first project's ID
-    router.push('/award-winning-projects/aria-residence-award');
+    // Navigate to The Bear House award-winning project detail page using the first project's ID
+    router.push('/award-winning-projects/the-bear-house');
   };
 
   const handleMouseEnter = () => {

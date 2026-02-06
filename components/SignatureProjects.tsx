@@ -95,7 +95,7 @@ const ProjectCard: React.FC<{ project: any; onClick: () => void }> = memo(({ pro
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
         {/* Award Winning Tag */}
-        {(project.id === 'aria-residence-award' || project.id === 'the-edge-award' || project.id === 'Emhub-1F') && (
+        {(project.id === 'the-bear-house' || project.id === 'the-edge' || project.id === 'the-pinkground-1f') && (
           <div className="absolute top-4 right-4 bg-gradient-to-r from-yellow-400 to-yellow-600 text-black px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide shadow-lg">
             Award Winning
           </div>
