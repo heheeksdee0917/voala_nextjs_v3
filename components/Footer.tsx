@@ -1,7 +1,7 @@
 "use client"
 
 import React from 'react';
-import { MapPin, Phone, Mail, Clock, Instagram, Facebook } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Instagram, Facebook, Linkedin, Youtube } from 'lucide-react';
 import Link from 'next/link';
 
 const Footer: React.FC = () => {
@@ -123,6 +123,24 @@ const Footer: React.FC = () => {
                   aria-label="Follow us on Facebook"
                 >
                   <Facebook size={20} className="text-white" />
+                </a>
+                <a
+                  href="https://www.youtube.com/@hellovoala9163"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center w-10 h-10 bg-white/10 backdrop-blur-sm rounded-full hover:bg-white/20 transition-all duration-300 hover:scale-110"
+                  aria-label="Subscribe our Youtube Channel"
+                >
+                  <Youtube size={20} className="text-white" />
+                </a>
+                <a
+                  href="https://www.linkedin.com/company/voala-interior/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center w-10 h-10 bg-white/10 backdrop-blur-sm rounded-full hover:bg-white/20 transition-all duration-300 hover:scale-110"
+                  aria-label="Follow us on LinkedIn"
+                >
+                  <Linkedin size={20} className="text-white" />
                 </a>
               </div>
             </div>

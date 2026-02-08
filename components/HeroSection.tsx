@@ -38,16 +38,15 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onOpenQuoteModal }) => {
         <p 
           className="font-louis-george-cafe text-xl md:text-2xl text-voala-off-white/90 mb-8 font-light tracking-wide max-w-5xl"
         >
-          At Voala Interior, we craft bespoke environments that speak to who you are and how you live, work, and connect — all guided by our signature heartwork.
+          We craft bespoke environments that speak to who you are and how you live, work, and connect — all guided by our signature heartwork.
         </p>
         
         <StandardButton
           onClick={handleGetDesign}
           variant="outline"
           className="bg-voala-off-white/10 backdrop-blur-sm border border-voala-off-white/20 text-white hover:bg-voala-off-white/20 hover:text-white rounded-full text-base md:text-lg px-6 md:px-8 py-3 md:py-4"
-          showArrow
         >
-          Get my design NOW
+          Talk to us
         </StandardButton>
       </div>
     </ImagesSlider>
