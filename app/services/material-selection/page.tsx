@@ -2,6 +2,29 @@ import React from 'react';
 import { CheckCircle, Droplets, Shield, TrendingUp, AlertTriangle } from 'lucide-react';
 import Link from 'next/link';
 import StandardButton from '@/components/ui/standard-button';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Material & Finishes Selection KL | Humidity-Proof Choices – Voala Interior',
+  description: 'Expert material & finishes selection in Kuala Lumpur: humidity-resistant flooring, wall coverings, countertops, tiles, paint, fabrics & hardware that last in Malaysia’s climate. Curated for style, durability & budget.',
+  keywords: 'material selection interior design KL, finishes selection Kuala Lumpur, humidity resistant materials Malaysia, best flooring for KL condo, mould resistant paint KL, countertop selection Malaysia, tiles for KL home',
+  alternates: {
+    canonical: 'https://voalainterior.com/services/material-finishes-selection',
+  },
+  openGraph: {
+    title: 'Material & Finishes Selection KL | Humidity-Proof Choices – Voala Interior',
+    description: 'Discover durable, mould-resistant materials & finishes for your Kuala Lumpur home: flooring, countertops, paint, tiles, fabrics & hardware curated for Malaysia’s humidity and lifestyle.',
+    url: 'https://voalainterior.com/services/material-finishes-selection',
+    images: [
+      {
+        url: 'https://voalainterior.com/Voala/ProjectSource/Signature-Projects/Lot68/4.avif', // replace with your actual 1200×630 OG image path
+        width: 1200,
+        height: 630,
+        alt: 'Luxury humidity-resistant kitchen countertop and flooring material selection in Kuala Lumpur by Voala Interior',
+      },
+    ],
+  },
+};
 
 const MaterialSelection: React.FC = () => {
   const keyConsiderations = [

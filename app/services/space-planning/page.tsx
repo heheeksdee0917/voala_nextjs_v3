@@ -2,6 +2,29 @@ import React from 'react';
 import { Ruler, Users, Grid3x3, Sofa, Package, Hammer, CheckCircle, AlertTriangle } from 'lucide-react';
 import Link from 'next/link';
 import StandardButton from '@/components/ui/standard-button';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Space Planning KL | Layout Reconfiguration & Floor Plan Design – Voala Interior',
+  description: 'Space planning & layout reconfiguration in Kuala Lumpur: complete floor-plan redesign, room flow optimization, furniture placement, storage solutions & structural changes for condos, terraces & homes.',
+  keywords: 'space planning KL, layout reconfiguration Kuala Lumpur, floor plan redesign interior design Malaysia, condo space planning KL, room flow optimization KL, storage solutions interior design KL',
+  alternates: {
+    canonical: 'https://voalainterior.com/services/space-planning',
+  },
+  openGraph: {
+    title: 'Space Planning KL | Layout Reconfiguration & Floor Plan Design – Voala Interior',
+    description: 'Expert space planning & layout reconfiguration in Kuala Lumpur: optimize room flow, furniture placement, storage & structural changes for better living in condos, terraces & landed homes.',
+    url: 'https://voalainterior.com/services/space-planning',
+    images: [
+      {
+        url: 'https://voalainterior.com/Voala/2.avif', // replace with your actual 1200×630 OG image path
+        width: 1200,
+        height: 630,
+        alt: 'Before and after space planning floor plan redesign for Kuala Lumpur condo by Voala Interior',
+      },
+    ],
+  },
+};
 
 const SpacePlanning: React.FC = () => {
   const planningProcess = [

@@ -3,6 +3,28 @@ import React from 'react';
 import { Box, Eye, Rotate3D, Palette, Sun, RefreshCw, CheckCircle, Sparkles } from 'lucide-react';
 import Link from 'next/link';
 import StandardButton from '../../../components/ui/standard-button';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: '3D Visualisation KL - Photorealistic Renders & Walkthroughs | Voala Interior',
+  description: '3D visualisation & photorealistic renderings in Kuala Lumpur: see your condo or house before renovation. High-quality renders, 360° walkthroughs & mood boards.',
+  keywords: '3D visualization KL, photorealistic rendering Malaysia, 360 walkthrough, interior design visualization',
+  alternates: {
+    canonical: 'https://voalainterior.com/services/3d-visualization',
+  },
+  openGraph: {
+    title: '3D Visualisation KL - See Your Home Before It‘s Built',
+    description: 'Professional 3D visualization services in Kuala Lumpur. Photorealistic renders, 360° walkthroughs, and VR experiences.',
+    url: 'https://voalainterior.com/services/3d-visualization',
+    images: [
+      {
+        url: 'https://voalainterior.com/Voala/ProjectSource/Signature-Projects/Emhub1F/1.avif', // Add appropriate image
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
+};
 
 const ThreeDVisualizationPage: React.FC = () => {
   const visualServices = [

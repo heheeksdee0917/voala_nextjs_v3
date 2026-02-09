@@ -20,6 +20,9 @@ export const metadata: Metadata = {
   title: 'Best Interior Designer in KL - If you looking for interior designer for commercial, residential Voala Interior is your best choice.',
   description: "Malaysia's award-winning interior design & build studio with 15+ years of heart-led experience. Residential & Commercial projects in Kuala Lumpur.",
   keywords: 'interior designer KL, interior design Malaysia, home interior design, office interior design, renovation KL',
+  alternates: {
+    canonical: 'https://voalainterior.com',
+  },
   openGraph: {
     title: 'Best Interior Designer in KL - If you looking for interior designer for commercial, residential Voala Interior is your best choice.',
     description: "Award-winning interior design studio with 15+ years experience in Kuala Lumpur",

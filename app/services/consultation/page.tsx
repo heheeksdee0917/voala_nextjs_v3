@@ -2,6 +2,29 @@ import React from 'react';
 import { CheckCircle, Clock, FileText, Users, Home, TrendingUp } from 'lucide-react';
 import Link from 'next/link';
 import StandardButton from '../../../components/ui/standard-button';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Interior Design Consultation KL | Feasibility Study – Voala Interior',
+  description: 'Interior design consultation & feasibility study in Kuala Lumpur: site visit, accurate measurements, lifestyle discussion, honest assessment, and layout options before any renovation begins.',
+  keywords: 'interior design consultation KL, feasibility study interior design Kuala Lumpur, interior designer site visit Malaysia, consultation before renovation KL, layout planning consultation KL',
+  alternates: {
+    canonical: 'https://voalainterior.com/services/consultation',
+  },
+  openGraph: {
+    title: 'Interior Design Consultation KL | Feasibility Study – Voala Interior',
+    description: 'Start your KL home renovation right with a professional interior design consultation: site measurements, lifestyle discussion, realistic feasibility report & initial layout options.',
+    url: 'https://voalainterior.com/services/consultation',
+    images: [
+      {
+        url: 'https://voalainterior.com/Voala/1.avif', // replace with your actual 1200×630 OG image path
+        width: 1200,
+        height: 630,
+        alt: 'Interior designer conducting on-site consultation and measurements in Kuala Lumpur condo by Voala Interior',
+      },
+    ],
+  },
+};
 
 const Consultation: React.FC = () => {
   const consultationSteps = [
