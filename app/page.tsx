@@ -17,11 +17,11 @@ import {
 
 // Page-specific metadata (overrides layout.tsx)
 export const metadata: Metadata = {
-  title: 'Best Interior Designer in KL | Voala Interior',
+  title: 'Best Interior Designer in KL - If you looking for interior designer for commercial, residential Voala Interior is your best choice.',
   description: "Malaysia's award-winning interior design & build studio with 15+ years of heart-led experience. Residential & Commercial projects in Kuala Lumpur.",
   keywords: 'interior designer KL, interior design Malaysia, home interior design, office interior design, renovation KL',
   openGraph: {
-    title: 'Best Interior Designer in KL | Voala Interior',
+    title: 'Best Interior Designer in KL - If you looking for interior designer for commercial, residential Voala Interior is your best choice.',
     description: "Award-winning interior design studio with 15+ years experience in Kuala Lumpur",
     url: 'https://voalainterior.com',
   },
@@ -36,6 +36,9 @@ const ComponentLoader = () => (
 export default function HomePage() {
   return (
     <>
+      <h1 className="sr-only">
+        Interior Design in KL - The best Residential & Commercial Interior Designer in KL
+      </h1>
       {/* Visual hero section */}
       <HeroSection />
       <ServicesSection />
