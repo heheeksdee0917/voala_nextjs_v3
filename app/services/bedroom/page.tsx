@@ -1,5 +1,3 @@
-"use client"
-
 import React from 'react';
 import { Droplets, ShowerHead, Lightbulb, Package, Wind, Shield, CheckCircle } from 'lucide-react';
 import Link from 'next/link';
