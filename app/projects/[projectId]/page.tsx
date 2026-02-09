@@ -1,4 +1,5 @@
 import { projectsData } from '../../../data/projectsData';
+import ProjectDetailContent from '@/components/ProjectDetailContent';
 import type { Metadata } from 'next';
 
 type Props = {
@@ -7,17 +8,15 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const projectId = params.projectId;
-  
-  // Find the actual project to get its name
+
   const project = projectsData.find(p => p.id === projectId);
-  
-  // Fallback if project not found
+
   if (!project) {
     return {
       title: 'Project Not Found | Voala Interior',
     };
   }
-  
+
   return {
     title: `${project.name} - ${project.type === 'residential' ? 'Residential' : 'Commercial'} Interior Design | Voala Interior`,
     description: `${project.description} ${project.overview?.replace(/<[^>]*>/g, '').substring(0, 150)}...`,
