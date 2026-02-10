@@ -15,7 +15,6 @@ import {
   LazyService,
 } from '@/components/LazyComponents';
 
-// Page-specific metadata (overrides layout.tsx)
 export const metadata: Metadata = {
   title: 'Best Interior Designer in KL - If you looking for interior designer for commercial, residential Voala Interior is your best choice.',
   description: "Malaysia's award-winning interior design & build studio with 15+ years of heart-led experience. Residential & Commercial projects in Kuala Lumpur.",
@@ -35,36 +34,52 @@ const ComponentLoader = () => (
     <div className="animate-pulse bg-gray-200 h-64 w-full max-w-4xl rounded-lg"></div>
   </div>
 );
-
+// app/page.tsx - Add these IDs to your sections
 export default function HomePage() {
   return (
     <>
       <h1 className="sr-only">
-        Interior Design in KL - The best Residential & Commercial Interior Designer in KL
+        Interior Design in Kuala Lumpur - The best Residential & Commercial Interior Designer in KL
       </h1>
-      {/* Visual hero section */}
+      
       <HeroSection />
+      
       <ServicesSection />
-      <TimelineSection />
+      
+      {/* Add ID for About section */}
+      <div id="timeline-section">
+        <TimelineSection />
+      </div>
+      
       <VoalaAwardProjects />
+      
       <Suspense fallback={<ComponentLoader />}>
         <LazySignatureProjects />
       </Suspense>
+      
       <Suspense fallback={<ComponentLoader />}>
         <LazyAboutSection />
       </Suspense>
+      
       <Suspense fallback={<ComponentLoader />}>
         <LazyTestimonialCarousel />
       </Suspense>
+      
+      {/* Add ID for Services section */}
       <Suspense fallback={<ComponentLoader />}>
-        <LazyService />
+        <div id="services-section">
+          <LazyService />
+        </div>
       </Suspense>
+      
       <Suspense fallback={<ComponentLoader />}>
         <LazyCallUsNowCTA />
       </Suspense>
+      
       <Suspense fallback={<ComponentLoader />}>
         <LazyRecognitionGrid />
       </Suspense>
+      
       <BackToTop />
     </>
   );
