@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
               As luxury interior design and fit-out specialists, we create bespoke interiors that transform your vision into reality.
             </p>
             <div className="flex flex-col gap-2 text-white font-louis-george-cafe">
-              <span className="font-semibold gradient-highlight-white">15+ Years Experience</span>
+              <span className="font-semibold gradient-highlight-white">10+ Years Experience</span>
               <span className="font-semibold gradient-highlight-white">200+ Projects Completed</span>
             </div>
           </div>

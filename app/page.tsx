@@ -17,15 +17,38 @@ import {
 
 export const metadata: Metadata = {
   title: 'Best Interior Designer in KL - If you looking for interior designer for commercial, residential Voala Interior is your best choice.',
-  description: "Malaysia's award-winning interior design & build studio with 15+ years of heart-led experience. Residential & Commercial projects in Kuala Lumpur.",
+  description: "Malaysia's award-winning interior design & build studio with  years of heart-led experience. Residential & Commercial projects in Kuala Lumpur.",
   keywords: 'interior designer KL, interior design Malaysia, home interior design, office interior design, renovation KL',
   alternates: {
     canonical: 'https://voalainterior.com',
   },
   openGraph: {
-    title: 'Best Interior Designer in KL - If you looking for interior designer for commercial, residential Voala Interior is your best choice.',
-    description: "Award-winning interior design studio with 15+ years experience in Kuala Lumpur",
+    type: 'website',
+    locale: 'en_MY',
     url: 'https://voalainterior.com',
+    siteName: 'Voala Interior',
+    title: 'Best Interior Designer in KL - If you looking for interior designer for commercial, residential Voala Interior is your best choice.',
+    description: "Malaysia's award-winning interior design & build studio with  years of heart-led experience. Residential & Commercial projects in Kuala Lumpur.",
+    images: [
+      {
+        url: 'https://voalainterior.com/Voala/1.avif', // Replace with your actual OG image URL
+        width: 1200,
+        height: 630,
+        alt: 'Voala Interior - Award-winning Interior Design Studio in Kuala Lumpur',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Best Interior Designer in KL - Voala Interior',
+    description: "Award-winning interior design studio with  years experience in Kuala Lumpur",
+    images: ['https://voalainterior.com/Voala/1.avif'], // Replace with your actual Twitter card image URL
+  },
+  other: {
+    'facebook:profile': 'https://www.facebook.com/hellovoala',
+    'instagram:profile': 'https://www.instagram.com/hellovoala/',
+    'linkedin:profile': 'https://www.linkedin.com/company/voala-interior/',
+    'youtube:channel': 'https://www.youtube.com/@hellovoala9163',
   },
 };
 
@@ -34,50 +57,73 @@ const ComponentLoader = () => (
     <div className="animate-pulse bg-gray-200 h-64 w-full max-w-4xl rounded-lg"></div>
   </div>
 );
-// app/page.tsx - Add these IDs to your sections
+
 export default function HomePage() {
   return (
     <>
+      {/* SEO h1 - hidden visually but available to screen readers and search engines */}
       <h1 className="sr-only">
-        Interior Design in Kuala Lumpur - The best Residential & Commercial Interior Designer in KL
+        Interior Design in Kuala Lumpur - The best Residential & Commercial Interior Designer in Kuala Lumpur
       </h1>
       
+      {/* Hero Section */}
       <HeroSection />
       
-      <ServicesSection />
+      {/* Services Overview Section */}
+      <section id="services-overview">
+        <ServicesSection />
+      </section>
       
-      {/* Add ID for About section */}
-      <div id="timeline-section">
+      {/* Timeline/About Section */}
+      <section id="timeline-section">
         <TimelineSection />
-      </div>
+      </section>
       
-      <VoalaAwardProjects />
+      {/* Award-Winning Projects Section */}
+      <section id="award-projects">
+        <VoalaAwardProjects />
+      </section>
       
+      {/* Signature Projects Section */}
       <Suspense fallback={<ComponentLoader />}>
-        <LazySignatureProjects />
+        <section id="signature-projects">
+          <LazySignatureProjects />
+        </section>
       </Suspense>
       
+      {/* About Us Section */}
       <Suspense fallback={<ComponentLoader />}>
-        <LazyAboutSection />
+        <section id="about">
+          <LazyAboutSection />
+        </section>
       </Suspense>
       
+      {/* Testimonials Section */}
       <Suspense fallback={<ComponentLoader />}>
-        <LazyTestimonialCarousel />
+        <section id="testimonials">
+          <LazyTestimonialCarousel />
+        </section>
       </Suspense>
       
-      {/* Add ID for Services section */}
+      {/* Full Services Section */}
       <Suspense fallback={<ComponentLoader />}>
-        <div id="services-section">
+        <section id="services-section">
           <LazyService />
-        </div>
+        </section>
       </Suspense>
       
+      {/* Call to Action Section */}
       <Suspense fallback={<ComponentLoader />}>
-        <LazyCallUsNowCTA />
+        <section id="cta">
+          <LazyCallUsNowCTA />
+        </section>
       </Suspense>
       
+      {/* Recognition & Awards Section */}
       <Suspense fallback={<ComponentLoader />}>
-        <LazyRecognitionGrid />
+        <section id="recognition">
+          <LazyRecognitionGrid />
+        </section>
       </Suspense>
       
       <BackToTop />

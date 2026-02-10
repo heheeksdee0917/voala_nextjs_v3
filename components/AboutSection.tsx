@@ -63,7 +63,7 @@ const AboutSection: React.FC = () => {
             </div>
             )}
             <div className="absolute -bottom-6 -right-6 bg-black p-6 rounded-lg shadow-lg">
-              <p className="text-white font-bold text-2xl font-linik">15+</p>
+              <p className="text-white font-bold text-2xl font-linik"></p>
               <p className="text-white text-sm font-linik">Years Experience</p>
             </div>
           </div>
@@ -80,7 +80,7 @@ const AboutSection: React.FC = () => {
             </p>
             
             <p className="text-lg text-voala-gray leading-relaxed font-louis-george-cafe">
-              With over 15 years of experience in design and fit-out, our team is committed to turning vision into reality. <strong>Every space we create</strong>, blends thoughtful function with timeless elegance, ensuring the result is not only beautiful but built to last.
+              With over a decade of experience in design and fit-out, our team is committed to turning vision into reality. <strong>Every space we create</strong>, blends thoughtful function with timeless elegance, ensuring the result is not only beautiful but built to last.
             </p>
 
            <p className="text-lg text-voala-gray leading-relaxed font-louis-george-cafe">
