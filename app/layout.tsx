@@ -27,18 +27,18 @@ const samsungSharpSans = localFont({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Award-Winning Interior Designer in KL | Voala Interior',
-    template: '%s | Voala Interior',
+    default: 'Award-winning Interior Design in KL - Voala Interior',
+    template: '%s - Award-winning Interior Design in KL | Voala Interior',
   },
-  description: "Malaysia's award-winning interior design & build studio with over 10 years of heart-led experience in residential and commercial spaces.",
-  keywords: 'interior designer KL, interior design Kuala Lumpur, home renovation Malaysia, office interior design KL, award winning interior design Malaysia, condo renovation KL',
+  description: "Malaysia's award-winning interior design & build studio in Kuala Lumpur – best one-stop service for luxury residential & commercial projects.",
+  keywords: 'award winning interior design KL, best interior designer Kuala Lumpur, interior design Malaysia, residential interior design KL, commercial interior design Kuala Lumpur, luxury home renovation KL',
   openGraph: {
     siteName: 'Voala Interior',
     locale: 'en_MY',
     type: 'website',
     images: [
       {
-        url: 'https://voalainterior.com/Voala/1.avif',
+        url: 'https://voalainterior.com/Voala/Voala_OG.png',
         width: 1200,
         height: 630,
         alt: 'Voala Interior - Award-winning Interior Design Studio in Kuala Lumpur',
@@ -47,14 +47,14 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    images: ['https://voalainterior.com/Voala/1.avif'],
+    images: ['https://voalainterior.com/Voala/Voala_OG.png'],
   },
   icons: {
     icon: '/favicon.ico',
     shortcut: '/favicon.ico',
     apple: '/favicon.ico',
   },
-}
+};
 
 const structuredData = {
   '@context': 'https://schema.org',
@@ -66,9 +66,9 @@ const structuredData = {
   url: 'https://voalainterior.com',
   telephone: '+60125053395',
   email: 'hello@voalainterior.com',
-  priceRange: '$$$$',
+  priceRange: '$$$-$$$$',
   image: [
-    'https://voalainterior.com/Voala/1.avif',
+    'https://voalainterior.com/Voala/Voala_OG.png',
     'https://voalainterior.com/Voala/ProjectSource/Logo/VOALA%20NEW_BLACK.png',
   ],
   logo: {
@@ -102,15 +102,6 @@ const structuredData = {
     { '@type': 'City', name: 'Selangor' },
     { '@type': 'AdministrativeArea', name: 'Klang Valley' },
   ],
-  serviceArea: {
-    '@type': 'GeoCircle',
-    geoMidpoint: {
-      '@type': 'GeoCoordinates',
-      latitude: 3.052340896923446,
-      longitude: 101.67637307497074,
-    },
-    geoRadius: '50000',
-  },
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
     name: 'Interior Design Services',
@@ -216,7 +207,7 @@ const structuredData = {
     '3D Visualization',
     'Material Selection',
   ],
-}
+};
 
 export default function RootLayout({
   children,
