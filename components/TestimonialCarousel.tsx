@@ -11,7 +11,7 @@ const TestimonialCarousel: React.FC = () => {
 
   const testimonials = [
     {
-      text: "We are unpacking gradually now. Very happy with everything. <3 <3 <3. Thank you for your team/’s great work. I noticed the carpentry quality of your company is excellent. Very detail and meticulous.",
+      text: "We are unpacking gradually now. Very happy with everything. <3 <3 <3. Thank you for your team/'s great work. I noticed the carpentry quality of your company is excellent. Very detail and meticulous.",
       author: "Ellie",
       position: "Bukit Jalil",
       image: "/Voala/ProjectSource/Signature-Projects/Rimba/RimbaInfo/1.jpg"
@@ -23,7 +23,7 @@ const TestimonialCarousel: React.FC = () => {
       image: "/Voala/ProjectSource/Signature-Projects/Rimba/RimbaInfo/1.jpg"
     },
     {
-      text: "Thanks so much once again for making my home a heaven! Not only the design is good, it is also very functional! Super well done once again. Let’s catch up again next month when I am back. <3 SUPER GRATEFUL AND THANKFUL! Voala is the SUPER BEST!!! Love you all!!! <3",
+      text: "Thanks so much once again for making my home a heaven! Not only the design is good, it is also very functional! Super well done once again. Let's catch up again next month when I am back. <3 SUPER GRATEFUL AND THANKFUL! Voala is the SUPER BEST!!! Love you all!!! <3",
       author: "Susan",
       position: "Bukit Jalil",
       image: "/Voala/ProjectSource/Signature-Projects/Rimba/RimbaInfo/1.jpg"
@@ -64,17 +64,8 @@ const TestimonialCarousel: React.FC = () => {
   };
 
   return (
-    <section className="py-20 bg-white">
+    <div className="py-20 bg-white">
       <div className="container mx-auto px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 font-linik gradient-highlight">
-            Client Testimonials
-          </h2>
-          <p className="text-xl text-gray-700 max-w-2xl mx-auto font-linik">
-            Hear from our satisfied clients about their experience with Voala Interior
-          </p>
-        </div>
-        
         <div ref={carouselRef} className="relative max-w-4xl mx-auto">
           <div className="overflow-hidden rounded-lg shadow-lg border border-gray-200">
             <div 
@@ -106,6 +97,7 @@ const TestimonialCarousel: React.FC = () => {
           <button 
             onClick={prevTestimonial}
             className="absolute left-4 top-1/2 -translate-y-1/2 bg-black hover:bg-gray-800 text-white p-3 rounded-full transition-all duration-300 shadow-lg"
+            aria-label="Previous testimonial"
           >
             <ChevronLeft size={24} />
           </button>
@@ -113,6 +105,7 @@ const TestimonialCarousel: React.FC = () => {
           <button 
             onClick={nextTestimonial}
             className="absolute right-4 top-1/2 -translate-y-1/2 bg-black hover:bg-gray-800 text-white p-3 rounded-full transition-all duration-300 shadow-lg"
+            aria-label="Next testimonial"
           >
             <ChevronRight size={24} />
           </button>
@@ -125,12 +118,13 @@ const TestimonialCarousel: React.FC = () => {
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
                   index === currentIndex ? 'bg-black' : 'bg-gray-300'
                 }`}
+                aria-label={`Go to testimonial ${index + 1}`}
               />
             ))}
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

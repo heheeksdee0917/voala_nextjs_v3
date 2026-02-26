@@ -9,6 +9,7 @@ export interface Project {
   category: string;
   year: string;
   size: string;
+  isAwardWinningFeatured?: boolean;
   galleryImages: Array<{
     src: string;
   }>;
@@ -26,6 +27,7 @@ export const projectsData: Project[] = [
     category: 'Award-Winning',
     year: '2022',
     size: '1,502 sq ft',
+    isAwardWinningFeatured: true, 
     overview: 'Unapologetically bold, <b>The Bear House</b> is a moody masterpiece designed for the modern collector. Cloaked in rich shades of black, this home defies convention — wrapping its inhabitants in a cocoon of sophistication, intimacy, and edge.<br /><br />Inside, a curated universe of <b>Bearbricks and luxury art toys</b> takes centre stage, each piece adding personality, playfulness, and a subtle sense of rebellion. Every corner feels like a gallery, yet every room is built to be lived in — blending style and comfort in perfect balance.<br /><br />It\'s not just a home — it\'s a statement. A celebration of individuality, design freedom, and heartwork that\'s anything but ordinary.',
     galleryImages: [
       { src: '/Voala/ProjectSource/Award-Winning-Projects/Aria/1.avif' },

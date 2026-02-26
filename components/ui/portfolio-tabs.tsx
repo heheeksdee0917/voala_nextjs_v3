@@ -18,9 +18,8 @@ export function PortfolioTabs({ className }: PortfolioTabsProps) {
   const router = useRouter();
 
   const handleProjectClick = (projectId: string) => {
-    // Special handling for award-winning projects
     const project = projectsData.find(p => p.id === projectId);
-    if (project && project.category === 'Award-Winning') {
+    if (project?.isAwardWinningFeatured) {
       router.push(`/award-winning-projects/${projectId}`);
     } else {
       router.push(`/projects/${projectId}`);
@@ -58,8 +57,8 @@ export function PortfolioTabs({ className }: PortfolioTabsProps) {
               key={`${tabKey}-${project.id}`}
               initial={{ opacity: 0, y: 30, scale: 0.95 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{ 
-                duration: 0.6, 
+              transition={{
+                duration: 0.6,
                 delay: index * 0.1,
                 ease: "easeOut"
               }}
@@ -75,10 +74,10 @@ export function PortfolioTabs({ className }: PortfolioTabsProps) {
                   className="w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-110 group-hover:brightness-75"
                   loading="lazy"
                 />
-                
+
                 {/* Overlay - Only appears on hover */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                
+
                 {/* Project Details Overlay */}
                 <div className="absolute inset-0 flex flex-col justify-end p-4 md:p-6 lg:p-8 text-white translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-out">
                   <div className="space-y-2 md:space-y-4">
@@ -87,15 +86,15 @@ export function PortfolioTabs({ className }: PortfolioTabsProps) {
                         {project.category}
                       </span>
                     </div>
-                    
+
                     <h3 className="text-xl md:text-2xl lg:text-3xl font-bold font-linik leading-tight">
                       {project.name}
                     </h3>
-                    
+
                     <p className="text-white/90 text-sm md:text-base leading-relaxed line-clamp-3 hidden md:block">
                       <span dangerouslySetInnerHTML={{ __html: project.description }} />
                     </p>
-                    
+
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4 pt-2 md:pt-4 border-t border-white/20">
                       <div className="flex items-center gap-2 text-xs md:text-sm text-white/80">
                         <MapPin size={12} className="md:w-4 md:h-4" />
@@ -106,14 +105,14 @@ export function PortfolioTabs({ className }: PortfolioTabsProps) {
                         <span>{project.year}</span>
                       </div>
                     </div>
-                    
+
                     <div className="flex items-center gap-2 text-xs md:text-sm text-white/80">
                       <Maximize2 size={12} className="md:w-4 md:h-4" />
                       <span>{project.size}</span>
                     </div>
                   </div>
                 </div>
-                
+
                 {/* Magazine-style corner indicator - hidden on mobile */}
                 <div className="absolute top-4 md:top-6 right-4 md:right-6 w-8 md:w-12 h-8 md:h-12 bg-black/30 backdrop-blur-sm flex items-center justify-center opacity-0 scale-75 group-hover:opacity-100 group-hover:scale-100 transition-all duration-500 hidden md:flex">
                   <div className="w-4 md:w-6 h-4 md:h-6 border-2 border-white flex items-center justify-center">
@@ -193,15 +192,15 @@ export function PortfolioTabs({ className }: PortfolioTabsProps) {
           </TabsList>
           <ScrollBar orientation="horizontal" />
         </ScrollArea>
-        
+
         <TabsContent value="all" className="mt-0">
           <ProjectGrid projects={getFilteredProjects('all')} tabKey="all" />
         </TabsContent>
-        
+
         <TabsContent value="commercial" className="mt-0">
           <ProjectGrid projects={getFilteredProjects('commercial')} tabKey="commercial" />
         </TabsContent>
-        
+
         <TabsContent value="residential" className="mt-0">
           <ProjectGrid projects={getFilteredProjects('residential')} tabKey="residential" />
         </TabsContent>
