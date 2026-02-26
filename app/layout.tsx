@@ -27,11 +27,11 @@ const samsungSharpSans = localFont({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Best Interior Design in Kuala Lumpur - If you are looking for the BEST Interior Designer in KL for Commercial or Residential Design - Voala Interior it is',
+    default: 'Best Interior Design in Kuala Lumpur - BEST Interior Designer in KL for Commercial or Residential Design - Voala Interior it is',
     template: '%s | Voala Interior'
   },
   description: "We are Malaysia's award-winning interior design & build studio in KL with years of heart-led experience.",
-  keywords: 'interior design, home design, renovation, Malaysia interior designer',
+  keywords: 'interior designer KL, interior design Kuala Lumpur, home renovation Malaysia, office interior design KL, award winning interior design Malaysia, condo renovation KL',
   openGraph: {
     title: 'Best Interior Design in Kuala Lumpur - Voala Interior Design',
     description: 'We are Malaysia‘s award-winning interior design & build studio in KL with years of heart-led experience.',
@@ -39,12 +39,12 @@ export const metadata: Metadata = {
     siteName: 'Voala Interior',
     images: [
       {
-        url: '/Voala/1.avif',
+        url: 'https://voalainterior.com/Voala/1.avif',
         width: 1200,
         height: 630,
       },
     ],
-    locale: 'en_US',
+    locale: 'en_MY',
     type: 'website',
   },
   twitter: {
@@ -69,15 +69,14 @@ const structuredData = {
   "description": "Malaysia's award-winning interior design & build studio with years of heart-led experience. Specializing in residential and commercial interior design in Kuala Lumpur.",
   "url": "https://voalainterior.com",
   "telephone": "+60125053395",
-  "email": "hello@voalainterior.com", // Add if you want this public
-  "priceRange": "$$$$",
+  "email": "hello@voalainterior.com",
   "image": [
     "https://voalainterior.com/Voala/1.avif",
-    "https://voalainterior.com/Voala/ProjectSource/Logo/VOALA%20NEW_BLACK.png" // Add your logo
+    "https://voalainterior.com/Voala/ProjectSource/Logo/VOALA%20NEW_BLACK.png"
   ],
   "logo": {
     "@type": "ImageObject",
-    "url": "https://voalainterior.com/Voala/ProjectSource/Logo/VOALA%20NEW_BLACK.png" // Add your logo URL
+    "url": "https://voalainterior.com/Voala/ProjectSource/Logo/VOALA%20NEW_BLACK.png"
   },
   "address": {
     "@type": "PostalAddress",
@@ -125,7 +124,7 @@ const structuredData = {
       "latitude": 3.052340896923446,
       "longitude": 101.67637307497074
     },
-    "geoRadius": "50000" // 50km radius from your location
+    "geoRadius": "50000"
   },
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
@@ -177,12 +176,12 @@ const structuredData = {
   ],
   "aggregateRating": {
     "@type": "AggregateRating",
-    "ratingValue": "5.0", // Update with your actual Google rating
-    "reviewCount": "8", // Update with your actual review count
+    "ratingValue": "5.0",
+    "reviewCount": "8",
     "bestRating": "5",
     "worstRating": "1"
   },
-  "foundingDate": "2016", 
+  "foundingDate": "2016",
   "slogan": "Award-winning interior design with heart-led experience",
   "paymentAccepted": "Cash, Credit Card, Bank Transfer",
   "currenciesAccepted": "MYR",
@@ -213,19 +212,19 @@ export default function RootLayout({
       </head>
       <body className={`${samsungSharpSans.variable} min-h-screen bg-white font-sans antialiased`}>
         {/* Skip to main content for accessibility */}
-        <a 
-          href="#main-content" 
+        <a
+          href="#main-content"
           className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-black focus:text-white focus:rounded"
         >
           Skip to main content
         </a>
-        
+
         <Navigation />
-        
+
         <main id="main-content">
           {children}
         </main>
-        
+
         <Footer />
       </body>
     </html>
