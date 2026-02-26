@@ -1,4 +1,3 @@
-// app/page.tsx
 import { Suspense } from 'react';
 import type { Metadata } from 'next';
 import HeroSection from '@/components/HeroSection';
@@ -59,107 +58,56 @@ const ComponentLoader = () => (
 );
 
 export default function HomePage() {
-
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'InteriorDesigner',
-    name: 'Voala Interior',
-    description: "Malaysia's award-winning interior design & build studio with over 10 years of heart-led experience.",
-    url: 'https://voalainterior.com',
-    logo: 'https://voalainterior.com/Voala/ProjectSource/Logo/VOALA NEW_BLACK.png', // update to your actual logo path
-    image: 'https://voalainterior.com/Voala/1.avif',
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: 'Kuala Lumpur',
-      addressCountry: 'MY',
-    },
-    sameAs: [
-      'https://www.facebook.com/hellovoala',
-      'https://www.instagram.com/hellovoala/',
-      'https://www.linkedin.com/company/voala-interior/',
-      'https://www.youtube.com/@hellovoala9163',
-    ],
-    areaServed: {
-      '@type': 'City',
-      name: 'Kuala Lumpur',
-    },
-    hasOfferCatalog: {
-      '@type': 'OfferCatalog',
-      name: 'Interior Design Services',
-      itemListElement: [
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Residential Design' } },
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Commercial Design' } },
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Space Planning' } },
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Design Consultation' } },
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: '3D Visualization' } },
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Bedroom Design' } },
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Living Room Design' } },
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Material Selection' } },
-      ],
-    },
-  };
-
   return (
     <>
-      {/* SEO h1 - hidden visually but available to screen readers and search engines */}
       <h1 className="sr-only">
-        Interior Design in Kuala Lumpur - The best Residential & Commercial Interior Designer in Kuala Lumpur
+        Award-Winning Interior Designer in Kuala Lumpur | Residential & Commercial Interior Design
       </h1>
 
-      {/* Hero Section */}
       <HeroSection />
 
-      {/* Services Overview Section */}
       <section id="services-overview">
         <ServicesSection />
       </section>
 
-      {/* Timeline/About Section */}
       <section id="timeline-section">
         <TimelineSection />
       </section>
 
-      {/* Award-Winning Projects Section */}
       <section id="award-projects">
         <VoalaAwardProjects />
       </section>
 
-      {/* Signature Projects Section */}
       <Suspense fallback={<ComponentLoader />}>
         <section id="signature-projects">
           <LazySignatureProjects />
         </section>
       </Suspense>
 
-      {/* About Us Section */}
       <Suspense fallback={<ComponentLoader />}>
         <section id="about">
           <LazyAboutSection />
         </section>
       </Suspense>
 
-      {/* Testimonials Section */}
       <Suspense fallback={<ComponentLoader />}>
         <section id="testimonials">
           <LazyTestimonialCarousel />
         </section>
       </Suspense>
 
-      {/* Full Services Section */}
       <Suspense fallback={<ComponentLoader />}>
         <section id="services-section">
           <LazyService />
         </section>
       </Suspense>
 
-      {/* Call to Action Section */}
       <Suspense fallback={<ComponentLoader />}>
         <section id="cta">
           <LazyCallUsNowCTA />
         </section>
       </Suspense>
 
-      {/* Recognition & Awards Section */}
       <Suspense fallback={<ComponentLoader />}>
         <section id="recognition">
           <LazyRecognitionGrid />
