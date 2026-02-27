@@ -1,5 +1,6 @@
 import { Suspense } from 'react';
 import type { Metadata } from 'next';
+import React from 'react';
 import HeroSection from '@/components/HeroSection';
 import VoalaAwardProjects from '@/components/VoalaAwardProjects';
 import ServicesSection from '@/components/ServicesSection';
@@ -55,7 +56,8 @@ export default function HomePage() {
   return (
     <>
       <h1 className="sr-only">
-        Award-winning Interior Design in KL - Best Interior Designer for Commercial and Residential Projects
+        Your premium interior design & built studio
+        <br />in Kuala Lumpur, Malaysia.
       </h1>
 
       <HeroSection />

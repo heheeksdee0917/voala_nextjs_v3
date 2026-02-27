@@ -28,17 +28,18 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onOpenQuoteModal }) => {
       <div
         className="z-50 flex flex-col justify-center items-center text-center px-4 md:px-8"
       >
-        <h1 
+        <p 
           className="font-linik font-bold text-4xl md:text-5xl lg:text-7xl leading-tight mb-4 md:mb-6 tracking-wide"
         >
           <span className="hero-gradient">Designs You'll Love. <br />
             Heartwork You'll Feel.</span>
-        </h1>
+        </p>
         
         <p 
           className="font-louis-george-cafe text-xl md:text-2xl text-voala-off-white/90 mb-8 font-light tracking-wide max-w-5xl"
         >
-          We craft bespoke environments that speak to who you are and how you live, work, and connect — all guided by our signature heartwork.
+          Your premium interior design & built studio
+          <br />in Kuala Lumpur, Malaysia.
         </p>
         
         <StandardButton
