@@ -170,6 +170,23 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
+        {/* Google Map – full width, below the grid */}
+        <div className="mt-12">
+          <h4 className="text-lg font-semibold mb-4 uppercase tracking-wide">Find Us</h4>
+          <div className="w-full overflow-hidden rounded-lg border border-white/10" style={{ height: '280px' }}>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3986.8957259380168!2d101.67637307497073!3d3.052340896923446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x69a2f2d66962931b%3A0x8e36de1214eefe17!2sVoala%20Interior!5e0!3m2!1sen!2smy!4v1773220702928!5m2!1sen!2smy"
+              width="100%"
+              height="100%"
+              style={{ border: 0, display: 'block' }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Voala Interior location on Google Maps"
+            />
+          </div>
+        </div>
+
         {/* Bottom Section */}
         <div className="border-t border-white/20 mt-12 pt-8 text-center text-sm">
           <div className="h-px bg-gradient-to-r from-transparent via-white/30 to-transparent mb-6"></div>

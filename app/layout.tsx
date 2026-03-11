@@ -27,8 +27,8 @@ const samsungSharpSans = localFont({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Award-winning Interior Design in KL - Voala Interior',
-    template: '%s - Award-winning Interior Design in KL | Voala Interior',
+    default: 'Best Interior Design in KL - If you‘re looking for interior design service near me or Living Room, Kitchen or Commercial design near me - Voala Interior is the palce to be',
+    template: '%s - Best Interior Design in KL | Voala Interior',
   },
   description: "Malaysia's award-winning interior design & build studio in Kuala Lumpur – best one-stop service for luxury residential & commercial projects.",
   keywords: 'award winning interior design KL, best interior designer Kuala Lumpur, interior design Malaysia, residential interior design KL, commercial interior design Kuala Lumpur, luxury home renovation KL',
