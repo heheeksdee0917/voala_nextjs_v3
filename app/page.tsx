@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     url: 'https://voalainterior.com',
     siteName: 'Voala Interior',
     title: 'Award-winning Interior Design in KL - Best Interior Designer for Commercial and Residential Projects | Voala Interior',
-    description: 'Malaysia’s award-winning interior design studio in Kuala Lumpur – best one-stop service for luxury residential & commercial projects from concept to handover.',
+    description: 'Malaysia‘s award-winning interior design studio in Kuala Lumpur – best one-stop service for luxury residential & commercial projects from concept to handover.',
     images: [
       {
         url: 'https://voalainterior.com/Voala/Voala_OG.png',
@@ -45,12 +45,6 @@ export const metadata: Metadata = {
     images: ['https://voalainterior.com/Voala/Voala_OG.png'],
   },
 };
-
-const ComponentLoader = () => (
-  <div className="py-20 flex justify-center">
-    <div className="animate-pulse bg-gray-200 h-64 w-full max-w-4xl rounded-lg"></div>
-  </div>
-);
 
 export default function HomePage() {
   return (
@@ -74,37 +68,37 @@ export default function HomePage() {
         <VoalaAwardProjects />
       </section>
 
-      <Suspense fallback={<ComponentLoader />}>
+      <Suspense fallback={<div className="h-screen" />}>
         <section id="signature-projects">
           <LazySignatureProjects />
         </section>
       </Suspense>
 
-      <Suspense fallback={<ComponentLoader />}>
+      <Suspense fallback={<div className="h-screen" />}>
         <section id="about">
           <LazyAboutSection />
         </section>
       </Suspense>
 
-      <Suspense fallback={<ComponentLoader />}>
+      <Suspense fallback={<div className="h-screen" />}>
         <section id="testimonials">
           <LazyTestimonialCarousel />
         </section>
       </Suspense>
 
-      <Suspense fallback={<ComponentLoader />}>
+      <Suspense fallback={<div className="h-screen" />}>
         <section id="services-section">
           <LazyService />
         </section>
       </Suspense>
 
-      <Suspense fallback={<ComponentLoader />}>
+      <Suspense fallback={<div className="h-screen" />}>
         <section id="cta">
           <LazyCallUsNowCTA />
         </section>
       </Suspense>
 
-      <Suspense fallback={<ComponentLoader />}>
+      <Suspense fallback={<div className="h-screen" />}>
         <section id="recognition">
           <LazyRecognitionGrid />
         </section>
