@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowLeft, MapPin, Calendar, Maximize2 } from 'lucide-react';
-import { useRouter } from 'next/navigation'; // ← added this
+import { useRouter } from 'next/navigation';
 import Footer from '@/components/Footer';
 import BackToTop from '@/components/BackToTop';
 import { projectsData } from '@/data/projectsData';
@@ -23,12 +23,42 @@ const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ params }) => {
   const { ref: imageRef, isInView } = useFadeInOnScroll();
   const [isGalleryModalOpen, setIsGalleryModalOpen] = useState(false);
   const [currentGalleryImageIndex, setCurrentGalleryImageIndex] = useState(0);
+  const [heroImageLoaded, setHeroImageLoaded] = useState(false);
+  const [isPageReady, setIsPageReady] = useState(false);
 
   const project = projectsData.find(p => p.id === projectId);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  // Preload hero image
+  useEffect(() => {
+    if (!project?.image) return;
+
+    const img = new Image();
+    img.src = project.image;
+    
+    img.onload = () => {
+      setHeroImageLoaded(true);
+      // Small delay to ensure smooth transition
+      setTimeout(() => setIsPageReady(true), 100);
+    };
+
+    img.onerror = () => {
+      console.error('Failed to load hero image');
+      setHeroImageLoaded(true);
+      setIsPageReady(true);
+    };
+
+    // Timeout fallback in case image takes too long
+    const timeout = setTimeout(() => {
+      setHeroImageLoaded(true);
+      setIsPageReady(true);
+    }, 3000);
+
+    return () => clearTimeout(timeout);
+  }, [project?.image]);
 
   const handleImageClick = (index: number) => {
     setCurrentGalleryImageIndex(index);
@@ -53,13 +83,25 @@ const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ params }) => {
     );
   }
 
+  // Loading state while hero image loads
+  if (!heroImageLoaded) {
+    return (
+      <div className="min-h-screen bg-white font-linik flex items-center justify-center">
+        <div className="text-center">
+          <div className="w-16 h-16 border-4 border-gray-200 border-t-black rounded-full animate-spin mx-auto mb-4"></div>
+          <p className="text-gray-600">Loading project...</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <div className="min-h-screen bg-white font-linik">
+    <div className={`min-h-screen bg-white font-linik transition-opacity duration-500 ${isPageReady ? 'opacity-100' : 'opacity-0'}`}>
       {/* Hero Section */}
       <section className="relative h-screen overflow-hidden">
         <div
           ref={imageRef as React.RefObject<HTMLDivElement>}
-          className={`w-full h-full ${isInView ? 'fadeInUpAnimated' : 'fadeInUpTrigger'}`}
+          className="w-full h-full"
           style={{
             backgroundImage: `url(${project.image})`,
             backgroundSize: 'cover',
