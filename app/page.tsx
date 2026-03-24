@@ -16,7 +16,7 @@ import {
 } from '@/components/LazyComponents';
 
 export const metadata: Metadata = {
-  title: 'Best Interior Design in KL - Best Interior Designer for Commercial and Residential Projects | Voala Interior',
+  title: 'Best Interior Designer KL - Best Interior Design for Commercial and Residential Projects | Voala Interior',
   description: 'Voala Interior – Award-winning interior design & build studio in Kuala Lumpur. Malaysia’s best one-stop designer for luxury residential & commercial projects, from concept to handover with heart-led craftsmanship.',
   keywords: 'award winning interior design KL, best interior designer Kuala Lumpur, interior design Malaysia, residential interior design KL, commercial interior design Kuala Lumpur, luxury home renovation KL, condo interior design Malaysia, bespoke interior KL',
   alternates: {
