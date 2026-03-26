@@ -27,10 +27,10 @@ const samsungSharpSans = localFont({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Best Interior Designer KL - If you‘re looking for interior design service near me or Living Room, Kitchen or Commercial design near me - Voala Interior is the palce to be',
+    default: 'Best Interior Designer Kuala Lumpur, Malaysia - If you‘re looking for interior design service near me or Living Room, Kitchen or Commercial design near me - Voala Interior is the palce to be',
     template: '%s - Best Interior Design in KL | Voala Interior',
   },
-  description: "Malaysia's award-winning interior design & build studio in Kuala Lumpur – best one-stop service for luxury residential & commercial projects.",
+  description: "Malaysia's award-winning interior designer in Kuala Lumpur – best one-stop service for luxury residential & commercial projects.",
   keywords: 'award winning interior design KL, best interior designer Kuala Lumpur, interior design Malaysia, residential interior design KL, commercial interior design Kuala Lumpur, luxury home renovation KL',
   openGraph: {
     siteName: 'Voala Interior',
@@ -50,9 +50,9 @@ export const metadata: Metadata = {
     images: ['https://voalainterior.com/Voala/Voala_OG.png'],
   },
   icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon.ico',
-    apple: '/favicon.ico',
+    icon: '/Voala-favicon.ico',
+    shortcut: '/Voala-favicon.ico',
+    apple: '/Voala-favicon.ico',
   },
 };
 
@@ -62,7 +62,7 @@ const structuredData = {
   '@id': 'https://voalainterior.com',
   name: 'Voala Interior',
   alternateName: 'Voala Interior Design',
-  description: "Malaysia's award-winning interior design & build studio with over 10 years of heart-led experience. Specializing in residential and commercial interior design in Kuala Lumpur.",
+  description: "Malaysia‘s award-winning interior designer with over 10 years of heart-led experience. Specializing in residential and commercial interior design in Kuala Lumpur.",
   url: 'https://voalainterior.com',
   telephone: '+60125053395',
   email: 'hello@voalainterior.com',
