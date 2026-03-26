@@ -229,7 +229,7 @@ export default function RootLayout({
           href="#main-content"
           className="sr-only focus:not-sr-only focusnpm :absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-black focus:text-white focus:rounded"
         >
-          Skip to main content
+          Skip to main
         </a>
 
         <Navigation />
