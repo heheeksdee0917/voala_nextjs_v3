@@ -50,9 +50,9 @@ export const metadata: Metadata = {
     images: ['https://voalainterior.com/Voala/Voala_OG.png'],
   },
   icons: {
-    icon: '/Voala-favicon.ico',
-    shortcut: '/Voala-favicon.ico',
-    apple: '/Voala-favicon.ico',
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/favicon.ico',
   },
 };
 
