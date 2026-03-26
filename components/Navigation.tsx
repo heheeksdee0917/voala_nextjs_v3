@@ -5,11 +5,21 @@ import { useState, useEffect, useRef } from 'react'
 import { useRouter, usePathname } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, ChevronDown } from 'lucide-react'
 import React from 'react'
+
+const services = [
+  { label: '3D Visualization', href: '/services/3d-visualization' },
+  { label: 'Residential Interior Design & Built', href: '/services/residential-interior-design' },
+  { label: 'Commercial Interior Design', href: '/services/commercial' },
+  { label: 'Consultation', href: '/services/consultation' },
+  { label: 'Material Selection', href: '/services/material-selection' },
+  { label: 'Space Planning', href: '/services/space-planning' },
+]
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [isOverDark, setIsOverDark] = useState(false)
   const navRef = useRef<HTMLElement>(null)
@@ -28,7 +38,7 @@ export default function Navigation() {
   useEffect(() => {
     const checkBackground = () => {
       if (!navRef.current) return
-      
+
       const navRect = navRef.current.getBoundingClientRect()
       const navMiddleY = navRect.top + navRect.height / 2
       const navMiddleX = window.innerWidth / 2
@@ -40,16 +50,15 @@ export default function Navigation() {
       for (const el of elementsAtPoint) {
         if (el === navRef.current || el.closest('nav')) continue
 
-        // Check for data-theme attribute
         let currentEl: Element | null = el
         while (currentEl && !themeFound) {
           const theme = currentEl.getAttribute('data-theme')
-          if (theme === 'dark') { 
+          if (theme === 'dark') {
             isDark = true
             themeFound = true
             break
           }
-          if (theme === 'light') { 
+          if (theme === 'light') {
             isDark = false
             themeFound = true
             break
@@ -58,7 +67,6 @@ export default function Navigation() {
         }
         if (themeFound) break
 
-        // Check background color
         const bgColor = window.getComputedStyle(el).backgroundColor
         if (bgColor && bgColor !== 'rgba(0, 0, 0, 0)' && bgColor !== 'transparent') {
           const rgb = bgColor.match(/\d+/g)
@@ -70,26 +78,25 @@ export default function Navigation() {
           }
         }
       }
-      
+
       setIsOverDark(isDark)
     }
 
     checkBackground()
-    
+
     const handleScrollCheck = () => {
       requestAnimationFrame(checkBackground)
     }
-    
+
     window.addEventListener('scroll', handleScrollCheck, { passive: true })
     window.addEventListener('resize', checkBackground)
-    
+
     return () => {
       window.removeEventListener('scroll', handleScrollCheck)
       window.removeEventListener('resize', checkBackground)
     }
   }, [pathname])
 
-  // Smooth scroll function with redirect support
   const scrollToSection = (sectionId: string) => {
     if (pathname !== '/') {
       router.push(`/#${sectionId}`)
@@ -101,15 +108,10 @@ export default function Navigation() {
       const navHeight = 80
       const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
       const offsetPosition = elementPosition - navHeight
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      })
+      window.scrollTo({ top: offsetPosition, behavior: 'smooth' })
     }
   }
 
-  // Handle hash navigation on page load
   useEffect(() => {
     if (pathname === '/' && window.location.hash) {
       const sectionId = window.location.hash.substring(1)
@@ -119,19 +121,15 @@ export default function Navigation() {
           const navHeight = 80
           const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
           const offsetPosition = elementPosition - navHeight
-
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: 'smooth'
-          })
+          window.scrollTo({ top: offsetPosition, behavior: 'smooth' })
         }
       }, 100)
     }
   }, [pathname])
 
-  // Dynamic text colors based on background
   const textColor = isOverDark ? 'text-white' : 'text-black'
   const underlineColor = isOverDark ? 'bg-white' : 'bg-black'
+  const dropdownBorder = isOverDark ? 'border-white/20' : 'border-black/10'
 
   return (
     <>
@@ -139,7 +137,7 @@ export default function Navigation() {
       <nav ref={navRef} className="fixed top-0 left-0 right-0 z-[100]">
         <div className="transition-all duration-500 backdrop-blur-xl bg-white/10 border-b border-white/20">
           <div className="max-w-[1800px] mx-auto px-6 md:px-12 py-4 flex items-center justify-between">
-            {/* Logo */}
+
             <Link href="/" className="relative z-20">
               <Image
                 src="/Voala/ProjectSource/Logo/VOALA NEW_BLACK.png"
@@ -151,10 +149,11 @@ export default function Navigation() {
               />
             </Link>
 
-            {/* Desktop Navigation */}
+
+            {/* Desktop Navigation — Left */}
             <ul className="hidden md:flex items-center gap-8 relative z-20">
               <li>
-                <Link 
+                <Link
                   href="/"
                   className={`relative font-medium transition-all duration-300 group/link ${textColor}`}
                 >
@@ -163,44 +162,55 @@ export default function Navigation() {
                 </Link>
               </li>
               <li>
-                <button 
-                  onClick={() => scrollToSection('timeline-section')}
-                  className={`relative font-medium transition-all duration-300 group/link ${textColor}`}
-                >
-                  About
-                  <span className={`absolute bottom-0 left-0 h-px transition-all duration-300 ease-out ${underlineColor} w-0 group-hover/link:w-full`}></span>
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={() => scrollToSection('services-section')}
-                  className={`relative font-medium transition-all duration-300 group/link ${textColor}`}
-                >
-                  Services
-                  <span className={`absolute bottom-0 left-0 h-px transition-all duration-300 ease-out ${underlineColor} w-0 group-hover/link:w-full`}></span>
-                </button>
-              </li>
-              <li>
-                <Link 
-                  href="/projects" 
+                <Link
+                  href="/projects"
                   className={`relative font-medium transition-all duration-300 group/link ${textColor}`}
                 >
                   Projects
                   <span className={`absolute bottom-0 left-0 h-px transition-all duration-300 ease-out ${underlineColor} w-0 group-hover/link:w-full`}></span>
                 </Link>
               </li>
+
+              {/* Services Dropdown */}
+              <li className="relative group/services">
+                <button
+                  className={`relative font-medium transition-all duration-300 flex items-center gap-1 group/link ${textColor}`}
+                >
+                  Services
+                  <ChevronDown size={16} className="transition-transform duration-300 group-hover/services:rotate-180" />
+                  <span className={`absolute bottom-0 left-0 h-px transition-all duration-300 ease-out ${underlineColor} w-0 group-hover/link:w-full`}></span>
+                </button>
+
+                {/* Dropdown */}
+                <div className={`absolute top-full left-0 mt-3 w-64 bg-white/90 backdrop-blur-xl rounded-lg border ${dropdownBorder} shadow-xl opacity-0 invisible group-hover/services:opacity-100 group-hover/services:visible transition-all duration-300 translate-y-1 group-hover/services:translate-y-0`}>
+                  <ul className="py-2">
+                    {services.map((service) => (
+                      <li key={service.href}>
+                        <Link
+                          href={service.href}
+                          className="block px-4 py-2.5 text-sm text-black/70 hover:text-black hover:bg-black/5 transition-colors duration-200 font-medium"
+                        >
+                          {service.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </li>
+
+              <li>
+                <Link
+                  href="/contact"
+                  className={`relative font-medium transition-all duration-300 group/link ${textColor}`}
+                >
+                  Contact Us
+                  <span className={`absolute bottom-0 left-0 h-px transition-all duration-300 ease-out ${underlineColor} w-0 group-hover/link:w-full`}></span>
+                </Link>
+              </li>
             </ul>
 
-            {/* Desktop Contact Button */}
-            <Link
-              href="/contact"
-              className={`hidden md:block font-medium transition-all duration-300 relative group/link z-20 ${textColor}`}
-            >
-              Contact Us
-              <span className={`absolute bottom-0 left-0 h-px transition-all duration-300 ease-out ${underlineColor} w-0 group-hover/link:w-full`}></span>
-            </Link>
 
-            {/* Mobile Menu Button */}
+            {/* Mobile Menu Button — Left */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className={`md:hidden relative z-20 transition-colors duration-300 ${textColor}`}
@@ -215,53 +225,66 @@ export default function Navigation() {
 
       {/* Mobile Menu Overlay */}
       {isMenuOpen && (
-        <div 
+        <div
           className="md:hidden fixed inset-0 bg-white z-[95]"
           onClick={() => setIsMenuOpen(false)}
         >
-          <div 
+          <div
             className="h-full w-full flex items-center justify-center px-8"
             onClick={(e) => e.stopPropagation()}
           >
-            <nav className="space-y-8 text-center">
-              <Link 
-                href="/" 
+            <nav className="space-y-8 text-center w-full max-w-xs">
+              <Link
+                href="/"
                 onClick={() => setIsMenuOpen(false)}
                 className="block text-2xl text-black/70 hover:text-black font-medium transition-colors"
               >
                 Home
               </Link>
-              <button
-                onClick={() => {
-                  setIsMenuOpen(false)
-                  scrollToSection('timeline-section')
-                }}
-                className="block text-2xl text-black/70 hover:text-black font-medium transition-colors w-full"
-              >
-                About
-              </button>
-              <button
-                onClick={() => {
-                  setIsMenuOpen(false)
-                  scrollToSection('services-section')
-                }}
-                className="block text-2xl text-black/70 hover:text-black font-medium transition-colors w-full"
-              >
-                Services
-              </button>
-              <Link 
-                href="/projects" 
+              <Link
+                href="/projects"
                 onClick={() => setIsMenuOpen(false)}
                 className="block text-2xl text-black/70 hover:text-black font-medium transition-colors"
               >
                 Projects
               </Link>
+
+              {/* Mobile Services Accordion */}
+              <div>
+                <button
+                  onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
+                  className="flex items-center justify-center gap-2 text-2xl text-black/70 hover:text-black font-medium transition-colors w-full"
+                >
+                  Services
+                  <ChevronDown
+                    size={20}
+                    className={`transition-transform duration-300 ${isMobileServicesOpen ? 'rotate-180' : ''}`}
+                  />
+                </button>
+
+                {isMobileServicesOpen && (
+                  <ul className="mt-4 space-y-4">
+                    {services.map((service) => (
+                      <li key={service.href}>
+                        <Link
+                          href={service.href}
+                          onClick={() => setIsMenuOpen(false)}
+                          className="block text-lg text-black/50 hover:text-black transition-colors"
+                        >
+                          {service.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+
               <Link
                 href="/contact"
                 onClick={() => setIsMenuOpen(false)}
                 className="block text-2xl text-black/70 hover:text-black font-medium transition-colors"
               >
-                Contact
+                Contact Us
               </Link>
             </nav>
           </div>

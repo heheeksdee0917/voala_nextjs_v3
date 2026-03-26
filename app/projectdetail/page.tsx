@@ -11,6 +11,7 @@ import StandardButton from '@/components/ui/standard-button';
 import { useFadeInOnScroll } from '@/hooks/useFadeInOnScroll';
 import ImageGalleryModal from '@/components/ui/ImageGalleryModal';
 import GalleryImageCard from '@/components/GalleryImageCard';
+import ServicesSection from '@/components/ServicesSection';
 
 interface ProjectDetailPageProps {
   params: { projectId: string };
@@ -38,10 +39,9 @@ const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ params }) => {
 
     const img = new Image();
     img.src = project.image;
-    
+
     img.onload = () => {
       setHeroImageLoaded(true);
-      // Small delay to ensure smooth transition
       setTimeout(() => setIsPageReady(true), 100);
     };
 
@@ -51,7 +51,6 @@ const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ params }) => {
       setIsPageReady(true);
     };
 
-    // Timeout fallback in case image takes too long
     const timeout = setTimeout(() => {
       setHeroImageLoaded(true);
       setIsPageReady(true);
@@ -83,7 +82,6 @@ const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ params }) => {
     );
   }
 
-  // Loading state while hero image loads
   if (!heroImageLoaded) {
     return (
       <div className="min-h-screen bg-white font-linik flex items-center justify-center">
@@ -237,6 +235,9 @@ const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ params }) => {
           </div>
         </div>
       </section>
+
+      {/* Services Section */}
+      <ServicesSection />
 
       <BackToTop />
 

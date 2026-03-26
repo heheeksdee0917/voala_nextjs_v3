@@ -13,6 +13,8 @@ export interface Project {
   galleryImages: Array<{
     src: string;
   }>;
+  areaLabel?: string;   
+  areaLink?: string;  
 }
 
 export const projectsData: Project[] = [
@@ -22,6 +24,8 @@ export const projectsData: Project[] = [
     name: 'The BEAR HOUSE',
     description: 'Bold. Dark. Unforgettable.',
     location: 'Aria Luxury Residence, KLCC',
+    areaLabel: 'KLCC',
+    areaLink: '/areas/kuala-lumpur',
     type: 'residential',
     image: '/Voala/ProjectSource/Award-Winning-Projects/Aria/AriaCoverPhoto.avif',
     category: 'Award-Winning',
@@ -164,6 +168,8 @@ export const projectsData: Project[] = [
     name: 'The WHITE NEST',
     description: 'Where Minimalism Feels Like Home.',
     location: 'Legasi 1, Bandar Kinrara',
+    areaLabel: 'Bandar Kinrara',
+    areaLink: '/areas/bukit-jalil',
     type: 'residential',
     image: '/Voala/ProjectSource/Signature-Projects/Legasi1/LegasiCoverPhoto.avif',
     category: '2 Storey Terrace House',
@@ -276,6 +282,8 @@ export const projectsData: Project[] = [
     name: 'The DUAL KEY HIDEAWAY',
     description: 'Where Simplicity Meets Soul.',
     location: 'Trinity Pentamont, Mont\' Kiara',
+    areaLabel: 'Mont\' Kiara',
+    areaLink: '/areas/mont-kiara',
     type: 'residential',
     image: '/Voala/ProjectSource/Signature-Projects/Pentamont/PentamonCoverPhoto.avif',
     category: 'Condominium, (TYPE B2 DUAL-KEY)',

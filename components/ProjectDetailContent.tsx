@@ -2,14 +2,16 @@
 
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowLeft, MapPin, Calendar, Maximize2 } from 'lucide-react';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 import BackToTop from '@/components/BackToTop';
 import { projectsData } from '@/data/projectsData';
 import StandardButton from '@/components/ui/standard-button';
 import { useFadeInOnScroll } from '@/hooks/useFadeInOnScroll';
 import ImageGalleryModal from '@/components/ui/ImageGalleryModal';
 import GalleryImageCard from '@/components/GalleryImageCard';
+import Service from '@/components/Service';
+import { ArrowLeft, MapPin, Calendar, Maximize2, ExternalLink } from 'lucide-react';
 
 interface ProjectDetailContentProps {
   projectId: string;
@@ -106,7 +108,22 @@ const ProjectDetailContent: React.FC<ProjectDetailContentProps> = ({ projectId }
                   <MapPin size={16} className="md:w-5 md:h-5 text-white/80" />
                   <div>
                     <p className="text-xs md:text-sm text-white/80">Location</p>
-                    <p className="font-semibold text-sm md:text-base">{project.location}</p>
+                    <p className="font-semibold text-sm md:text-base">
+                      {project.areaLink && project.areaLabel ? (
+                        <>
+                          {project.location.replace(project.areaLabel, '')}
+                          <Link
+                            href={project.areaLink}
+                            className="inline-flex items-center gap-1 hover:underline underline-offset-2"
+                          >
+                            {project.areaLabel}
+                            <ExternalLink className="w-3 h-3" />
+                          </Link>
+                        </>
+                      ) : (
+                        project.location
+                      )}
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-center gap-2 md:gap-3 text-white">
@@ -187,7 +204,7 @@ const ProjectDetailContent: React.FC<ProjectDetailContentProps> = ({ projectId }
           </div>
         </div>
       </section>
-
+      <Service />
       <BackToTop />
 
       <ImageGalleryModal

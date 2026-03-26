@@ -86,11 +86,6 @@ export default function HomePage() {
         </section>
       </Suspense>
 
-      <Suspense fallback={<div className="h-screen" />}>
-        <section id="services-section">
-          <LazyService />
-        </section>
-      </Suspense>
 
       <Suspense fallback={<div className="h-screen" />}>
         <section id="cta">

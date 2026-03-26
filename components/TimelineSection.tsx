@@ -1,5 +1,6 @@
 "use client"
 import React, { memo } from 'react';
+import Link from 'next/link';
 import { Timeline } from './ui/timeline';
 import { useFadeInOnScroll } from '../hooks/useFadeInOnScroll';
 
@@ -28,7 +29,11 @@ ServiceImage.displayName = 'ServiceImage';
 const TimelineSection: React.FC = () => {
   const servicesData = [
     {
-      title: "Planning & Consultation",
+      title: (
+        <Link href="/services/space-planning" className="text-inherit no-underline hover:opacity-70 transition-opacity duration-200">
+          <h2>Planning & Consultation</h2>
+        </Link>
+      ),
       content: (
         <div className="space-y-4">
           <p className="text-gray-700 text-lg leading-relaxed font-linik">
@@ -61,7 +66,11 @@ const TimelineSection: React.FC = () => {
       ),
     },
     {
-      title: "Bespoke Interior Design",
+      title: (
+        <Link href="/services/3d-visualization" className="text-inherit no-underline hover:opacity-70 transition-opacity duration-200">
+          <h2>Bespoke Interior Design</h2>
+        </Link>
+      ),
       content: (
         <div className="space-y-4">
           <p className="text-gray-700 text-lg leading-relaxed font-linik">
@@ -93,7 +102,11 @@ const TimelineSection: React.FC = () => {
       ),
     },
     {
-      title: "Professional Fit-Out",
+      title: (
+        <Link href="/services/consultation" className="text-inherit no-underline hover:opacity-70 transition-opacity duration-200">
+          <h2>Professional Fit-Out</h2>
+        </Link>
+      ),
       content: (
         <div className="space-y-4">
           <p className="text-gray-700 text-lg leading-relaxed font-linik">
@@ -126,7 +139,11 @@ const TimelineSection: React.FC = () => {
       ),
     },
     {
-      title: "Luxury Styling & Finishing",
+      title: (
+        <Link href="/services/material-selection" className="text-inherit no-underline hover:opacity-70 transition-opacity duration-200">
+          <h2>Luxury Styling & Finishing</h2>
+        </Link>
+      ),
       content: (
         <div className="space-y-4">
           <p className="text-gray-700 text-lg leading-relaxed font-linik">
@@ -159,6 +176,7 @@ const TimelineSection: React.FC = () => {
       ),
     },
   ];
+
   return (
     <div style={{ paddingTop: '0px', paddingBottom: '0px' }}>
       <Timeline data={servicesData} />
