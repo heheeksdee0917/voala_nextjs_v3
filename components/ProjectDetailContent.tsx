@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
@@ -17,18 +17,47 @@ interface ProjectDetailContentProps {
   projectId: string;
 }
 
+const BATCH_SIZE = 6;
+
 const ProjectDetailContent: React.FC<ProjectDetailContentProps> = ({ projectId }) => {
   const router = useRouter();
-
   const { ref: imageRef, isInView } = useFadeInOnScroll();
   const [isGalleryModalOpen, setIsGalleryModalOpen] = useState(false);
   const [currentGalleryImageIndex, setCurrentGalleryImageIndex] = useState(0);
+
+  // How many images are currently "unlocked" (rendered into the DOM)
+  const [visibleCount, setVisibleCount] = useState(BATCH_SIZE);
+  // How many of the visible images have finished loading
+  const [loadedCount, setLoadedCount] = useState(0);
 
   const project = projectsData.find(p => p.id === projectId);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  // Reset batching whenever the project changes
+  useEffect(() => {
+    setVisibleCount(BATCH_SIZE);
+    setLoadedCount(0);
+  }, [projectId]);
+
+  const totalImages = project?.galleryImages.length ?? 0;
+  const currentBatchSize = Math.min(visibleCount, totalImages);
+
+  // Called by each GalleryImageCard when its image finishes loading (or errors)
+  const handleImageSettled = useCallback(() => {
+    setLoadedCount(prev => {
+      const next = prev + 1;
+      // Once every card in the current batch has settled, unlock the next batch
+      if (next >= currentBatchSize && visibleCount < totalImages) {
+        setVisibleCount(v => Math.min(v + BATCH_SIZE, totalImages));
+        // Reset counter for the next batch
+        return 0;
+      }
+      return next;
+    });
+  }, [currentBatchSize, visibleCount, totalImages]);
 
   const handleImageClick = (index: number) => {
     setCurrentGalleryImageIndex(index);
@@ -55,7 +84,9 @@ const ProjectDetailContent: React.FC<ProjectDetailContentProps> = ({ projectId }
 
   return (
     <div className="min-h-screen bg-white font-linik">
-      <section className="relative h-screen overflow-hidden">
+
+      {/* Hero */}
+      <section className="relative h-screen overflow-hidden z-0">
         <div
           ref={imageRef as React.RefObject<HTMLDivElement>}
           className={`w-full h-full ${isInView ? 'fadeInUpAnimated' : 'fadeInUpTrigger'}`}
@@ -146,9 +177,12 @@ const ProjectDetailContent: React.FC<ProjectDetailContentProps> = ({ projectId }
         </div>
       </section>
 
-      <section className="py-16 md:py-20 bg-white">
+      {/* Content */}
+      <section className="py-16 md:py-20 bg-white relative z-10">
         <div className="container mx-auto px-4 md:px-8">
           <div className="max-w-4xl mx-auto">
+
+            {/* Overview */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -163,6 +197,7 @@ const ProjectDetailContent: React.FC<ProjectDetailContentProps> = ({ projectId }
               </p>
             </motion.div>
 
+            {/* Gallery */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -173,16 +208,18 @@ const ProjectDetailContent: React.FC<ProjectDetailContentProps> = ({ projectId }
                 Project <span className="gradient-highlight">Gallery</span>
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-                {project.galleryImages.map((image, index) => (
+                {project.galleryImages.slice(0, visibleCount).map((image, index) => (
                   <GalleryImageCard
                     key={index}
                     imageSrc={image.src}
                     onClick={() => handleImageClick(index)}
+                    onSettled={handleImageSettled}
                   />
                 ))}
               </div>
             </motion.div>
 
+            {/* CTA */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -201,9 +238,11 @@ const ProjectDetailContent: React.FC<ProjectDetailContentProps> = ({ projectId }
                 </StandardButton>
               </div>
             </motion.div>
+
           </div>
         </div>
       </section>
+
       <Service />
       <BackToTop />
 
