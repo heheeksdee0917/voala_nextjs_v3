@@ -171,33 +171,6 @@ export default function Navigation() {
                 </Link>
               </li>
 
-              {/* Services Dropdown */}
-              <li className="relative group/services">
-                <button
-                  className={`relative font-medium transition-all duration-300 flex items-center gap-1 group/link ${textColor}`}
-                >
-                  Services
-                  <ChevronDown size={16} className="transition-transform duration-300 group-hover/services:rotate-180" />
-                  <span className={`absolute bottom-0 left-0 h-px transition-all duration-300 ease-out ${underlineColor} w-0 group-hover/link:w-full`}></span>
-                </button>
-
-                {/* Dropdown */}
-                <div className={`absolute top-full left-0 mt-3 w-64 bg-white/90 backdrop-blur-xl rounded-lg border ${dropdownBorder} shadow-xl opacity-0 invisible group-hover/services:opacity-100 group-hover/services:visible transition-all duration-300 translate-y-1 group-hover/services:translate-y-0`}>
-                  <ul className="py-2">
-                    {services.map((service) => (
-                      <li key={service.href}>
-                        <Link
-                          href={service.href}
-                          className="block px-4 py-2.5 text-sm text-black/70 hover:text-black hover:bg-black/5 transition-colors duration-200 font-medium"
-                        >
-                          {service.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </li>
-
               <li>
                 <Link
                   href="/contact"
