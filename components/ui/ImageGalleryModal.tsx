@@ -161,6 +161,7 @@ const ImageGalleryModal: React.FC<ImageGalleryModalProps> = ({
               >
                 <img
                   src={image.src}
+                  alt={image.alt ?? project.imageAlt} 
                   alt={`Gallery thumbnail ${index + 1}`}
                   className="w-full h-full object-cover"
                   loading="lazy"

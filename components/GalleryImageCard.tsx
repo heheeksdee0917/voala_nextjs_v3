@@ -4,12 +4,13 @@ import React, { useState, useRef, useEffect } from 'react';
 
 interface GalleryImageCardProps {
   imageSrc: string;
+  alt: string;
   onClick: () => void;
   /** Called once when the image finishes loading or errors — used by the parent to trigger the next batch */
   onSettled?: () => void;
 }
 
-const GalleryImageCard: React.FC<GalleryImageCardProps> = ({ imageSrc, onClick, onSettled }) => {
+const GalleryImageCard: React.FC<GalleryImageCardProps> = ({ imageSrc, alt, onClick, onSettled }) => {
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageError, setImageError] = useState(false);
   const imgRef = useRef<HTMLImageElement>(null);
@@ -64,14 +65,13 @@ const GalleryImageCard: React.FC<GalleryImageCardProps> = ({ imageSrc, onClick, 
       <img
         ref={imgRef}
         src={imageSrc}
-        alt="Gallery image"
+        alt={alt}
         loading="lazy"
         decoding="async"
         onLoad={() => settle(true)}
         onError={() => settle(false)}
-        className={`absolute inset-0 w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:scale-110 ${
-          imageLoaded && !imageError ? 'opacity-100' : 'opacity-0'
-        }`}
+        className={`absolute inset-0 w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:scale-110 ${imageLoaded && !imageError ? 'opacity-100' : 'opacity-0'
+          }`}
       />
 
       {/* Hover overlay */}

@@ -212,6 +212,7 @@ const ProjectDetailContent: React.FC<ProjectDetailContentProps> = ({ projectId }
                   <GalleryImageCard
                     key={index}
                     imageSrc={image.src}
+                    alt={image.alt ?? project.imageAlt} 
                     onClick={() => handleImageClick(index)}
                     onSettled={handleImageSettled}
                   />
