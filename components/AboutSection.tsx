@@ -43,7 +43,7 @@ const AboutSection: React.FC = () => {
                   <iframe
                     width="100%"
                     height="100%"
-                    src="https://www.youtube-nocookie.com/embed/U3M1dUFuSpo?autoplay=0&mute=0&controls=1&showinfo=1&rel=0&modestbranding=1&playsinline=1"
+                    src="https://www.youtube-nocookie.com/embed/kyrh4C3fqZY?autoplay=0&mute=0&controls=1&showinfo=1&rel=0&modestbranding=1&playsinline=1"
                     title="YouTube video player"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
