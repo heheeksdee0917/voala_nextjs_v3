@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 interface ImageGalleryModalProps {
   isOpen: boolean;
   onClose: () => void;
-  images: Array<{ src: string; }>;
+  images: Array<{ src: string; alt?: string }>;
   initialIndex: number;
 }
 
@@ -63,13 +63,13 @@ const ImageGalleryModal: React.FC<ImageGalleryModalProps> = ({
   }, [isOpen]);
 
   const goToPrevious = () => {
-    setCurrentIndex((prevIndex) => 
+    setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? images.length - 1 : prevIndex - 1
     );
   };
 
   const goToNext = () => {
-    setCurrentIndex((prevIndex) => 
+    setCurrentIndex((prevIndex) =>
       prevIndex === images.length - 1 ? 0 : prevIndex + 1
     );
   };
@@ -103,12 +103,12 @@ const ImageGalleryModal: React.FC<ImageGalleryModalProps> = ({
         </div>
 
         {/* Main Image Container */}
-        <div 
+        <div
           className="flex items-center justify-center h-full p-4 md:p-8"
           onClick={(e) => e.stopPropagation()}
         >
           <div className="relative max-w-7xl max-h-full w-full h-full flex items-center justify-center">
-            
+
             {/* Previous Button */}
             <button
               onClick={goToPrevious}
@@ -130,8 +130,9 @@ const ImageGalleryModal: React.FC<ImageGalleryModalProps> = ({
             {/* Image Display */}
             <AnimatePresence mode="wait">
               <motion.img
-                key={currentIndex}
                 src={images[currentIndex].src}
+                alt={images[currentIndex].alt ?? `Gallery image ${currentIndex + 1}`}
+                key={currentIndex}
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
@@ -153,16 +154,14 @@ const ImageGalleryModal: React.FC<ImageGalleryModalProps> = ({
                   e.stopPropagation();
                   setCurrentIndex(index);
                 }}
-                className={`flex-shrink-0 w-12 h-12 rounded-lg overflow-hidden border-2 transition-all duration-200 ${
-                  index === currentIndex 
-                    ? 'border-white scale-110' 
+                className={`flex-shrink-0 w-12 h-12 rounded-lg overflow-hidden border-2 transition-all duration-200 ${index === currentIndex
+                    ? 'border-white scale-110'
                     : 'border-transparent hover:border-gray-400'
-                }`}
+                  }`}
               >
                 <img
                   src={image.src}
-                  alt={image.alt ?? project.alt} 
-                  alt={`Gallery thumbnail ${index + 1}`}
+                  alt={image.alt ?? `Gallery thumbnail ${index + 1}`}
                   className="w-full h-full object-cover"
                   loading="lazy"
                 />
