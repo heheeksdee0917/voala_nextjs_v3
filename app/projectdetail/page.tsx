@@ -207,7 +207,7 @@ const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ params }) => {
                   <GalleryImageCard
                     key={index}
                     imageSrc={image.src}
-                    alt={image.alt ?? project.imageAlt} 
+                    alt={image.alt ?? project.alt} 
                     onClick={() => handleImageClick(index)}
                   />
                 ))}
