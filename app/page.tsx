@@ -16,7 +16,7 @@ import {
 } from '@/components/LazyComponents';
 
 export const metadata: Metadata = {
-  title: 'Best Interior Designer Kuala Lumpur, Malaysia - If you‘re looking for interior design service near me or Residential, Retail or Commercial design near me - Voala Interior is the place to be',
+  title: 'Voala Interior | Best Interior Designer in Kuala Lumpur',
   description: 'Voala Interior – Award-winning interior design & build studio in Kuala Lumpur. Malaysia’s best one-stop designer for luxury residential & commercial projects, from concept to handover with heart-led craftsmanship.',
   keywords: 'award winning interior design KL, best interior designer Kuala Lumpur, interior design Malaysia, residential interior design KL, commercial interior design Kuala Lumpur, luxury home renovation KL, condo interior design Malaysia, bespoke interior KL',
   alternates: {
