@@ -50,8 +50,8 @@ export default function HomePage() {
   return (
     <>
       <h1 className="sr-only">
-        Your premium interior design & built studio
-        <br />in Kuala Lumpur, Malaysia.
+        The premium interior designer
+        <br />based in KL, Malaysia.
       </h1>
 
       <HeroSection />

@@ -3,7 +3,7 @@
 import React from 'react';
 import { ImagesSlider } from './ui/images-slider';
 import StandardButton from './ui/standard-button';
-import { useRouter } from 'next/navigation';  // ✅ Next.js
+import { useRouter } from 'next/navigation';
 
 interface HeroSectionProps {
   onOpenQuoteModal?: () => void;
@@ -25,23 +25,22 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onOpenQuoteModal }) => {
 
   return (
     <ImagesSlider className="h-screen" images={images}>
-      <div
-        className="z-50 flex flex-col justify-center items-center text-center px-4 md:px-8"
-      >
-        <p 
-          className="font-linik font-bold text-4xl md:text-5xl lg:text-7xl leading-tight mb-4 md:mb-6 tracking-wide"
-        >
-          <span className="hero-gradient">Designs You'll Love. <br />
-            Heartwork You'll Feel.</span>
+      <div className="z-50 flex flex-col justify-center items-center text-center px-4 md:px-8">
+
+        <h1 className="font-linik font-bold text-4xl md:text-5xl lg:text-7xl leading-tight mb-4 md:mb-6 tracking-wide">
+          <span className="hero-gradient">
+            Award-Winning Interior Designer<br />
+            in Kuala Lumpur
+          </span>
+        </h1>
+
+        {/* Subheading — brand voice, warm and human */}
+        <p className="font-louis-george-cafe text-xl md:text-2xl text-voala-off-white/90 mb-8 font-light tracking-wide max-w-5xl">
+          Designs You'll Love.
+          <br />
+          Heartwork You'll Feel.
         </p>
-        
-        <p 
-          className="font-louis-george-cafe text-xl md:text-2xl text-voala-off-white/90 mb-8 font-light tracking-wide max-w-5xl"
-        >
-          Your premium interior design & built studio
-          <br />in Kuala Lumpur, Malaysia.
-        </p>
-        
+
         <StandardButton
           onClick={handleGetDesign}
           variant="outline"
@@ -49,6 +48,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onOpenQuoteModal }) => {
         >
           Talk to us
         </StandardButton>
+
       </div>
     </ImagesSlider>
   );
