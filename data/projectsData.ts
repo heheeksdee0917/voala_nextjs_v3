@@ -6,7 +6,7 @@ export interface Project {
   location: string;
   type: 'commercial' | 'residential';
   image: string;
-  aly: string;        // SEO alt text for the hero/cover image
+  alt: string;        // SEO alt text for the hero/cover image
   category: string;
   year: string;
   size: string;
