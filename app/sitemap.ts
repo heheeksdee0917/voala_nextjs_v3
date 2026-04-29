@@ -33,7 +33,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${baseUrl}/services/residential-interior-design`,
+      lastModified: new Date('2024-06-01'),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
       url: `${baseUrl}/services/commercial`,
+      lastModified: new Date('2024-06-01'),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/services/commercial-interior-design`,
       lastModified: new Date('2024-06-01'),
       changeFrequency: 'monthly',
       priority: 0.8,
@@ -74,6 +86,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.8,
     },
+    {
+      url: `${baseUrl}/services/home-staging`,
+      lastModified: new Date('2024-06-01'),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/services/project-management`,
+      lastModified: new Date('2024-06-01'),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
 
     // Areas (Local SEO)
     {
@@ -90,6 +114,66 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/areas/bukit-jalil`,
+      lastModified: new Date('2024-06-01'),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/areas/ampang-hilir`,
+      lastModified: new Date('2024-06-01'),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/areas/bangsar`,
+      lastModified: new Date('2024-06-01'),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/areas/bangsar-south`,
+      lastModified: new Date('2024-06-01'),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/areas/bukit-bintang`,
+      lastModified: new Date('2024-06-01'),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/areas/bukit-tunku`,
+      lastModified: new Date('2024-06-01'),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/areas/damansara-heights`,
+      lastModified: new Date('2024-06-01'),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/areas/desa-park-city`,
+      lastModified: new Date('2024-06-01'),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/areas/klcc`,
+      lastModified: new Date('2024-06-01'),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/areas/sri-hartamas`,
+      lastModified: new Date('2024-06-01'),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/areas/ttdi`,
       lastModified: new Date('2024-06-01'),
       changeFrequency: 'monthly',
       priority: 0.7,
