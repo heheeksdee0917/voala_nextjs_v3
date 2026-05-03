@@ -10,7 +10,6 @@ import StandardButton from '@/components/ui/standard-button';
 import { useFadeInOnScroll } from '@/hooks/useFadeInOnScroll';
 import ImageGalleryModal from '@/components/ui/ImageGalleryModal';
 import GalleryImageCard from '@/components/GalleryImageCard';
-import Service from '@/components/Service';
 import { ArrowLeft, MapPin, Calendar, Maximize2, ExternalLink } from 'lucide-react';
 
 interface ProjectDetailContentProps {
@@ -25,18 +24,16 @@ const ProjectDetailContent: React.FC<ProjectDetailContentProps> = ({ projectId }
   const [isGalleryModalOpen, setIsGalleryModalOpen] = useState(false);
   const [currentGalleryImageIndex, setCurrentGalleryImageIndex] = useState(0);
 
-  // How many images are currently "unlocked" (rendered into the DOM)
   const [visibleCount, setVisibleCount] = useState(BATCH_SIZE);
-  // How many of the visible images have finished loading
   const [loadedCount, setLoadedCount] = useState(0);
 
   const project = projectsData.find(p => p.id === projectId);
+  const services = project?.services ?? [];
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  // Reset batching whenever the project changes
   useEffect(() => {
     setVisibleCount(BATCH_SIZE);
     setLoadedCount(0);
@@ -45,14 +42,11 @@ const ProjectDetailContent: React.FC<ProjectDetailContentProps> = ({ projectId }
   const totalImages = project?.galleryImages.length ?? 0;
   const currentBatchSize = Math.min(visibleCount, totalImages);
 
-  // Called by each GalleryImageCard when its image finishes loading (or errors)
   const handleImageSettled = useCallback(() => {
     setLoadedCount(prev => {
       const next = prev + 1;
-      // Once every card in the current batch has settled, unlock the next batch
       if (next >= currentBatchSize && visibleCount < totalImages) {
         setVisibleCount(v => Math.min(v + BATCH_SIZE, totalImages));
-        // Reset counter for the next batch
         return 0;
       }
       return next;
@@ -117,6 +111,7 @@ const ProjectDetailContent: React.FC<ProjectDetailContentProps> = ({ projectId }
               transition={{ duration: 0.8, delay: 0.2 }}
               className="max-w-4xl"
             >
+              {/* Category + Type pills */}
               <div className="flex flex-wrap items-center gap-2 md:gap-3 mb-3 md:mb-4">
                 <span className="px-2 md:px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full text-xs md:text-sm font-medium">
                   {project.category}
@@ -134,9 +129,12 @@ const ProjectDetailContent: React.FC<ProjectDetailContentProps> = ({ projectId }
                 <span dangerouslySetInnerHTML={{ __html: project.description }} />
               </p>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+              {/* Meta row: Location, Completed, Size + Services */}
+              <div className="flex flex-wrap items-start gap-6 md:gap-8">
+
+                {/* Location */}
                 <div className="flex items-center gap-2 md:gap-3 text-white">
-                  <MapPin size={16} className="md:w-5 md:h-5 text-white/80" />
+                  <MapPin size={16} className="md:w-5 md:h-5 text-white/80 shrink-0" />
                   <div>
                     <p className="text-xs md:text-sm text-white/80">Location</p>
                     <p className="font-semibold text-sm md:text-base">
@@ -157,20 +155,43 @@ const ProjectDetailContent: React.FC<ProjectDetailContentProps> = ({ projectId }
                     </p>
                   </div>
                 </div>
+
+                {/* Completed */}
                 <div className="flex items-center gap-2 md:gap-3 text-white">
-                  <Calendar size={16} className="md:w-5 md:h-5 text-white/80" />
+                  <Calendar size={16} className="md:w-5 md:h-5 text-white/80 shrink-0" />
                   <div>
                     <p className="text-xs md:text-sm text-white/80">Completed</p>
                     <p className="font-semibold text-sm md:text-base">{project.year}</p>
                   </div>
                 </div>
+
+                {/* Size */}
                 <div className="flex items-center gap-2 md:gap-3 text-white">
-                  <Maximize2 size={16} className="md:w-5 md:h-5 text-white/80" />
+                  <Maximize2 size={16} className="md:w-5 md:h-5 text-white/80 shrink-0" />
                   <div>
                     <p className="text-xs md:text-sm text-white/80">Size</p>
                     <p className="font-semibold text-sm md:text-base">{project.size}</p>
                   </div>
                 </div>
+
+                {/* Services — visually distinct, right of Size */}
+                {services.length > 0 && (
+                  <div>
+                    <p className="text-xs md:text-sm text-white/80 mb-1.5">Services</p>
+                    <div className="flex flex-wrap gap-2">
+                      {services.map((service) => (
+                        <button
+                          key={service.slug}
+                          onClick={() => router.push(`/services/${service.slug}`)}
+                          className="px-2.5 py-1 rounded-full text-xs md:text-sm font-medium border border-white/60 text-white bg-transparent hover:bg-white hover:text-black transition-all duration-300"
+                        >
+                          {service.label}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
               </div>
             </motion.div>
           </div>
@@ -212,7 +233,7 @@ const ProjectDetailContent: React.FC<ProjectDetailContentProps> = ({ projectId }
                   <GalleryImageCard
                     key={index}
                     imageSrc={image.src}
-                    alt={image.alt ?? project.alt} 
+                    alt={image.alt ?? project.alt}
                     onClick={() => handleImageClick(index)}
                     onSettled={handleImageSettled}
                   />
@@ -244,7 +265,6 @@ const ProjectDetailContent: React.FC<ProjectDetailContentProps> = ({ projectId }
         </div>
       </section>
 
-      <Service />
       <BackToTop />
 
       <ImageGalleryModal

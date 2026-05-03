@@ -17,6 +17,10 @@ export interface Project {
   }>;
   areaLabel?: string;
   areaLink?: string;
+  services?: Array<{
+    label: string;
+    slug: string;
+  }>;
 }
 
 export const projectsData: Project[] = [
@@ -54,6 +58,11 @@ export const projectsData: Project[] = [
       { src: '/Voala/ProjectSource/Award-Winning-Projects/Aria/15.avif', alt: 'Dark themed study nook with custom shelving, KLCC residential interior design' },
       { src: '/Voala/ProjectSource/Award-Winning-Projects/Aria/16.avif', alt: 'Hallway with recessed lighting, award-winning condo renovation Kuala Lumpur' },
       { src: '/Voala/ProjectSource/Award-Winning-Projects/Aria/17.avif', alt: 'Finished interior overview of The Bear House, Aria KLCC by Voala Interior' },
+    ],
+    services: [
+      { label: 'Residential Interior Design', slug: 'residential-interior-design' },
+      { label: 'Space Planning', slug: 'space-planning' },
+      { label: '3D Visualization', slug: '3d-visualization' },
     ],
   },
 
@@ -103,6 +112,11 @@ export const projectsData: Project[] = [
       { src: '/Voala/ProjectSource/Award-Winning-Projects/TheEdge/31.avif', alt: 'Utility and laundry area design, functional interior renovation Kuala Lumpur' },
       { src: '/Voala/ProjectSource/Award-Winning-Projects/TheEdge/32.avif', alt: 'Final overview of The Edge interior, award-winning home design Taman U-Thant KL by Voala Interior' },
     ],
+    services: [
+      { label: 'Residential Interior Design', slug: 'residential-interior-design' },
+      { label: 'Space Planning', slug: 'space-planning' },
+      { label: 'Living Room Design', slug: 'living-room-design' },
+    ],
   },
 
   // The Pinkground 1F - Emhub
@@ -142,6 +156,11 @@ export const projectsData: Project[] = [
       { src: '/Voala/ProjectSource/Signature-Projects/Emhub1F/21.avif', alt: 'Completed first floor overview, The Pinkground Emhub by Voala Interior' },
       { src: '/Voala/ProjectSource/Signature-Projects/Emhub1F/22.avif', alt: 'Final interior shot of community space, commercial design by Voala Interior KL' },
     ],
+    services: [
+      { label: 'Commercial Interior Design', slug: 'commercial-interior-design' },
+      { label: 'Space Planning', slug: 'space-planning' },
+      { label: 'Project Management', slug: 'project-management' },
+    ],
   },
 
   // Sky-Meridien
@@ -173,6 +192,11 @@ export const projectsData: Project[] = [
       { src: '/Voala/ProjectSource/Signature-Projects/SkyMeridien/12.avif', alt: 'Living room overview with dark palette, Sky Meridien condo design by Voala Interior' },
       { src: '/Voala/ProjectSource/Signature-Projects/SkyMeridien/14.avif', alt: 'Bedroom with layered soft furnishings, condo interior renovation Bandar Baru Sentul' },
       { src: '/Voala/ProjectSource/Signature-Projects/SkyMeridien/15.avif', alt: 'Final interior overview of The Whisper House, Sky Meridien KL by Voala Interior' },
+    ],
+    services: [
+      { label: 'Residential Interior Design', slug: 'residential-interior-design' },
+      { label: 'Bedroom Design', slug: 'bedroom' },
+      { label: 'Material Selection', slug: 'material-selection' },
     ],
   },
 
@@ -227,6 +251,11 @@ export const projectsData: Project[] = [
       { src: '/Voala/ProjectSource/Signature-Projects/Legasi1/34.avif', alt: 'Natural light in master bedroom, minimalist terrace house renovation Kinrara' },
       { src: '/Voala/ProjectSource/Signature-Projects/Legasi1/35.avif', alt: 'Completed overview of The White Nest, Legasi 1 Bandar Kinrara by Voala Interior' },
     ],
+    services: [
+      { label: 'Residential Interior Design', slug: 'residential-interior-design' },
+      { label: 'Space Planning', slug: 'space-planning' },
+      { label: 'Living Room Design', slug: 'living-room-design' },
+    ],
   },
 
   // The Sesh
@@ -253,6 +282,11 @@ export const projectsData: Project[] = [
       { src: '/Voala/ProjectSource/Signature-Projects/TheSesh/8.avif', alt: 'Changing room and amenity area, The Sesh tennis court interior KL' },
       { src: '/Voala/ProjectSource/Signature-Projects/TheSesh/9.avif', alt: 'Branding and signage design, commercial interior The Sesh Jalan Ipoh' },
       { src: '/Voala/ProjectSource/Signature-Projects/TheSesh/10.avif', alt: 'Final overview of The Sesh auto-tennis court, commercial design by Voala Interior KL' },
+    ],
+    services: [
+      { label: 'Commercial', slug: 'commercial' },
+      { label: 'Space Planning', slug: 'space-planning' },
+      { label: 'Project Management', slug: 'project-management' },
     ],
   },
 
@@ -293,6 +327,11 @@ export const projectsData: Project[] = [
       { src: '/Voala/ProjectSource/Signature-Projects/Carsome/21.avif', alt: 'Natural light in open office, commercial interior design Kuala Lumpur' },
       { src: '/Voala/ProjectSource/Signature-Projects/Carsome/22.avif', alt: 'Storage and utility area, functional commercial design by Voala Interior' },
       { src: '/Voala/ProjectSource/Signature-Projects/Carsome/23.avif', alt: 'Final overview of Carsome Academy, award-winning commercial design Jalan Ipoh KL' },
+    ],
+    services: [
+      { label: 'Commercial Interior Design', slug: 'commercial-interior-design' },
+      { label: 'Project Management', slug: 'project-management' },
+      { label: '3D Visualization', slug: '3d-visualization' },
     ],
   },
 
@@ -337,6 +376,11 @@ export const projectsData: Project[] = [
       { src: '/Voala/ProjectSource/Signature-Projects/Pentamont/24.avif', alt: 'Natural wood and white contrast, condo renovation Kuala Lumpur' },
       { src: '/Voala/ProjectSource/Signature-Projects/Pentamont/27.avif', alt: 'Final interior overview of The Dual Key Hideaway, Trinity Pentamont KL by Voala Interior' },
     ],
+    services: [
+      { label: 'Residential Interior Design', slug: 'residential-interior-design' },
+      { label: 'Space Planning', slug: 'space-planning' },
+      { label: 'Bedroom Design', slug: 'bedroom' },
+    ],
   },
 
   // The Charlotte - Lot68
@@ -378,6 +422,11 @@ export const projectsData: Project[] = [
       { src: '/Voala/ProjectSource/Signature-Projects/Lot68/23.avif', alt: 'Shoppers moving through designed space, retail interior renovation Kuching' },
       { src: '/Voala/ProjectSource/Signature-Projects/Lot68/24.avif', alt: 'Final overview of The Charlotte Lot 68, mixed development design by Voala Interior' },
     ],
+    services: [
+      { label: 'Commercial Interior Design', slug: 'commercial-interior-design' },
+      { label: 'Space Planning', slug: 'space-planning' },
+      { label: 'Project Management', slug: 'project-management' },
+    ],
   },
 
   // The Kami
@@ -418,6 +467,11 @@ export const projectsData: Project[] = [
       { src: '/Voala/ProjectSource/Signature-Projects/Kami/22.avif', alt: 'Living room overview with natural textures, The Kami condo interior KL' },
       { src: '/Voala/ProjectSource/Signature-Projects/Kami/23.avif', alt: 'Final overview of The Kami, multigenerational condo design by Voala Interior Kuala Lumpur' },
     ],
+    services: [
+      { label: 'Residential Interior Design', slug: 'residential-interior-design' },
+      { label: 'Space Planning', slug: 'space-planning' },
+      { label: 'Consultation', slug: 'consultation' },
+    ],
   },
 
   // Rimba
@@ -446,6 +500,11 @@ export const projectsData: Project[] = [
       { src: '/Voala/ProjectSource/Signature-Projects/Rimba/8.avif', alt: 'Living room with neutral furnishings, minimalist condo interior KL by Voala Interior' },
       { src: '/Voala/ProjectSource/Signature-Projects/Rimba/9.avif', alt: 'Natural tone feature wall, condo interior renovation Bandar Kinrara Malaysia' },
       { src: '/Voala/ProjectSource/Signature-Projects/Rimba/10.avif', alt: "Final overview of The Sister's Home, Rimba Residence Bandar Kinrara by Voala Interior" },
+    ],
+    services: [
+      { label: 'Residential Interior Design', slug: 'residential-interior-design' },
+      { label: 'Material Selection', slug: 'material-selection' },
+      { label: 'Home Staging', slug: 'home-staging' },
     ],
   },
 
@@ -483,6 +542,11 @@ export const projectsData: Project[] = [
       { src: '/Voala/ProjectSource/Signature-Projects/Foresta/18.avif', alt: 'Green and timber kitchen, condo interior design Malaysia by Voala Interior' },
       { src: '/Voala/ProjectSource/Signature-Projects/Foresta/19.avif', alt: 'Living workscape setup, home office integrated design condo KL' },
       { src: '/Voala/ProjectSource/Signature-Projects/Foresta/20.avif', alt: 'Final overview of The Foresta, green condo interior design by Voala Interior KL' },
+    ],
+    services: [
+      { label: 'Residential Interior Design', slug: 'residential-interior-design' },
+      { label: 'Living Room Design', slug: 'living-room-design' },
+      { label: 'Material Selection', slug: 'material-selection' },
     ],
   },
 
@@ -523,6 +587,11 @@ export const projectsData: Project[] = [
       { src: '/Voala/ProjectSource/Signature-Projects/Rimbun/19.avif', alt: 'Second bathroom clean finish, landed house renovation Kinrara KL' },
       { src: '/Voala/ProjectSource/Signature-Projects/Rimbun/20.avif', alt: 'Dining and kitchen in open layout, home renovation Bandar Kinrara Malaysia' },
       { src: '/Voala/ProjectSource/Signature-Projects/Rimbun/21.avif', alt: 'Final overview of The Rimbun, newlywed terrace house design by Voala Interior Bandar Kinrara' },
+    ],
+    services: [
+      { label: 'Residential Interior Design', slug: 'residential-interior-design' },
+      { label: 'Space Planning', slug: 'space-planning' },
+      { label: 'Living Room Design', slug: 'living-room-design' },
     ],
   },
 
@@ -567,6 +636,11 @@ export const projectsData: Project[] = [
       { src: '/Voala/ProjectSource/Signature-Projects/Affiniti/23.avif', alt: 'Top floor terrace or bonus room, 5-storey townhouse interior by Voala Interior' },
       { src: '/Voala/ProjectSource/Signature-Projects/Affiniti/24.avif', alt: 'Final overview of The Affiniti, minimalist townhouse design by Voala Interior KL' },
     ],
+    services: [
+      { label: 'Residential Interior Design', slug: 'residential-interior-design' },
+      { label: 'Bedroom Design', slug: 'bedroom' },
+      { label: 'Space Planning', slug: 'space-planning' },
+    ],
   },
 
   // Emhub GF
@@ -597,6 +671,11 @@ export const projectsData: Project[] = [
       { src: '/Voala/ProjectSource/Signature-Projects/EmhubGF/12.avif', alt: 'Acoustic panel and ceiling detail, office interior design Kuala Lumpur' },
       { src: '/Voala/ProjectSource/Signature-Projects/EmhubGF/13.avif', alt: 'Reception and entry area, Emhub ground floor commercial design KL' },
       { src: '/Voala/ProjectSource/Signature-Projects/EmhubGF/14.avif', alt: 'Final overview of The Pinkground GF, open office interior by Voala Interior KL' },
+    ],
+    services: [
+      { label: 'Commercial Interior Design', slug: 'commercial-interior-design' },
+      { label: 'Space Planning', slug: 'space-planning' },
+      { label: 'Consultation', slug: 'consultation' },
     ],
   },
 ];
