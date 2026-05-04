@@ -49,9 +49,6 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
-      <h1 className="sr-only">
-        Best Interior Designer in Kuala Lumpur — Award-Winning Residential & Commercial Design | Voala Interior
-      </h1>
 
       <HeroSection />
 
