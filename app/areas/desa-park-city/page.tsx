@@ -49,7 +49,7 @@ const structuredData = {
   },
   url: 'https://voalainterior.com',
   telephone: '+60125053395',
-  email: 'hello@voalainterior.com',
+  email: 'askvoala@gmail.com.com',
   openingHoursSpecification: [
     {
       '@type': 'OpeningHoursSpecification',
@@ -425,7 +425,7 @@ export default function DesaParkCityPage() {
                   </p>
                   <p className="text-sm">
                     <Mail className="inline w-4 h-4 mr-2" />
-                    <a href="mailto:hello@voalainterior.com" className="hover:underline">hello@voalainterior.com</a>
+                    <a href="mailto:askvoala@gmail.com.com" className="hover:underline">askvoala@gmail.com.com</a>
                   </p>
                 </div>
               </div>

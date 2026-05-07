@@ -5,7 +5,7 @@ import { MapPin, Phone, Mail, Clock, ArrowRight, CheckCircle2, Star, Home, Build
 
 export const metadata: Metadata = {
   title: 'Interior Designer Mont Kiara | Luxury Condo & Apartment Design | Voala Interior',
-  description: 'Leading interior designer in Mont Kiara specializing in luxury condos & apartments. 15+ years serving expat families & locals in Mont Kiara, Dutamas, Segambut. Call +60 12 505 3395.',
+  description: 'Leading interior designer in Mont Kiara specializing in luxury condos & apartments. 10+ years serving expat families & locals in Mont Kiara, Dutamas, Segambut. Call +60 12 505 3395.',
   keywords: 'interior designer Mont Kiara, interior design Mont Kiara, condo interior design Mont Kiara, apartment design Mont Kiara, expat interior designer KL, luxury interior design Mont Kiara',
   openGraph: {
     title: 'Interior Designer Mont Kiara | Luxury Condo Design | Voala Interior',
@@ -39,7 +39,7 @@ const structuredData = {
   },
   url: 'https://voalainterior.com',
   telephone: '+60125053395',
-  email: 'hello@voalainterior.com',
+  email: 'askvoala@gmail.com.com',
   openingHoursSpecification: [
     {
       '@type': 'OpeningHoursSpecification',
@@ -138,7 +138,7 @@ export default function MontKiaraPage() {
     },
     {
       question: 'How do I schedule a consultation for my Mont Kiara property?',
-      answer: 'Contact us at +60 12 505 3395 or hello@voalainterior.com to schedule a free consultation. We can meet you at your Mont Kiara condo or apartment, or you can visit our studio in Bukit Jalil (about 25 minutes from Mont Kiara). During the consultation, we discuss your vision, lifestyle needs, budget, and timeline. We typically provide preliminary design concepts and a quotation within 5-7 days after the consultation.',
+      answer: 'Contact us at +60 12 505 3395 or askvoala@gmail.com.com to schedule a free consultation. We can meet you at your Mont Kiara condo or apartment, or you can visit our studio in Bukit Jalil (about 25 minutes from Mont Kiara). During the consultation, we discuss your vision, lifestyle needs, budget, and timeline. We typically provide preliminary design concepts and a quotation within 5-7 days after the consultation.',
     },
     {
       question: 'Can you work within my building\'s renovation guidelines?',
@@ -434,7 +434,7 @@ export default function MontKiaraPage() {
                   </p>
                   <p>
                     <Mail className="inline w-4 h-4 mr-2" />
-                    <a href="mailto:hello@voalainterior.com" className="hover:underline">hello@voalainterior.com</a>
+                    <a href="mailto:askvoala@gmail.com.com" className="hover:underline">askvoala@gmail.com.com</a>
                   </p>
                 </div>
               </div>

@@ -16,7 +16,6 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Renovation Project Management KL - Stress-Free Home Renovation | Voala Interior',
   description: 'Professional renovation project management in Kuala Lumpur: end-to-end coordination, timeline control, quality assurance and budget management for hassle-free condo and house renovations.',
-  keywords: 'renovation project management KL, home renovation project manager Kuala Lumpur, interior design project management Malaysia',
   alternates: {
     canonical: 'https://voalainterior.com/services/project-management',
   },
@@ -26,7 +25,7 @@ export const metadata: Metadata = {
     url: 'https://voalainterior.com/services/project-management',
     images: [
       {
-        url: 'https://voalainterior.com/images/project-management-og.jpg', // Replace with actual project image
+        url: 'https://voalainterior.com/Voala/Voala_OG.png',
         width: 1200,
         height: 630,
       },

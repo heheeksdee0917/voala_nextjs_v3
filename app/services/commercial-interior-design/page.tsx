@@ -16,7 +16,6 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Commercial Interior Design KL - Office, Retail & F&B Spaces | Voala Interior',
   description: 'Commercial interior design in Kuala Lumpur: professional office, retail, restaurant and F&B space design. Functional layouts, brand-aligned aesthetics and durable commercial-grade solutions.',
-  keywords: 'commercial interior design KL, office interior design Kuala Lumpur, retail design Malaysia, F&B interior design KL',
   alternates: {
     canonical: 'https://voalainterior.com/services/commercial-interior-design',
   },
@@ -26,7 +25,7 @@ export const metadata: Metadata = {
     url: 'https://voalainterior.com/services/commercial-interior-design',
     images: [
       {
-        url: 'https://voalainterior.com/images/commercial-interior-design-og.jpg', // Replace with actual project image
+        url: 'https://voalainterior.com/Voala/Voala_OG.png', // Replace with actual project image
         width: 1200,
         height: 630,
       },

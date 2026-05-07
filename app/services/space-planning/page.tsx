@@ -7,7 +7,6 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Space Planning KL | Layout Reconfiguration & Floor Plan Design – Voala Interior',
   description: 'Space planning & layout reconfiguration in Kuala Lumpur: complete floor-plan redesign, room flow optimization, furniture placement, storage solutions & structural changes for condos, terraces & homes.',
-  keywords: 'space planning KL, layout reconfiguration Kuala Lumpur, floor plan redesign interior design Malaysia, condo space planning KL, room flow optimization KL, storage solutions interior design KL',
   alternates: {
     canonical: 'https://voalainterior.com/services/space-planning',
   },
@@ -17,7 +16,7 @@ export const metadata: Metadata = {
     url: 'https://voalainterior.com/services/space-planning',
     images: [
       {
-        url: 'https://voalainterior.com/Voala/2.avif', // replace with your actual 1200×630 OG image path
+        url: 'https://voalainterior.com/Voala/Voala_OG.png',
         width: 1200,
         height: 630,
         alt: 'Before and after space planning floor plan redesign for Kuala Lumpur condo by Voala Interior',

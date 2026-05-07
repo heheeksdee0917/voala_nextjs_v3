@@ -49,7 +49,7 @@ const structuredData = {
   },
   url: 'https://voalainterior.com',
   telephone: '+60125053395',
-  email: 'hello@voalainterior.com',
+  email: 'askvoala@gmail.com.com',
   openingHoursSpecification: [
     {
       '@type': 'OpeningHoursSpecification',
@@ -234,7 +234,7 @@ export default function BangsarPage() {
 
             <p className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed">
               Heart-led craftsmanship for Bangsar bungalows, semi-Ds, and Bangsar South condos.
-              Award-winning interior design with 15+ years of experience in KL's most discerning neighbourhood.
+              Award-winning interior design with 10+ years of experience in KL's most discerning neighbourhood.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
@@ -473,7 +473,7 @@ export default function BangsarPage() {
                   </p>
                   <p className="text-sm">
                     <Mail className="inline w-4 h-4 mr-2" />
-                    <a href="mailto:hello@voalainterior.com" className="hover:underline">hello@voalainterior.com</a>
+                    <a href="mailto:askvoala@gmail.com.com" className="hover:underline">askvoala@gmail.com.com</a>
                   </p>
                 </div>
               </div>

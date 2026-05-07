@@ -9,7 +9,7 @@ import {
 export const metadata: Metadata = {
   title: 'Interior Designer Kuala Lumpur | Award-Winning Design Studio | Voala Interior',
   description:
-    'Leading interior designer in Kuala Lumpur with 15+ years of heart-led craftsmanship. Serving KLCC, Bukit Jalil, Bangsar, Mont Kiara & across KL. Call +60 12 505 3395 for exceptional interior design.',
+    'Leading interior designer in Kuala Lumpur with 10+ years of heart-led craftsmanship. Serving KLCC, Bukit Jalil, Bangsar, Mont Kiara & across KL. Call +60 12 505 3395 for exceptional interior design.',
   keywords:
     'interior designer Kuala Lumpur, interior design KL, best interior designer in Kuala Lumpur, interior designer near me KL, residential interior design Kuala Lumpur, commercial interior design KL',
   alternates: {
@@ -32,7 +32,7 @@ const structuredData = {
   '@id': 'https://voalainterior.com/#business',
   name: 'Voala Interior',
   image: 'https://voalainterior.com/Voala/Voala_OG.png',
-  description: 'Award-winning interior design studio in Kuala Lumpur with 15+ years of heart-led experience',
+  description: 'Award-winning interior design studio in Kuala Lumpur with 10+ years of heart-led experience',
   address: {
     '@type': 'PostalAddress',
     streetAddress: 'L2-29 & 30, The Link 2, Jalan Jalil Perkasa 3',
@@ -48,7 +48,7 @@ const structuredData = {
   },
   url: 'https://voalainterior.com',
   telephone: '+60125053395',
-  email: 'hello@voalainterior.com',
+  email: 'askvoala@gmail.com.com',
   openingHoursSpecification: [
     {
       '@type': 'OpeningHoursSpecification',
@@ -107,7 +107,7 @@ const services = [
 
 const whyUs = [
   {
-    title: '15+ Years in Kuala Lumpur',
+    title: '10+ Years in Kuala Lumpur',
     body: 'Deep understanding of KL homes — from KLCC high-rises to Bangsar landed properties. We know the building regulations, common space constraints, and design opportunities unique to each neighbourhood.',
   },
   {
@@ -188,7 +188,7 @@ const faqs = [
   {
     question: 'What makes Voala Interior different from other KL interior designers?',
     answer:
-      'We combine 15+ years of award-winning expertise with heart-led craftsmanship and genuine attention to detail. Unlike corporate design firms, we treat every KL home as unique — listening deeply before drawing a single line. Our clients become part of the Voala family.',
+      'We combine 10+ years of award-winning expertise with heart-led craftsmanship and genuine attention to detail. Unlike corporate design firms, we treat every KL home as unique — listening deeply before drawing a single line. Our clients become part of the Voala family.',
   },
   {
     question: 'Can I see examples of your work in Kuala Lumpur?',
@@ -237,7 +237,7 @@ export default function KualaLumpurPage() {
             </h1>
 
             <p className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed">
-              Heart-led craftsmanship for homes and businesses across KL. 15+ years serving KLCC,
+              Heart-led craftsmanship for homes and businesses across KL. 10+ years serving KLCC,
               Bangsar, Mont Kiara, Bukit Jalil & beyond. Studio at The Link 2 — your neighbours in design.
             </p>
 
@@ -475,7 +475,7 @@ export default function KualaLumpurPage() {
                   </p>
                   <p className="text-sm">
                     <Mail className="inline w-4 h-4 mr-2" />
-                    <a href="mailto:hello@voalainterior.com" className="hover:underline">hello@voalainterior.com</a>
+                    <a href="mailto:askvoala@gmail.com.com" className="hover:underline">askvoala@gmail.com.com</a>
                   </p>
                 </div>
               </div>

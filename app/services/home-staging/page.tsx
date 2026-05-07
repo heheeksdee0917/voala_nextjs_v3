@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     url: 'https://voalainterior.com/services/home-staging',
     images: [
       {
-        url: 'https://voalainterior.com/images/home-staging-og.jpg', // Replace with actual image
+        url: 'https://voalainterior.com/Voala/Voala_OG.png', // Replace with actual image
         width: 1200,
         height: 630,
       },

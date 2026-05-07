@@ -8,7 +8,6 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Residential Interior Design & Built KL | Full Home Renovation – Voala Interior',
   description: 'Complete residential interior design and built services in Kuala Lumpur. From living rooms and bedrooms to kitchens and bathrooms — we design and build your entire home with precision and style.',
-  keywords: 'residential interior design KL, home renovation Kuala Lumpur, full home interior design Malaysia, bedroom kitchen bathroom renovation KL, condo interior design built',
   alternates: {
     canonical: 'https://voalainterior.com/services/residential-interior-design',
   },
@@ -18,7 +17,7 @@ export const metadata: Metadata = {
     url: 'https://voalainterior.com/services/residential-interior-design',
     images: [
       {
-        url: 'https://voalainterior.com/Voala/ProjectSource/Award-Winning-Projects/Aria/5.avif',
+        url: 'https://voalainterior.com/Voala/Voala_OG.png',
         width: 1200,
         height: 630,
         alt: 'Residential interior design and built in Kuala Lumpur by Voala Interior',

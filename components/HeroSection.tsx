@@ -27,19 +27,20 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onOpenQuoteModal }) => {
     <ImagesSlider className="h-screen" images={images}>
       <div className="z-50 flex flex-col justify-center items-center text-center px-4 md:px-8">
 
-        <h1 className="font-linik font-bold text-4xl md:text-5xl lg:text-7xl leading-tight mb-4 md:mb-6 tracking-wide">
+        {/* Subheading — visually dominant, uses old H1 gradient style */}
+        <p className="font-linik font-bold text-4xl md:text-5xl lg:text-7xl leading-tight mb-8 tracking-wide">
           <span className="hero-gradient">
-            Award-Winning Interior Designer<br />
-            in Kuala Lumpur
+            Designs You'll Love.
+            <br />
+            Heartwork You'll Feel.
           </span>
-        </h1>
-
-        {/* Subheading — brand voice, warm and human */}
-        <p className="font-louis-george-cafe text-xl md:text-2xl text-voala-off-white/90 mb-8 font-light tracking-wide max-w-5xl">
-          Designs You'll Love.
-          <br />
-          Heartwork You'll Feel.
         </p>
+
+
+        {/* H1 — SEO tag, visually styled small like the old subheading */}
+        <h1 className="font-louis-george-cafe text-xl md:text-2xl text-voala-off-white/90 mb-4 md:mb-6 font-light tracking-wide max-w-5xl">
+          Award-Winning Interior Designer in Kuala Lumpur
+        </h1>
 
         <StandardButton
           onClick={handleGetDesign}

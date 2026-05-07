@@ -7,7 +7,6 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Interior Design Consultation KL | Feasibility Study – Voala Interior',
   description: 'Interior design consultation & feasibility study in Kuala Lumpur: site visit, accurate measurements, lifestyle discussion, honest assessment, and layout options before any renovation begins.',
-  keywords: 'interior design consultation KL, feasibility study interior design Kuala Lumpur, interior designer site visit Malaysia, consultation before renovation KL, layout planning consultation KL',
   alternates: {
     canonical: 'https://voalainterior.com/services/consultation',
   },
@@ -17,7 +16,7 @@ export const metadata: Metadata = {
     url: 'https://voalainterior.com/services/consultation',
     images: [
       {
-        url: 'https://voalainterior.com/Voala/1.avif', // replace with your actual 1200×630 OG image path
+        url: 'https://voalainterior.com/Voala/Voala_OG.png',
         width: 1200,
         height: 630,
         alt: 'Interior designer conducting on-site consultation and measurements in Kuala Lumpur condo by Voala Interior',

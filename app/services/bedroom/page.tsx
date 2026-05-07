@@ -7,7 +7,6 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Master Bedroom Design KL - Waterproofing, Storage & Lighting | Voala Interior',
   description: 'Master bedroom design in Kuala Lumpur: waterproofing to stop mould, smart storage, layered lighting, anti-slip flooring & ventilation. Real KL condo & house examples.',
-  keywords: 'bedroom design KL, master bedroom interior design Malaysia, bedroom renovation, waterproofing KL',
   alternates: {
     canonical: 'https://voalainterior.com/services/bedroom',
   },
@@ -17,7 +16,7 @@ export const metadata: Metadata = {
     url: 'https://voalainterior.com/services/bedroom-design',
     images: [
       {
-        url: 'https://voalainterior.com/images/bedroom-design-og.jpg',
+        url: 'https://voalainterior.com/Voala/Voala_OG.png',
         width: 1200,
         height: 630,
       },

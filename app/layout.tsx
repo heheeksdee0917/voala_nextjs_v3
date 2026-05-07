@@ -32,7 +32,6 @@ export const metadata: Metadata = {
     template: '%s - Best Interior Design in KL | Voala Interior',
   },
   description: "Malaysia's award-winning interior designer in Kuala Lumpur – best one-stop service for luxury residential & commercial projects.",
-  keywords: 'award winning interior design KL, best interior designer Kuala Lumpur, interior design Malaysia, residential interior design KL, commercial interior design Kuala Lumpur, luxury home renovation KL',
   openGraph: {
     siteName: 'Voala Interior',
     locale: 'en_MY',
@@ -66,7 +65,7 @@ const structuredData = {
   description: "Malaysia‘s award-winning interior designer with over 10 years of heart-led experience. Specializing in residential and commercial interior design in Kuala Lumpur.",
   url: 'https://voalainterior.com',
   telephone: '+60125053395',
-  email: 'hello@voalainterior.com',
+  email: 'askvoala@gmail.com',
   priceRange: '$$$-$$$$',
   image: [
     'https://voalainterior.com/Voala/Voala_OG.png',
@@ -190,7 +189,7 @@ const structuredData = {
   aggregateRating: {
     '@type': 'AggregateRating',
     ratingValue: '5.0',
-    reviewCount: '8',
+    reviewCount: '10',
     bestRating: '5',
     worstRating: '1',
   },

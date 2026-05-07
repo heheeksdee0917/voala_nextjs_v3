@@ -44,7 +44,7 @@ const AboutSection: React.FC = () => {
                     width="100%"
                     height="100%"
                     src="https://www.youtube-nocookie.com/embed/kyrh4C3fqZY?autoplay=0&mute=0&controls=1&showinfo=1&rel=0&modestbranding=1&playsinline=1"
-                    title="YouTube video player"
+                    title="Voala Interior — Award-Winning Interior Designer in KL"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
                     referrerPolicy="strict-origin-when-cross-origin"
@@ -63,28 +63,28 @@ const AboutSection: React.FC = () => {
               </div>
             )}
             <div className="absolute -bottom-6 -right-6 bg-black p-6 rounded-lg shadow-lg">
-              <p className="text-white font-bold text-2xl font-linik"></p>
+              <p className="text-white font-bold text-2xl font-linik">10+</p>
               <p className="text-white text-sm font-linik">Years Experience</p>
             </div>
           </div>
 
           <div className="space-y-6">
             <h2 className="text-4xl md:text-5xl font-bold leading-tight font-louis-george-cafe text-voala-secondary">
-              <span className="gradient-highlight">Bespoke</span> interior solutions<br />
+              <span className="gradient-highlight">Bespoke</span> Interior Design in KL —<br />
               from concept to <span className="gradient-highlight">completion</span>
             </h2>
 
             <p className="text-lg text-voala-gray leading-relaxed font-louis-george-cafe">
-              At <strong>VOALA</strong> we offer more than just design—we deliver a full journey,
+              At <strong>VOALA</strong>, KL's award-winning interior design studio, we offer more than just design — we deliver a full journey,
               <strong> tailored to you.</strong> From the first spark of an idea to the final layer of styling, we craft interiors that feel personal, purposeful, and beautifully finished.
             </p>
 
             <p className="text-lg text-voala-gray leading-relaxed font-louis-george-cafe">
-              With over a decade of experience in design and fit-out, our team is committed to turning vision into reality. <strong>Every space we create</strong>, blends thoughtful function with timeless elegance, ensuring the result is not only beautiful but built to last.
+              With over a decade of experience as an interior designer in Kuala Lumpur, our team is committed to turning vision into reality. <strong>Every space we create</strong> blends thoughtful function with timeless elegance, ensuring the result is not only beautiful but built to last.
             </p>
 
             <p className="text-lg text-voala-gray leading-relaxed font-louis-george-cafe">
-              Whether it's a <strong>private home or a commercial space</strong>, we manage every detail with heart and precision—so you can simply enjoy the space that’s <strong>truly yours.</strong>
+              Whether it's a <strong>private home or a commercial space</strong> across KL and Klang Valley, we manage every detail with heart and precision — so you can simply enjoy the space that's <strong>truly yours.</strong>
             </p>
 
             <div className="grid grid-cols-3 gap-6 pt-6">

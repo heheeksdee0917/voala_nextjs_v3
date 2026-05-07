@@ -8,7 +8,6 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Living Room Design KL | Open-Concept Family Area Ideas – Voala Interior',
   description: 'Living room & family area design in Kuala Lumpur: expert seating layout, entertainment integration, feature walls, layered lighting, and multi-functional furniture for open-concept homes. Transform your KL condo or house with timeless, practical style.',
-  keywords: 'living room design KL, open concept living room Kuala Lumpur, family area interior design Malaysia, modern living room renovation KL, condo living room ideas, feature wall design KL, layered lighting living room',
   alternates: {
     canonical: 'https://voalainterior.com/services/living-room-design',
   },
@@ -18,7 +17,7 @@ export const metadata: Metadata = {
     url: 'https://voalainterior.com/services/living-room-design',
     images: [
       {
-        url: 'https://voalainterior.com/Voala/ProjectSource/Award-Winning-Projects/Aria/5.avif', // replace with your actual OG image path (1200×630 recommended)
+        url: 'https://voalainterior.com/Voala/Voala_OG.png',
         width: 1200,
         height: 630,
         alt: 'Modern open-concept living room design in Kuala Lumpur by Voala Interior',

@@ -37,8 +37,10 @@ const TimelineSection: React.FC = () => {
       content: (
         <div className="space-y-4">
           <p className="text-gray-700 text-lg leading-relaxed font-linik">
-            Our comprehensive planning phase ensures your project starts on solid ground. We conduct thorough site analysis, 
-            space optimization studies, and regulatory compliance reviews to establish the perfect foundation for your vision.
+            Our comprehensive planning phase ensures your project starts on solid ground.
+            As your trusted interior designer in KL, we conduct thorough site analysis,
+            space optimization studies, and regulatory compliance reviews to establish
+            the perfect foundation for your vision.
           </p>
           
           <div className="space-y-3">
@@ -59,7 +61,7 @@ const TimelineSection: React.FC = () => {
           <div className="mt-4">
             <ServiceImage
               src="/Voala/1.avif"
-              alt="Planning and consultation process"
+              alt="Interior design planning and consultation service in KL by Voala Interior"
             />
           </div>
         </div>
@@ -95,7 +97,7 @@ const TimelineSection: React.FC = () => {
           <div className="mt-4">
             <ServiceImage
               src="/Voala/2.avif"
-              alt="Custom interior design process"
+              alt="Bespoke interior designer in KL creating custom concept and 3D visualization"
             />
           </div>
         </div>
@@ -103,15 +105,16 @@ const TimelineSection: React.FC = () => {
     },
     {
       title: (
-        <Link href="/services/consultation" className="text-inherit no-underline hover:opacity-70 transition-opacity duration-200">
+        <Link href="/services/project-management" className="text-inherit no-underline hover:opacity-70 transition-opacity duration-200">
           <h2>Professional Fit-Out</h2>
         </Link>
       ),
       content: (
         <div className="space-y-4">
           <p className="text-gray-700 text-lg leading-relaxed font-linik">
-            Our professional fit-out services combine quality craftsmanship with precise project management. 
-            We coordinate all vendors and trades to deliver exceptional results on schedule and within budget.
+            Our professional fit-out services combine quality craftsmanship with precise
+            project management across Kuala Lumpur and Klang Valley. We coordinate all
+            vendors and trades to deliver exceptional results on schedule and within budget.
           </p>
           
           <div className="space-y-3">
@@ -132,7 +135,7 @@ const TimelineSection: React.FC = () => {
           <div className="mt-4">
             <ServiceImage
               src="/Voala/3.avif"
-              alt="Professional fit-out construction"
+              alt="Professional interior fit-out and construction management in Kuala Lumpur"
             />
           </div>
         </div>
@@ -169,7 +172,7 @@ const TimelineSection: React.FC = () => {
           <div className="mt-4">
             <ServiceImage
               src="/Voala/4.avif"
-              alt="Luxury styling and finishing touches"
+              alt="Luxury interior styling and finishing by award-winning interior designer in KL"
             />
           </div>
         </div>
@@ -180,6 +183,14 @@ const TimelineSection: React.FC = () => {
   return (
     <div style={{ paddingTop: '0px', paddingBottom: '0px' }}>
       <Timeline data={servicesData} />
+      <div className="flex justify-center pb-16">
+        <Link
+          href="/services"
+          className="inline-block border border-black text-black text-sm font-medium px-8 py-3 rounded-full hover:bg-black hover:text-white transition-colors duration-300 no-underline"
+        >
+          View All Services
+        </Link>
+      </div>
     </div>
   );
 };

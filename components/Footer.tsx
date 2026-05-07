@@ -18,7 +18,7 @@ const Footer: React.FC = () => {
               with heart-led craftsmanship and exceptional detail.
             </p>
             <div className="flex flex-col gap-2 text-white/90 text-sm">
-              <span className="font-semibold">15+ Years Experience</span>
+              <span className="font-semibold">10+ Years Experience</span>
               <span className="font-semibold">200+ Projects Completed</span>
             </div>
           </div>
@@ -191,7 +191,7 @@ const Footer: React.FC = () => {
         <div className="border-t border-white/20 mt-12 pt-8 text-center text-sm">
           <div className="h-px bg-gradient-to-r from-transparent via-white/30 to-transparent mb-6"></div>
           <p className="text-white/60">
-            © 2025 Voala Interior. All rights reserved. | Award-winning Interior Design in KL
+            © 2026 Voala Interior. All rights reserved. | Award-winning Interior Design in KL
           </p>
           <p className="text-white/50 mt-2">
             L2-29 & 30, The Link 2, Jalan Jalil Perkasa 3, Bukit Jalil, 57000 Kuala Lumpur, Malaysia
