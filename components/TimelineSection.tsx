@@ -4,10 +4,10 @@ import Link from 'next/link';
 import { Timeline } from './ui/timeline';
 import { useFadeInOnScroll } from '../hooks/useFadeInOnScroll';
 
-const ServiceImage: React.FC<{ src: string; alt: string; className?: string }> = memo(({ 
-  src, 
-  alt, 
-  className = "rounded-lg shadow-xl w-full h-64" 
+const ServiceImage: React.FC<{ src: string; alt: string; className?: string }> = memo(({
+  src,
+  alt,
+  className = "rounded-lg shadow-xl w-full h-64"
 }) => {
   const { ref: imageRef, isInView } = useFadeInOnScroll();
 
@@ -31,7 +31,7 @@ const TimelineSection: React.FC = () => {
     {
       title: (
         <Link href="/services/space-planning" className="text-inherit no-underline hover:opacity-70 transition-opacity duration-200">
-          <h2>Planning & Consultation</h2>
+          <h3>Planning & Consultation</h3>
         </Link>
       ),
       content: (
@@ -42,7 +42,7 @@ const TimelineSection: React.FC = () => {
             space optimization studies, and regulatory compliance reviews to establish
             the perfect foundation for your vision.
           </p>
-          
+
           <div className="space-y-3">
             <div className="flex items-start gap-3">
               <div className="w-2 h-2 bg-black rounded-full mt-2 flex-shrink-0"></div>
@@ -57,7 +57,7 @@ const TimelineSection: React.FC = () => {
               <p className="text-gray-700 font-linik">Budget planning and timeline development</p>
             </div>
           </div>
-          
+
           <div className="mt-4">
             <ServiceImage
               src="/Voala/1.avif"
@@ -70,7 +70,7 @@ const TimelineSection: React.FC = () => {
     {
       title: (
         <Link href="/services/3d-visualization" className="text-inherit no-underline hover:opacity-70 transition-opacity duration-200">
-          <h2>Bespoke Interior Design</h2>
+          <h3>Bespoke Interior Design</h3>
         </Link>
       ),
       content: (
@@ -78,7 +78,7 @@ const TimelineSection: React.FC = () => {
           <p className="text-gray-700 text-lg leading-relaxed font-linik">
             Transform your vision into reality with our bespoke design services. We create personalized concepts, select premium materials, and provide photorealistic 3D visualizations that bring every detail to life.
           </p>
-          
+
           <div className="space-y-3">
             <div className="flex items-start gap-3">
               <div className="w-2 h-2 bg-black rounded-full mt-2 flex-shrink-0"></div>
@@ -93,7 +93,7 @@ const TimelineSection: React.FC = () => {
               <p className="text-gray-700 font-linik">Photorealistic 3D visualization and renderings</p>
             </div>
           </div>
-          
+
           <div className="mt-4">
             <ServiceImage
               src="/Voala/2.avif"
@@ -106,7 +106,7 @@ const TimelineSection: React.FC = () => {
     {
       title: (
         <Link href="/services/project-management" className="text-inherit no-underline hover:opacity-70 transition-opacity duration-200">
-          <h2>Professional Fit-Out</h2>
+          <h3>Professional Fit-Out</h3>
         </Link>
       ),
       content: (
@@ -116,7 +116,7 @@ const TimelineSection: React.FC = () => {
             project management across Kuala Lumpur and Klang Valley. We coordinate all
             vendors and trades to deliver exceptional results on schedule and within budget.
           </p>
-          
+
           <div className="space-y-3">
             <div className="flex items-start gap-3">
               <div className="w-2 h-2 bg-black rounded-full mt-2 flex-shrink-0"></div>
@@ -131,7 +131,7 @@ const TimelineSection: React.FC = () => {
               <p className="text-gray-700 font-linik">Timeline management and quality control</p>
             </div>
           </div>
-          
+
           <div className="mt-4">
             <ServiceImage
               src="/Voala/3.avif"
@@ -144,16 +144,16 @@ const TimelineSection: React.FC = () => {
     {
       title: (
         <Link href="/services/material-selection" className="text-inherit no-underline hover:opacity-70 transition-opacity duration-200">
-          <h2>Luxury Styling & Finishing</h2>
+          <h3>Luxury Styling & Finishing</h3>
         </Link>
       ),
       content: (
         <div className="space-y-4">
           <p className="text-gray-700 text-lg leading-relaxed font-linik">
-            The final touches that transform spaces into extraordinary experiences. Our luxury styling services include 
+            The final touches that transform spaces into extraordinary experiences. Our luxury styling services include
             precise furniture placement, curated art selection, and premium accessory coordination.
           </p>
-          
+
           <div className="space-y-3">
             <div className="flex items-start gap-3">
               <div className="w-2 h-2 bg-black rounded-full mt-2 flex-shrink-0"></div>
@@ -168,7 +168,7 @@ const TimelineSection: React.FC = () => {
               <p className="text-gray-700 font-linik">Premium accessory coordination and styling</p>
             </div>
           </div>
-          
+
           <div className="mt-4">
             <ServiceImage
               src="/Voala/4.avif"
@@ -182,6 +182,17 @@ const TimelineSection: React.FC = () => {
 
   return (
     <div style={{ paddingTop: '0px', paddingBottom: '0px' }}>
+      <div className="text-left md:text-center px-6 pt-16 pb-8">
+        <p className="text-sm uppercase tracking-widest text-gray-500 font-medium mb-3 font-linik">
+          What We Do
+        </p>
+        <h2 className="text-3xl md:text-4xl font-semibold text-black leading-tight">
+          Interior Design Services in Kuala Lumpur
+        </h2>
+        <p className="text-gray-600 text-lg mt-4 max-w-2xl mx-auto font-linik">
+          From initial concept to final styling, Voala Interior delivers end-to-end design solutions across KL and Klang Valley.
+        </p>
+      </div>
       <Timeline data={servicesData} />
       <div className="flex justify-center pb-16">
         <Link
