@@ -16,8 +16,8 @@ import {
 } from '@/components/LazyComponents';
 
 export const metadata: Metadata = {
-  title: 'Voala Interior | Best Interior Designer in Kuala Lumpur',
-  description: 'Voala Interior – Award-winning interior design & build studio in Kuala Lumpur. Best one-stop designer for luxury residential & commercial projects.',
+  title: 'Voala Interior | Award-Winning Interior Designer in KL',
+  description: 'Voala Interior – Award-winning interior designer in KL specialising in luxury residential & commercial projects. One-stop design & build studio in Kuala Lumpur.',
   alternates: {
     canonical: 'https://voalainterior.com',
   },
@@ -26,8 +26,8 @@ export const metadata: Metadata = {
     locale: 'en_MY',
     url: 'https://voalainterior.com',
     siteName: 'Voala Interior',
-    title: 'Award-winning Interior Design in KL - Best Interior Designer for Commercial and Residential Projects | Voala Interior',
-    description: 'Malaysia‘s award-winning interior design studio in Kuala Lumpur – best one-stop service for luxury residential & commercial projects from concept to handover.',
+    title: 'Award-Winning Interior Designer in KL | Voala Interior',
+    description: 'Voala Interior – Award-winning interior designer in KL specialising in luxury residential & commercial projects. One-stop design & build studio in Kuala Lumpur.',
     images: [
       {
         url: 'https://voalainterior.com/Voala/Voala_OG.png',
@@ -39,8 +39,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Award-winning Interior Design in KL | Voala Interior',
-    description: 'Best interior designer in Kuala Lumpur for commercial & residential projects – award-winning one-stop design & build.',
+    title: 'Award-Winning Interior Designer in KL | Voala Interior',
+    description: 'Voala Interior – Award-winning interior designer in KL specialising in luxury residential & commercial projects. One-stop design & build studio in Kuala Lumpur.',
     images: ['https://voalainterior.com/Voala/Voala_OG.png'],
   },
 };
