@@ -10,7 +10,7 @@ const OurServicesSection: React.FC = () => {
             KL's Interior Design Studio — Timeless Spaces, Made with Heart.
           </h2>
           <p className="text-gray-700 text-base md:text-lg lg:text-xl font-linik mx-auto">
-            As Kuala Lumpur's trusted interior design and build studio, we handle every detail — from concept to completion — so you can simply enjoy the journey.
+          Voala Interior is an award-winning interior designer in KL, Kuala Lumpur. We specialize in bespoke residential and commercial interior design across Malaysia.
           </p>
         </div>
       </div>

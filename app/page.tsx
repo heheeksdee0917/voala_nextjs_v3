@@ -16,7 +16,7 @@ import {
 } from '@/components/LazyComponents';
 
 export const metadata: Metadata = {
-  title: 'Voala Interior | Award-Winning Interior Designer in KL',
+  title: 'Award-Winning Interior Designer in KL | Voala Interior Kuala Lumpur',
   description: 'Voala Interior – Award-winning interior designer in KL specialising in luxury residential & commercial projects. One-stop design & build studio in Kuala Lumpur.',
   alternates: {
     canonical: 'https://voalainterior.com',
@@ -26,8 +26,8 @@ export const metadata: Metadata = {
     locale: 'en_MY',
     url: 'https://voalainterior.com',
     siteName: 'Voala Interior',
-    title: 'Award-Winning Interior Designer in KL | Voala Interior',
-    description: 'Voala Interior – Award-winning interior designer in KL specialising in luxury residential & commercial projects. One-stop design & build studio in Kuala Lumpur.',
+    title: 'Award-Winning Interior Designer in KL | Voala Interior Kuala Lumpur',
+    description: 'Award-winning interior designer in KL. Voala Interior offers luxury residential & commercial interior design in Kuala Lumpur. One-stop design & build studio from concept to handover.',
     images: [
       {
         url: 'https://voalainterior.com/Voala/Voala_OG.png',
@@ -39,8 +39,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Award-Winning Interior Designer in KL | Voala Interior',
-    description: 'Voala Interior – Award-winning interior designer in KL specialising in luxury residential & commercial projects. One-stop design & build studio in Kuala Lumpur.',
+    title: 'Award-Winning Interior Designer in KL | Voala Interior Kuala Lumpur',
+    description: 'Award-winning interior designer in KL. Voala Interior offers luxury residential & commercial interior design in Kuala Lumpur. One-stop design & build studio from concept to handover.',
     images: ['https://voalainterior.com/Voala/Voala_OG.png'],
   },
 };

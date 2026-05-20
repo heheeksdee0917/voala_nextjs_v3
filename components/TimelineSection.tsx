@@ -187,7 +187,7 @@ const TimelineSection: React.FC = () => {
           What We Do
         </p>
         <h2 className="text-3xl md:text-4xl font-semibold text-black leading-tight">
-          Interior Design Services in Kuala Lumpur
+          Interior Design Services in Kuala Lumpur (KL)
         </h2>
         <p className="text-gray-600 text-lg mt-4 max-w-2xl mx-auto font-linik">
           From initial concept to final styling, Voala Interior delivers end-to-end design solutions across KL and Klang Valley.
