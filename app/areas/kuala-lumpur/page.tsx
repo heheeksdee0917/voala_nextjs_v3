@@ -1,4 +1,3 @@
-// app/areas/kuala-lumpur/page.tsx
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import {
@@ -7,18 +6,15 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Interior Designer Kuala Lumpur | Award-Winning Design Studio | Voala Interior',
-  description:
-    'Leading interior designer in Kuala Lumpur with 10+ years of heart-led craftsmanship. Serving KLCC, Bukit Jalil, Bangsar, Mont Kiara & across KL. Call +60 12 505 3395 for exceptional interior design.',
-  keywords:
-    'interior designer Kuala Lumpur, interior design KL, best interior designer in Kuala Lumpur, interior designer near me KL, residential interior design Kuala Lumpur, commercial interior design KL',
+  title: 'Award-Winning Interior Designer in Kuala Lumpur | Voala Interior',
+  description: 'Best interior designer in Kuala Lumpur. Award-winning residential & commercial interior design studio in KL. Serving KLCC, Bukit Jalil, Bangsar, Mont Kiara & across Kuala Lumpur. Free consultation available.',
+  keywords: 'interior designer in Kuala Lumpur, interior designer KL, best interior designer Kuala Lumpur, interior design KL, residential interior design Kuala Lumpur, commercial interior design Kuala Lumpur',
   alternates: {
     canonical: 'https://voalainterior.com/areas/kuala-lumpur',
   },
   openGraph: {
-    title: 'Interior Designer Kuala Lumpur | Voala Interior',
-    description:
-      'Award-winning interior design studio in Kuala Lumpur. Heart-led craftsmanship for homes and businesses across KL.',
+    title: 'Award-Winning Interior Designer in Kuala Lumpur | Voala Interior',
+    description: 'Leading interior design studio in KL with heart-led craftsmanship. Residential, commercial & renovation services across Kuala Lumpur.',
     url: 'https://voalainterior.com/areas/kuala-lumpur',
     siteName: 'Voala Interior',
     locale: 'en_MY',
@@ -48,7 +44,7 @@ const structuredData = {
   },
   url: 'https://voalainterior.com',
   telephone: '+60125053395',
-  email: 'askvoala@gmail.com.com',
+  email: 'askvoala@gmail.com',
   openingHoursSpecification: [
     {
       '@type': 'OpeningHoursSpecification',
@@ -211,7 +207,6 @@ const faqs = [
       'WhatsApp us or book a consultation online. The first conversation is a proper listening session — we want to understand your home, your lifestyle, and your vision before we talk design. No portfolios shoved at you before we\'ve heard what you need.',
   },
 ];
-
 export default function KualaLumpurPage() {
   return (
     <>
@@ -230,7 +225,7 @@ export default function KualaLumpurPage() {
             </div>
 
             <h1 className="text-4xl md:text-6xl font-bold mb-6 text-gray-900">
-              Interior Designer in{' '}
+              Award-Winning Interior Designer in{' '}
               <span className="bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent">
                 Kuala Lumpur
               </span>
@@ -260,7 +255,7 @@ export default function KualaLumpurPage() {
 
             <p className="text-gray-600">
               <MapPin className="inline w-4 h-4 mr-1" />
-              L2-29 & 30, The Link 2, Jalan Jalil Perkasa 3, Bukit Jalil · Serving KLCC · Bangsar · Mont Kiara · Sri Petaling
+              L2-29 & 30, The Link 2, Jalan Jalil Perkasa 3, Bukit Jalil · Serving all of Kuala Lumpur
             </p>
           </div>
         </div>
