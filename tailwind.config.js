@@ -22,7 +22,32 @@ const config: Config = {
           gray: '#5E5E5E',
           'light-gray': '#FAFAFA',
           accent: '#ede9e1',
-        }
+          'warm-cream': '#F5E6D3',
+          'warm-beige': '#E8D4BF',
+        },
+        // Explicit text color utilities for button
+        'voala-secondary': '#59514e',
+        'voala-warm-cream': '#F5E6D3',
+        'voala-warm-beige': '#E8D4BF',
+      },
+      backgroundColor: {
+        // Explicit background color utilities for button
+        'voala-gold': '#C8A165',
+        'voala-gold-hover': '#d4b896',
+        'voala-warm-cream': '#F5E6D3',
+        'voala-warm-beige': '#E8D4BF',
+      },
+      borderColor: {
+        // Explicit border color utilities for button
+        'voala-secondary': '#59514e',
+        'voala-warm-cream': '#F5E6D3',
+        'voala-warm-beige': '#E8D4BF',
+      },
+      textColor: {
+        // Explicit text color utilities for button
+        'voala-secondary': '#59514e',
+        'voala-warm-cream': '#F5E6D3',
+        'voala-warm-beige': '#E8D4BF',
       },
       animation: {
         'fade-in': 'fadeIn 0.6s ease-out',
@@ -102,6 +127,13 @@ const config: Config = {
           'background-clip': 'text',
           'display': 'inline-block',
           'font-weight': '700',
+        },
+        '.button-glow': {
+          boxShadow: '0 0 30px rgba(200, 161, 101, 0.5)',
+          transition: 'box-shadow 0.2s ease-out',
+        },
+        '.button-glow-hover': {
+          boxShadow: '0 0 40px rgba(200, 161, 101, 0.7)',
         },
       }
       addUtilities(newUtilities)

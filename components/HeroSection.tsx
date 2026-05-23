@@ -28,7 +28,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onOpenQuoteModal }) => {
       <div className="z-50 flex flex-col justify-center items-center text-center px-4 md:px-8">
 
         {/* Subheading — visually dominant, uses old H1 gradient style */}
-        <p className="font-linik font-bold text-4xl md:text-5xl lg:text-7xl leading-tight mb-8 tracking-wide">
+        <p className="font-linik font-bold text-4xl md:text-5xl lg:text-7xl leading-tight mb-1 md:mb-1 tracking-wide">
           <span className="hero-gradient">
             Designs You'll Love.
             <br />
@@ -38,17 +38,37 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onOpenQuoteModal }) => {
 
 
         {/* H1 — SEO tag, visually styled small like the old subheading */}
-        <h1 className="font-louis-george-cafe text-xl md:text-2xl text-voala-off-white/90 mb-4 md:mb-6 font-light tracking-wide max-w-5xl">
+        <h1 className="font-louis-george-cafe text-xl md:text-2xl text-voala-off-white/90 mb-8 md:mb-12 font-light tracking-wide max-w-5xl">
           Award-Winning Interior Designer in Kuala Lumpur
         </h1>
 
         <StandardButton
           onClick={handleGetDesign}
           variant="outline"
-          className="bg-voala-off-white/10 backdrop-blur-sm border border-voala-off-white/20 text-white hover:bg-voala-off-white/20 hover:text-white rounded-full text-base md:text-lg px-6 md:px-8 py-3 md:py-4"
+          className="bg-voala-gold text-voala-warm-cream border-2 border-voala-warm-cream hover:bg-voala-gold-hover rounded-full text-base md:text-lg px-6 md:px-8 py-3 md:py-4 font-medium transition-all duration-200"
         >
-          Talk to us
+          Talk to us - It's free
         </StandardButton>
+        {/* 
+          <StandardButton
+            onClick={handleGetDesign}
+            variant="outline"
+            className="bg-voala-gold text-voala-warm-beige border-2 border-voala-warm-beige hover:bg-voala-gold-hover rounded-full text-base md:text-lg px-6 md:px-8 py-3 md:py-4 font-medium transition-all duration-200"
+          >
+            Talk to us - It's free
+          </StandardButton>
+        */}
+
+        {/* 
+          Uncomment to use Option 3: Warm Cream background with Gold text & border
+          <StandardButton
+            onClick={handleGetDesign}
+            variant="outline"
+            className="bg-voala-warm-cream text-voala-gold border-2 border-voala-gold hover:bg-voala-warm-beige rounded-full text-base md:text-lg px-6 md:px-8 py-3 md:py-4 font-medium transition-all duration-200"
+          >
+            Talk to us - It's free
+          </StandardButton>
+        */}
 
       </div>
     </ImagesSlider>
