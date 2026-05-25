@@ -49,7 +49,7 @@ const structuredData = {
   },
   url: 'https://voalainterior.com',
   telephone: '+60125053395',
-  email: 'askvoala@gmail.com.com',
+  email: 'askvoala@gmail.com',
   openingHoursSpecification: [
     {
       '@type': 'OpeningHoursSpecification',
@@ -424,7 +424,7 @@ export default function DamansaraHeightsPage() {
                   </p>
                   <p className="text-sm">
                     <Mail className="inline w-4 h-4 mr-2" />
-                    <a href="mailto:askvoala@gmail.com.com" className="hover:underline">askvoala@gmail.com.com</a>
+                    <a href="mailto:askvoala@gmail.com" className="hover:underline">askvoala@gmail.com</a>
                   </p>
                 </div>
               </div>

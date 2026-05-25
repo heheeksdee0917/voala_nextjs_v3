@@ -39,7 +39,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onOpenQuoteModal }) => {
 
         {/* H1 — SEO tag, visually styled small like the old subheading */}
         <h1 className="font-louis-george-cafe text-xl md:text-2xl text-voala-off-white/90 mb-8 md:mb-12 font-light tracking-wide max-w-5xl">
-          Award-Winning Interior Designer in Kuala Lumpur
+          Interior Designer in KL | Award-Winning Interior Design in Kuala Lumpur
         </h1>
 
         <StandardButton

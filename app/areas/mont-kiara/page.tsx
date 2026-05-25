@@ -39,7 +39,7 @@ const structuredData = {
   },
   url: 'https://voalainterior.com',
   telephone: '+60125053395',
-  email: 'askvoala@gmail.com.com',
+  email: 'askvoala@gmail.com',
   openingHoursSpecification: [
     {
       '@type': 'OpeningHoursSpecification',
@@ -138,7 +138,7 @@ export default function MontKiaraPage() {
     },
     {
       question: 'How do I schedule a consultation for my Mont Kiara property?',
-      answer: 'Contact us at +60 12 505 3395 or askvoala@gmail.com.com to schedule a free consultation. We can meet you at your Mont Kiara condo or apartment, or you can visit our studio in Bukit Jalil (about 25 minutes from Mont Kiara). During the consultation, we discuss your vision, lifestyle needs, budget, and timeline. We typically provide preliminary design concepts and a quotation within 5-7 days after the consultation.',
+      answer: 'Contact us at +60 12 505 3395 or askvoala@gmail.com to schedule a free consultation. We can meet you at your Mont Kiara condo or apartment, or you can visit our studio in Bukit Jalil (about 25 minutes from Mont Kiara). During the consultation, we discuss your vision, lifestyle needs, budget, and timeline. We typically provide preliminary design concepts and a quotation within 5-7 days after the consultation.',
     },
     {
       question: 'Can you work within my building\'s renovation guidelines?',
@@ -434,7 +434,7 @@ export default function MontKiaraPage() {
                   </p>
                   <p>
                     <Mail className="inline w-4 h-4 mr-2" />
-                    <a href="mailto:askvoala@gmail.com.com" className="hover:underline">askvoala@gmail.com.com</a>
+                    <a href="mailto:askvoala@gmail.com" className="hover:underline">askvoala@gmail.com</a>
                   </p>
                 </div>
               </div>
