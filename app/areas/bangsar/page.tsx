@@ -10,7 +10,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Interior Designer Bangsar | Best Interior Design KL – Voala Interior',
   description:
-    'Looking for an interior designer in Bangsar? Voala Interior brings heart-led craftsmanship to Bangsar bungalows, semi-Ds, and luxury condos. Studio at The Link 2, Bukit Jalil. Call +60 12 505 3395.',
+    'Looking for an interior designer in Bangsar? Voala Interior brings heart-led craftsmanship to Bangsar bungalows, semi-Ds, and luxury condos. Studio at The Link, 2, Bukit Jalil. Call +60 12 505 3395.',
   keywords:
     'interior designer Bangsar, interior design Bangsar, best interior designer in Bangsar, interior designer Bangsar South, interior design Kuala Lumpur',
   alternates: {
@@ -36,7 +36,7 @@ const structuredData = {
   description: 'Premium interior design studio serving Bangsar, Bangsar South, Damansara Heights and KL.',
   address: {
     '@type': 'PostalAddress',
-    streetAddress: 'L2-29 & 30, The Link 2, Jalan Jalil Perkasa 3',
+    streetAddress: 'L2-29 & 30, The Link, 2, Jalan Jalil Perkasa 3',
     addressLocality: 'Bukit Jalil',
     addressRegion: 'Kuala Lumpur',
     postalCode: '57000',
@@ -123,7 +123,7 @@ const whyUs = [
   },
   {
     title: 'Close Enough to Care',
-    body: "Our studio is at The Link 2, Bukit Jalil — under 15 minutes from Bangsar via NPE or the LRT Kelana Jaya Line. Close enough for frequent site visits; far enough to bring fresh eyes to your space.",
+    body: "Our studio is at The Link, 2, Bukit Jalil — under 15 minutes from Bangsar via NPE or the LRT Kelana Jaya Line. Close enough for frequent site visits; far enough to bring fresh eyes to your space.",
   },
   {
     title: 'Expat & Diaspora Experience',
@@ -159,7 +159,7 @@ const faqs = [
   {
     question: 'Do you serve Bangsar even though your studio is in Bukit Jalil?',
     answer:
-      "Yes — Bangsar is one of our most active service areas. Our studio at The Link 2, Bukit Jalil is roughly 12–15 minutes from central Bangsar via the NPE or LRT. We do site visits, consultations, and project management across the entire Bangsar and Bangsar South area.",
+      "Yes — Bangsar is one of our most active service areas. Our studio at The Link, 2, Bukit Jalil is roughly 12–15 minutes from central Bangsar via the NPE or LRT. We do site visits, consultations, and project management across the entire Bangsar and Bangsar South area.",
   },
   {
     question: "Can you renovate an older Bangsar bungalow without losing its character?",
@@ -204,7 +204,7 @@ const faqs = [
   {
     question: 'How do I get started?',
     answer:
-      "WhatsApp us at +60 12 505 3395 or visit our studio at L2-29 & 30, The Link 2, Jalan Jalil Perkasa 3, Bukit Jalil. The first consultation is a proper conversation about your home, not a sales pitch. We listen first — always.",
+      "WhatsApp us at +60 12 505 3395 or visit our studio at L2-29 & 30, The Link, 2, Jalan Jalil Perkasa 3, Bukit Jalil. The first consultation is a proper conversation about your home, not a sales pitch. We listen first — always.",
   },
 ];
 
@@ -281,7 +281,7 @@ export default function BangsarPage() {
               </p>
               <p className="text-lg leading-relaxed mb-6">
                 We're Voala Interior — a premium interior design studio based at{' '}
-                <strong>The Link 2, Bukit Jalil</strong>, roughly 12–15 minutes from central
+                <strong>The Link, 2, Bukit Jalil</strong>, roughly 12–15 minutes from central
                 Bangsar. We design and build interiors for bungalows, semi-Ds, and luxury condos
                 across Bangsar, Bangsar South, Damansara Heights, Pantai Hillpark, and the broader
                 KL corridor. Heart-led craftsmanship and exceptional detail are the standards we
@@ -463,7 +463,7 @@ export default function BangsarPage() {
                   <h4 className="font-bold mb-4">Contact Us</h4>
                   <p className="mb-3 text-sm leading-relaxed">
                     <strong>Voala Interior</strong><br />
-                    L2-29 & 30, The Link 2<br />
+                    L2-29 & 30, The Link, 2<br />
                     Jalan Jalil Perkasa 3<br />
                     Bukit Jalil, 57000 Kuala Lumpur
                   </p>
@@ -569,7 +569,7 @@ export default function BangsarPage() {
                 <MapPin className="inline w-4 h-4 mr-1" />
                 12–15 minutes from Bangsar · Serving Bangsar South · Damansara Heights · Pantai Hillpark · KL
               </p>
-              <p>Voala Interior, L2-29 & 30, The Link 2, Bukit Jalil, 57000 Kuala Lumpur</p>
+              <p>Voala Interior, L2-29 & 30, The Link, 2, Bukit Jalil, 57000 Kuala Lumpur</p>
             </div>
           </div>
         </div>

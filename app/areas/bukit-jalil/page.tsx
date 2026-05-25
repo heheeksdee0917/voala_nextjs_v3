@@ -10,7 +10,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Interior Designer Bukit Jalil | Best Interior Design KL – Voala Interior',
   description:
-    'Looking for an interior designer in Bukit Jalil? Voala Interior is located at The Link 2, Bukit Jalil. Heart-led craftsmanship for condos & landed homes across KL. Call +60 12 505 3395.',
+    'Looking for an interior designer in Bukit Jalil? Voala Interior is located at The Link, 2, Bukit Jalil. Heart-led craftsmanship for condos & landed homes across KL. Call +60 12 505 3395.',
   keywords:
     'interior designer Bukit Jalil, interior design Bukit Jalil, best interior designer in Bukit Jalil, interior designer near KLCC, interior design Kuala Lumpur',
   alternates: {
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Interior Designer Bukit Jalil — Voala Interior',
     description:
-      'Heart-led interior design studio at The Link 2, Bukit Jalil. Serving Bukit Jalil, Sri Petaling, Taman Desa, Kinrara & KLCC. Call us today.',
+      'Heart-led interior design studio at The Link, 2, Bukit Jalil. Serving Bukit Jalil, Sri Petaling, Taman Desa, Kinrara & KLCC. Call us today.',
     url: 'https://voalainterior.com/areas/bukit-jalil',
     siteName: 'Voala Interior',
     locale: 'en_MY',
@@ -37,7 +37,7 @@ const structuredData = {
     'Premium interior design studio in Bukit Jalil, KL. Heart-led craftsmanship for condos and landed homes.',
   address: {
     '@type': 'PostalAddress',
-    streetAddress: 'L2-29 & 30, The Link 2, Jalan Jalil Perkasa 3',
+    streetAddress: 'L2-29 & 30, The Link, 2, Jalan Jalil Perkasa 3',
     addressLocality: 'Bukit Jalil',
     addressRegion: 'Kuala Lumpur',
     postalCode: '57000',
@@ -116,7 +116,7 @@ const services = [
 const whyUs = [
   {
     title: 'We Understand Your Building',
-    body: "Our studio is right here at The Link 2 on Jalan Jalil Perkasa 3. We've worked in the condos nearby and know the quirks — unusual column placements, low ceiling heights, load-bearing walls that can't move. No surprises in your quote.",
+    body: "Our studio is right here at The Link, 2 on Jalan Jalil Perkasa 3. We've worked in the condos nearby and know the quirks — unusual column placements, low ceiling heights, load-bearing walls that can't move. No surprises in your quote.",
   },
   {
     title: "We Work Around KL's Climate",
@@ -169,7 +169,7 @@ const faqs = [
   {
     question: 'Where exactly is your studio? Can I visit without an appointment?',
     answer:
-      "We're at L2-29 & 30, The Link 2, Jalan Jalil Perkasa 3, Bukit Jalil, 57000 Kuala Lumpur — on the second level. We love walk-ins, but a quick WhatsApp to +60 12 505 3395 means we'll have coffee ready.",
+      "We're at L2-29 & 30, The Link, 2, Jalan Jalil Perkasa 3, Bukit Jalil, 57000 Kuala Lumpur — on the second level. We love walk-ins, but a quick WhatsApp to +60 12 505 3395 means we'll have coffee ready.",
   },
   {
     question: 'Do you serve areas beyond Bukit Jalil?',
@@ -214,7 +214,7 @@ const faqs = [
   {
     question: 'How do I get started?',
     answer:
-      "WhatsApp us at +60 12 505 3395 or drop by the studio at The Link 2, Bukit Jalil. The first consultation is a proper conversation, not a sales pitch — we listen first.",
+      "WhatsApp us at +60 12 505 3395 or drop by the studio at The Link, 2, Bukit Jalil. The first consultation is a proper conversation, not a sales pitch — we listen first.",
   },
 ];
 
@@ -244,7 +244,7 @@ export default function BukitJalilPage() {
 
             <p className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed">
               Heart-led craftsmanship for condos and landed homes in Bukit Jalil, Sri Petaling,
-              Kinrara & beyond. Studio at The Link 2 — your neighbours in design.
+              Kinrara & beyond. Studio at The Link, 2 — your neighbours in design.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
@@ -266,7 +266,7 @@ export default function BukitJalilPage() {
 
             <p className="text-gray-600">
               <MapPin className="inline w-4 h-4 mr-1" />
-              L2-29 & 30, The Link 2, Jalan Jalil Perkasa 3, Bukit Jalil · Serving Sri Petaling · Taman Desa · Kinrara · KLCC
+              L2-29 & 30, The Link, 2, Jalan Jalil Perkasa 3, Bukit Jalil · Serving Sri Petaling · Taman Desa · Kinrara · KLCC
             </p>
           </div>
         </div>
@@ -290,7 +290,7 @@ export default function BukitJalilPage() {
               </p>
               <p className="text-lg leading-relaxed mb-6">
                 We're Voala Interior — a premium interior design studio located right here at{' '}
-                <strong>L2-29 & 30, The Link 2, Jalan Jalil Perkasa 3, Bukit Jalil</strong>. We
+                <strong>L2-29 & 30, The Link, 2, Jalan Jalil Perkasa 3, Bukit Jalil</strong>. We
                 design and build interiors for condos, apartments, and landed homes across Bukit
                 Jalil, Sri Petaling, Taman Desa, Kinrara, and the KLCC corridor. Heart-led
                 craftsmanship and exceptional detail aren't marketing words for us — they're the
@@ -393,7 +393,7 @@ export default function BukitJalilPage() {
             <div className="bg-black text-white p-8 rounded-lg">
               <h3 className="text-2xl font-bold mb-4">What Bukit Jalil Clients Say</h3>
               <blockquote className="text-lg italic mb-4">
-                "We walked past the Voala Interior studio at The Link 2 and decided to drop in.
+                "We walked past the Voala Interior studio at The Link, 2 and decided to drop in.
                 Three months later, our condo looked nothing like a developer unit. The team knew
                 our building inside out — no guesswork, no surprises."
               </blockquote>
@@ -483,7 +483,7 @@ export default function BukitJalilPage() {
                   <ul className="space-y-3 text-gray-700">
                     <li className="flex items-start gap-3">
                       <CheckCircle2 className="w-5 h-5 text-green-600 mt-1 flex-shrink-0" />
-                      <span><strong>Walk In:</strong> We're at The Link 2, Level 2 — walk-ins welcome, WhatsApp ahead for coffee</span>
+                      <span><strong>Walk In:</strong> We're at The Link, 2, Level 2 — walk-ins welcome, WhatsApp ahead for coffee</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <CheckCircle2 className="w-5 h-5 text-green-600 mt-1 flex-shrink-0" />
@@ -500,7 +500,7 @@ export default function BukitJalilPage() {
                   <h4 className="font-bold mb-4">Contact Us</h4>
                   <p className="mb-3 text-sm leading-relaxed">
                     <strong>Voala Interior</strong><br />
-                    L2-29 & 30, The Link 2<br />
+                    L2-29 & 30, The Link, 2<br />
                     Jalan Jalil Perkasa 3<br />
                     Bukit Jalil, 57000 Kuala Lumpur
                   </p>
@@ -542,7 +542,7 @@ export default function BukitJalilPage() {
                     allowFullScreen
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    title="Voala Interior Studio at The Link 2, Bukit Jalil"
+                    title="Voala Interior Studio at The Link, 2, Bukit Jalil"
                   />
                 </div>
 
@@ -616,7 +616,7 @@ export default function BukitJalilPage() {
             <div className="text-gray-400 text-sm">
               <p className="mb-2">
                 <MapPin className="inline w-4 h-4 mr-1" />
-                L2-29 & 30, The Link 2, Jalan Jalil Perkasa 3, Bukit Jalil · Serving Sri Petaling · Taman Desa · Kinrara · KLCC
+                L2-29 & 30, The Link, 2, Jalan Jalil Perkasa 3, Bukit Jalil · Serving Sri Petaling · Taman Desa · Kinrara · KLCC
               </p>
               <p>Voala Interior, Bukit Jalil, 57000 Kuala Lumpur</p>
             </div>

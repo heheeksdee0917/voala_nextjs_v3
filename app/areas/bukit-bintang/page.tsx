@@ -37,7 +37,7 @@ const structuredData = {
     'Premium interior design studio serving Bukit Bintang luxury condos — Pavilion Suites, Marc Residence, Stonor Park, and beyond.',
   address: {
     '@type': 'PostalAddress',
-    streetAddress: 'L2-29 & 30, The Link 2, Jalan Jalil Perkasa 3',
+    streetAddress: 'L2-29 & 30, The Link, 2, Jalan Jalil Perkasa 3',
     addressLocality: 'Bukit Jalil',
     addressRegion: 'Kuala Lumpur',
     postalCode: '57000',
@@ -169,7 +169,7 @@ const faqs = [
   {
     question: 'Do you serve Bukit Bintang even though your studio is in Bukit Jalil?',
     answer:
-      "Yes — Bukit Bintang is well within our active service area. Our studio at The Link 2, Bukit Jalil is roughly 20–25 minutes from Bukit Bintang via the KL city expressways. We do site visits, consultations, and full project management across all Bukit Bintang developments.",
+      "Yes — Bukit Bintang is well within our active service area. Our studio at The Link, 2, Bukit Jalil is roughly 20–25 minutes from Bukit Bintang via the KL city expressways. We do site visits, consultations, and full project management across all Bukit Bintang developments.",
   },
   {
     question: 'My unit is in a serviced apartment block with strict management rules. Can you still renovate?',
@@ -214,7 +214,7 @@ const faqs = [
   {
     question: 'How do I get started?',
     answer:
-      "WhatsApp us at +60 12 505 3395 or visit our studio at L2-29 & 30, The Link 2, Jalan Jalil Perkasa 3, Bukit Jalil. First consultation is a real conversation about your home and what you want to achieve — not a pitch. We come prepared and we listen first.",
+      "WhatsApp us at +60 12 505 3395 or visit our studio at L2-29 & 30, The Link, 2, Jalan Jalil Perkasa 3, Bukit Jalil. First consultation is a real conversation about your home and what you want to achieve — not a pitch. We come prepared and we listen first.",
   },
 ];
 
@@ -291,7 +291,7 @@ export default function BukitBintangPage() {
               </p>
               <p className="text-lg leading-relaxed mb-6">
                 We're Voala Interior — a premium interior design studio based at{' '}
-                <strong>The Link 2, Bukit Jalil</strong>, about 20–25 minutes from Bukit Bintang.
+                <strong>The Link, 2, Bukit Jalil</strong>, about 20–25 minutes from Bukit Bintang.
                 We design and build interiors for luxury condos and serviced apartments across{' '}
                 <strong>Pavilion Suites, Marc Residence, Stonor Park, Angkasa Raya</strong>, and
                 the broader Bukit Bintang and KLCC corridor. Heart-led craftsmanship for homes
@@ -503,7 +503,7 @@ export default function BukitBintangPage() {
                   <h4 className="font-bold mb-4">Contact Us</h4>
                   <p className="mb-3 text-sm leading-relaxed">
                     <strong>Voala Interior</strong><br />
-                    L2-29 & 30, The Link 2<br />
+                    L2-29 & 30, The Link, 2<br />
                     Jalan Jalil Perkasa 3<br />
                     Bukit Jalil, 57000 Kuala Lumpur
                   </p>
@@ -609,7 +609,7 @@ export default function BukitBintangPage() {
                 <MapPin className="inline w-4 h-4 mr-1" />
                 20–25 minutes from Bukit Bintang · Serving KLCC · Jalan Imbi · Jalan Sultan Ismail · Jalan Raja Chulan
               </p>
-              <p>Voala Interior, L2-29 & 30, The Link 2, Bukit Jalil, 57000 Kuala Lumpur</p>
+              <p>Voala Interior, L2-29 & 30, The Link, 2, Bukit Jalil, 57000 Kuala Lumpur</p>
             </div>
           </div>
         </div>

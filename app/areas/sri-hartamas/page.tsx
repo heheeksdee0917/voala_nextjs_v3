@@ -36,7 +36,7 @@ const structuredData = {
   description: 'Premium interior design studio serving Sri Hartamas, Mont Kiara, Desa ParkCity and greater KL.',
   address: {
     '@type': 'PostalAddress',
-    streetAddress: 'L2-29 & 30, The Link 2, Jalan Jalil Perkasa 3',
+    streetAddress: 'L2-29 & 30, The Link, 2, Jalan Jalil Perkasa 3',
     addressLocality: 'Bukit Jalil',
     addressRegion: 'Kuala Lumpur',
     postalCode: '57000',
@@ -159,7 +159,7 @@ const faqs = [
   {
     question: 'Do you serve Sri Hartamas even though your studio is in Bukit Jalil?',
     answer:
-      "Yes — Sri Hartamas is one of our core service areas. The drive from our studio at The Link 2, Bukit Jalil takes only 10–15 minutes. We conduct regular site visits and are very familiar with the neighbourhood.",
+      "Yes — Sri Hartamas is one of our core service areas. The drive from our studio at The Link, 2, Bukit Jalil takes only 10–15 minutes. We conduct regular site visits and are very familiar with the neighbourhood.",
   },
   {
     question: "Can you renovate both condos and cluster homes in Sri Hartamas?",
@@ -415,7 +415,7 @@ export default function SriHartamasPage() {
                   <h4 className="font-bold mb-4">Contact Us</h4>
                   <p className="mb-3 text-sm leading-relaxed">
                     <strong>Voala Interior</strong><br />
-                    L2-29 & 30, The Link 2<br />
+                    L2-29 & 30, The Link, 2<br />
                     Jalan Jalil Perkasa 3<br />
                     Bukit Jalil, 57000 Kuala Lumpur
                   </p>
@@ -518,7 +518,7 @@ export default function SriHartamasPage() {
                 <MapPin className="inline w-4 h-4 mr-1" />
                 10–15 minutes from Sri Hartamas · Serving Mont Kiara, Desa ParkCity & surrounding areas
               </p>
-              <p>Voala Interior, L2-29 & 30, The Link 2, Bukit Jalil, 57000 Kuala Lumpur</p>
+              <p>Voala Interior, L2-29 & 30, The Link, 2, Bukit Jalil, 57000 Kuala Lumpur</p>
             </div>
           </div>
         </div>

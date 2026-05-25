@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Book a Free Consultation | Voala Interior Kuala Lumpur',
     description:
-      'Get in touch with Voala Interior — heart-led craftsmanship for condos and homes across KL. Studio at The Link 2, Bukit Jalil. Call +60 12 505 3395.',
+      'Get in touch with Voala Interior — heart-led craftsmanship for condos and homes across KL. Studio at The Link, 2, Bukit Jalil. Call +60 12 505 3395.',
     url: 'https://voalainterior.com/contact',
     siteName: 'Voala Interior',
     locale: 'en_MY',

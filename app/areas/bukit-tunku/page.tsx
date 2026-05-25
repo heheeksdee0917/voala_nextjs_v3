@@ -10,7 +10,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Interior Designer Bukit Tunku | Luxury Homes & Bungalows KL – Voala Interior',
   description:
-    'Premium interior designer for Bukit Tunku (Kenny Hills). We specialise in high-end bungalows, villas, and luxury residences in one of KL’s most exclusive neighbourhoods. Studio at The Link 2, Bukit Jalil. Call +60 12 505 3395.',
+    'Premium interior designer for Bukit Tunku (Kenny Hills). We specialise in high-end bungalows, villas, and luxury residences in one of KL’s most exclusive neighbourhoods. Studio at The Link, 2, Bukit Jalil. Call +60 12 505 3395.',
   keywords:
     'interior designer Bukit Tunku, interior design Kenny Hills, luxury interior designer KL, bungalow renovation Bukit Tunku, high-end interior design Kuala Lumpur',
   alternates: {
@@ -36,7 +36,7 @@ const structuredData = {
   description: 'Premium interior design studio serving Bukit Tunku, Kenny Hills, Damansara Heights, Bangsar and greater KL.',
   address: {
     '@type': 'PostalAddress',
-    streetAddress: 'L2-29 & 30, The Link 2, Jalan Jalil Perkasa 3',
+    streetAddress: 'L2-29 & 30, The Link, 2, Jalan Jalil Perkasa 3',
     addressLocality: 'Bukit Jalil',
     addressRegion: 'Kuala Lumpur',
     postalCode: '57000',
@@ -159,7 +159,7 @@ const faqs = [
   {
     question: 'Do you serve Bukit Tunku even though your studio is in Bukit Jalil?',
     answer:
-      "Yes. Bukit Tunku is one of our core premium service areas. The drive from our studio at The Link 2, Bukit Jalil takes roughly 15–20 minutes via major highways. We schedule regular site visits and are very familiar with the neighbourhood’s access, security protocols and hilly terrain.",
+      "Yes. Bukit Tunku is one of our core premium service areas. The drive from our studio at The Link, 2, Bukit Jalil takes roughly 15–20 minutes via major highways. We schedule regular site visits and are very familiar with the neighbourhood’s access, security protocols and hilly terrain.",
   },
   {
     question: "Can you renovate older bungalows in Bukit Tunku while preserving their character?",
@@ -263,7 +263,7 @@ export default function BukitTunkuPage() {
               </p>
               <p className="text-lg leading-relaxed mb-6">
                 At Voala Interior, we bring heart-led craftsmanship to this exclusive enclave. 
-                Our studio at The Link 2, Bukit Jalil is only 15–20 minutes away, allowing us to provide attentive service 
+                Our studio at The Link, 2, Bukit Jalil is only 15–20 minutes away, allowing us to provide attentive service 
                 while respecting the privacy and serenity that define Bukit Tunku living.
               </p>
               <p className="text-lg leading-relaxed">
@@ -428,7 +428,7 @@ export default function BukitTunkuPage() {
                   <h4 className="font-bold mb-4">Contact Us</h4>
                   <p className="mb-3 text-sm leading-relaxed">
                     <strong>Voala Interior</strong><br />
-                    L2-29 & 30, The Link 2<br />
+                    L2-29 & 30, The Link, 2<br />
                     Jalan Jalil Perkasa 3<br />
                     Bukit Jalil, 57000 Kuala Lumpur
                   </p>
@@ -531,7 +531,7 @@ export default function BukitTunkuPage() {
                 <MapPin className="inline w-4 h-4 mr-1" />
                 15–20 minutes from Bukit Tunku · Serving Kenny Hills, Damansara Heights & surrounding prestige areas
               </p>
-              <p>Voala Interior, L2-29 & 30, The Link 2, Bukit Jalil, 57000 Kuala Lumpur</p>
+              <p>Voala Interior, L2-29 & 30, The Link, 2, Bukit Jalil, 57000 Kuala Lumpur</p>
             </div>
           </div>
         </div>

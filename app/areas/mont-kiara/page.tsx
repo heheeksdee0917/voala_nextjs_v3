@@ -26,7 +26,7 @@ const structuredData = {
   description: 'Award-winning interior designer in Mont Kiara specializing in luxury condo and apartment design for expat and local families',
   address: {
     '@type': 'PostalAddress',
-    streetAddress: 'L2-29 & 30, The Link 2, Jalan Jalil Perkasa 3',
+    streetAddress: 'L2-29 & 30, The Link, 2, Jalan Jalil Perkasa 3',
     addressLocality: 'Bukit Jalil',
     addressRegion: 'Kuala Lumpur',
     postalCode: '57000',
@@ -424,7 +424,7 @@ export default function MontKiaraPage() {
                   <h4 className="font-bold mb-4">Contact Us</h4>
                   <p className="mb-2">
                     <strong>Voala Interior</strong><br />
-                    L2-29 & 30, The Link 2<br />
+                    L2-29 & 30, The Link, 2<br />
                     Jalan Jalil Perkasa 3<br />
                     Bukit Jalil, 57000 Kuala Lumpur
                   </p>
@@ -527,7 +527,7 @@ export default function MontKiaraPage() {
                 <MapPin className="inline w-4 h-4 mr-1" />
                 20-25 minutes from Mont Kiara Central • Serving all Mont Kiara, Sri Hartamas & Dutamas condos
               </p>
-              <p>Voala Interior, L2-29 & 30, The Link 2, Bukit Jalil, 57000 Kuala Lumpur</p>
+              <p>Voala Interior, L2-29 & 30, The Link, 2, Bukit Jalil, 57000 Kuala Lumpur</p>
             </div>
           </div>
         </div>

@@ -31,7 +31,7 @@ const structuredData = {
   description: 'Award-winning interior design studio in Kuala Lumpur with 10+ years of heart-led experience',
   address: {
     '@type': 'PostalAddress',
-    streetAddress: 'L2-29 & 30, The Link 2, Jalan Jalil Perkasa 3',
+    streetAddress: 'L2-29 & 30, The Link, 2, Jalan Jalil Perkasa 3',
     addressLocality: 'Bukit Jalil',
     addressRegion: 'Kuala Lumpur',
     postalCode: '57000',
@@ -233,7 +233,7 @@ export default function KualaLumpurPage() {
 
             <p className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed">
               Heart-led craftsmanship for homes and businesses across KL. 10+ years serving KLCC,
-              Bangsar, Mont Kiara, Bukit Jalil & beyond. Studio at The Link 2 — your neighbours in design.
+              Bangsar, Mont Kiara, Bukit Jalil & beyond. Studio at The Link, 2 — your neighbours in design.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
@@ -255,7 +255,7 @@ export default function KualaLumpurPage() {
 
             <p className="text-gray-600">
               <MapPin className="inline w-4 h-4 mr-1" />
-              L2-29 & 30, The Link 2, Jalan Jalil Perkasa 3, Bukit Jalil · Serving all of Kuala Lumpur
+              L2-29 & 30, The Link, 2, Jalan Jalil Perkasa 3, Bukit Jalil · Serving all of Kuala Lumpur
             </p>
           </div>
         </div>
@@ -443,7 +443,7 @@ export default function KualaLumpurPage() {
                   <ul className="space-y-3 text-gray-700">
                     <li className="flex items-start gap-3">
                       <CheckCircle2 className="w-5 h-5 text-green-600 mt-1 flex-shrink-0" />
-                      <span><strong>Walk In:</strong> We're at The Link 2, Level 2 — walk-ins welcome, WhatsApp ahead for coffee</span>
+                      <span><strong>Walk In:</strong> We're at The Link, 2, Level 2 — walk-ins welcome, WhatsApp ahead for coffee</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <CheckCircle2 className="w-5 h-5 text-green-600 mt-1 flex-shrink-0" />
@@ -460,7 +460,7 @@ export default function KualaLumpurPage() {
                   <h4 className="font-bold mb-4">Contact Us</h4>
                   <p className="mb-3 text-sm leading-relaxed">
                     <strong>Voala Interior</strong><br />
-                    L2-29 & 30, The Link 2<br />
+                    L2-29 & 30, The Link, 2<br />
                     Jalan Jalil Perkasa 3<br />
                     Bukit Jalil, 57000 Kuala Lumpur
                   </p>
@@ -502,7 +502,7 @@ export default function KualaLumpurPage() {
                     allowFullScreen
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    title="Voala Interior Studio at The Link 2, Bukit Jalil"
+                    title="Voala Interior Studio at The Link, 2, Bukit Jalil"
                   />
                 </div>
 
@@ -576,7 +576,7 @@ export default function KualaLumpurPage() {
             <div className="text-gray-400 text-sm">
               <p className="mb-2">
                 <MapPin className="inline w-4 h-4 mr-1" />
-                L2-29 & 30, The Link 2, Jalan Jalil Perkasa 3, Bukit Jalil · Serving KLCC · Bangsar · Mont Kiara · Sri Petaling
+                L2-29 & 30, The Link, 2, Jalan Jalil Perkasa 3, Bukit Jalil · Serving KLCC · Bangsar · Mont Kiara · Sri Petaling
               </p>
               <p>Voala Interior, Bukit Jalil, 57000 Kuala Lumpur</p>
             </div>

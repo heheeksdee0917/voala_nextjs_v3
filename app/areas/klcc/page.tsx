@@ -36,7 +36,7 @@ const structuredData = {
   description: 'Premium interior design studio serving KLCC, Bukit Bintang, Ampang Hilir and greater KL.',
   address: {
     '@type': 'PostalAddress',
-    streetAddress: 'L2-29 & 30, The Link 2, Jalan Jalil Perkasa 3',
+    streetAddress: 'L2-29 & 30, The Link, 2, Jalan Jalil Perkasa 3',
     addressLocality: 'Bukit Jalil',
     addressRegion: 'Kuala Lumpur',
     postalCode: '57000',
@@ -159,7 +159,7 @@ const faqs = [
   {
     question: 'Do you serve KLCC even though your studio is in Bukit Jalil?',
     answer:
-      "Yes — KLCC is one of our key premium service areas. The drive from our studio at The Link 2, Bukit Jalil takes approximately 15–20 minutes via major highways. We conduct regular site visits and are very familiar with KLCC buildings.",
+      "Yes — KLCC is one of our key premium service areas. The drive from our studio at The Link, 2, Bukit Jalil takes approximately 15–20 minutes via major highways. We conduct regular site visits and are very familiar with KLCC buildings.",
   },
   {
     question: "Can you handle high-rise condo renovations with strict building rules?",
@@ -414,7 +414,7 @@ export default function KLCCPage() {
                   <h4 className="font-bold mb-4">Contact Us</h4>
                   <p className="mb-3 text-sm leading-relaxed">
                     <strong>Voala Interior</strong><br />
-                    L2-29 & 30, The Link 2<br />
+                    L2-29 & 30, The Link, 2<br />
                     Jalan Jalil Perkasa 3<br />
                     Bukit Jalil, 57000 Kuala Lumpur
                   </p>
@@ -517,7 +517,7 @@ export default function KLCCPage() {
                 <MapPin className="inline w-4 h-4 mr-1" />
                 15–20 minutes from KLCC · Serving Bukit Bintang, Ampang Hilir & the Golden Triangle
               </p>
-              <p>Voala Interior, L2-29 & 30, The Link 2, Bukit Jalil, 57000 Kuala Lumpur</p>
+              <p>Voala Interior, L2-29 & 30, The Link, 2, Bukit Jalil, 57000 Kuala Lumpur</p>
             </div>
           </div>
         </div>

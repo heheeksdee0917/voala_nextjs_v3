@@ -37,7 +37,7 @@ const structuredData = {
     'Premium interior design studio serving Bangsar South condos including The Vertical, Nexus, and The Sphere.',
   address: {
     '@type': 'PostalAddress',
-    streetAddress: 'L2-29 & 30, The Link 2, Jalan Jalil Perkasa 3',
+    streetAddress: 'L2-29 & 30, The Link, 2, Jalan Jalil Perkasa 3',
     addressLocality: 'Bukit Jalil',
     addressRegion: 'Kuala Lumpur',
     postalCode: '57000',
@@ -124,7 +124,7 @@ const whyUs = [
   },
   {
     title: 'A Studio 10 Minutes Away',
-    body: 'Our studio at The Link 2, Bukit Jalil is roughly 10 minutes from Bangsar South via the NPE. Close enough for frequent site visits and sample reviews mid-project — without the inconvenience of chasing a firm based on the other side of KL.',
+    body: 'Our studio at The Link, 2, Bukit Jalil is roughly 10 minutes from Bangsar South via the NPE. Close enough for frequent site visits and sample reviews mid-project — without the inconvenience of chasing a firm based on the other side of KL.',
   },
   {
     title: 'Expat & Remote-Worker Friendly',
@@ -214,7 +214,7 @@ const faqs = [
   {
     question: 'How do I get started?',
     answer:
-      "WhatsApp us at +60 12 505 3395 or visit our studio at L2-29 & 30, The Link 2, Jalan Jalil Perkasa 3, Bukit Jalil — about 10 minutes from Bangsar South. The first consultation is a proper conversation, not a sales pitch. We listen first.",
+      "WhatsApp us at +60 12 505 3395 or visit our studio at L2-29 & 30, The Link, 2, Jalan Jalil Perkasa 3, Bukit Jalil — about 10 minutes from Bangsar South. The first consultation is a proper conversation, not a sales pitch. We listen first.",
   },
 ];
 
@@ -290,7 +290,7 @@ export default function BangsarSouthPage() {
               </p>
               <p className="text-lg leading-relaxed mb-6">
                 We're Voala Interior — a premium interior design studio based at{' '}
-                <strong>The Link 2, Bukit Jalil</strong>, roughly 10 minutes from Bangsar South via
+                <strong>The Link, 2, Bukit Jalil</strong>, roughly 10 minutes from Bangsar South via
                 the NPE. We design and build interiors for condos across{' '}
                 <strong>The Vertical, Nexus, The Sphere, Crest Jalan Kerinchi</strong>, and the
                 broader Bangsar South and Kerinchi corridor. Heart-led craftsmanship and exceptional
@@ -502,7 +502,7 @@ export default function BangsarSouthPage() {
                   <h4 className="font-bold mb-4">Contact Us</h4>
                   <p className="mb-3 text-sm leading-relaxed">
                     <strong>Voala Interior</strong><br />
-                    L2-29 & 30, The Link 2<br />
+                    L2-29 & 30, The Link, 2<br />
                     Jalan Jalil Perkasa 3<br />
                     Bukit Jalil, 57000 Kuala Lumpur
                   </p>
@@ -608,7 +608,7 @@ export default function BangsarSouthPage() {
                 <MapPin className="inline w-4 h-4 mr-1" />
                 10 minutes from Bangsar South · Serving The Vertical · Nexus · The Sphere · Kerinchi · Pantai Hillpark
               </p>
-              <p>Voala Interior, L2-29 & 30, The Link 2, Bukit Jalil, 57000 Kuala Lumpur</p>
+              <p>Voala Interior, L2-29 & 30, The Link, 2, Bukit Jalil, 57000 Kuala Lumpur</p>
             </div>
           </div>
         </div>

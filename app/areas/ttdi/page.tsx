@@ -36,7 +36,7 @@ const structuredData = {
   description: 'Premium interior design studio serving TTDI, Damansara Heights, Bangsar and greater KL.',
   address: {
     '@type': 'PostalAddress',
-    streetAddress: 'L2-29 & 30, The Link 2, Jalan Jalil Perkasa 3',
+    streetAddress: 'L2-29 & 30, The Link, 2, Jalan Jalil Perkasa 3',
     addressLocality: 'Bukit Jalil',
     addressRegion: 'Kuala Lumpur',
     postalCode: '57000',
@@ -159,7 +159,7 @@ const faqs = [
   {
     question: 'Do you serve TTDI even though your studio is in Bukit Jalil?',
     answer:
-      "Yes — TTDI is one of our core service areas. The drive from our studio at The Link 2, Bukit Jalil takes approximately 15–20 minutes via the Sprint Highway. We conduct regular site visits and are very familiar with the neighbourhood.",
+      "Yes — TTDI is one of our core service areas. The drive from our studio at The Link, 2, Bukit Jalil takes approximately 15–20 minutes via the Sprint Highway. We conduct regular site visits and are very familiar with the neighbourhood.",
   },
   {
     question: "Can you renovate older bungalows in TTDI while preserving their character?",
@@ -414,7 +414,7 @@ export default function TTDIPage() {
                   <h4 className="font-bold mb-4">Contact Us</h4>
                   <p className="mb-3 text-sm leading-relaxed">
                     <strong>Voala Interior</strong><br />
-                    L2-29 & 30, The Link 2<br />
+                    L2-29 & 30, The Link, 2<br />
                     Jalan Jalil Perkasa 3<br />
                     Bukit Jalil, 57000 Kuala Lumpur
                   </p>
@@ -517,7 +517,7 @@ export default function TTDIPage() {
                 <MapPin className="inline w-4 h-4 mr-1" />
                 15–20 minutes from TTDI · Serving Damansara Heights, Bangsar & surrounding areas
               </p>
-              <p>Voala Interior, L2-29 & 30, The Link 2, Bukit Jalil, 57000 Kuala Lumpur</p>
+              <p>Voala Interior, L2-29 & 30, The Link, 2, Bukit Jalil, 57000 Kuala Lumpur</p>
             </div>
           </div>
         </div>

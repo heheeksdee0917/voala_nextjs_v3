@@ -36,7 +36,7 @@ const structuredData = {
   description: 'Premium interior design studio serving Damansara Heights, Bukit Tunku, Bangsar and greater KL.',
   address: {
     '@type': 'PostalAddress',
-    streetAddress: 'L2-29 & 30, The Link 2, Jalan Jalil Perkasa 3',
+    streetAddress: 'L2-29 & 30, The Link, 2, Jalan Jalil Perkasa 3',
     addressLocality: 'Bukit Jalil',
     addressRegion: 'Kuala Lumpur',
     postalCode: '57000',
@@ -159,7 +159,7 @@ const faqs = [
   {
     question: 'Do you serve Damansara Heights even though your studio is in Bukit Jalil?',
     answer:
-      "Yes — Damansara Heights is one of our primary premium service areas. The drive from our studio at The Link 2, Bukit Jalil takes approximately 15–20 minutes via the Sprint Highway. We conduct regular site visits and are very familiar with the neighbourhood.",
+      "Yes — Damansara Heights is one of our primary premium service areas. The drive from our studio at The Link, 2, Bukit Jalil takes approximately 15–20 minutes via the Sprint Highway. We conduct regular site visits and are very familiar with the neighbourhood.",
   },
   {
     question: "Can you renovate older bungalows in Damansara Heights while preserving character?",
@@ -414,7 +414,7 @@ export default function DamansaraHeightsPage() {
                   <h4 className="font-bold mb-4">Contact Us</h4>
                   <p className="mb-3 text-sm leading-relaxed">
                     <strong>Voala Interior</strong><br />
-                    L2-29 & 30, The Link 2<br />
+                    L2-29 & 30, The Link, 2<br />
                     Jalan Jalil Perkasa 3<br />
                     Bukit Jalil, 57000 Kuala Lumpur
                   </p>
@@ -518,7 +518,7 @@ export default function DamansaraHeightsPage() {
                 <MapPin className="inline w-4 h-4 mr-1" />
                 15–20 minutes from Damansara Heights · Serving Bukit Tunku, Bangsar & surrounding prestige areas
               </p>
-              <p>Voala Interior, L2-29 & 30, The Link 2, Bukit Jalil, 57000 Kuala Lumpur</p>
+              <p>Voala Interior, L2-29 & 30, The Link, 2, Bukit Jalil, 57000 Kuala Lumpur</p>
             </div>
           </div>
         </div>

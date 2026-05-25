@@ -72,7 +72,7 @@ const Footer: React.FC = () => {
                 <div>
                   <address className="not-italic text-white/80 leading-relaxed">
                     <span itemProp="streetAddress">
-                      L2-29 & 30, The Link 2, Jalan Jalil Perkasa 3
+                      L2-29 & 30, The Link, 2, Jalan Jalil Perkasa 3
                     </span><br />
                     <span itemProp="addressLocality">Bukit Jalil</span>,{' '}
                     <span itemProp="addressRegion">Kuala Lumpur</span><br />
@@ -194,7 +194,7 @@ const Footer: React.FC = () => {
             © 2026 Voala Interior. All rights reserved. | Award-winning Interior Design in KL
           </p>
           <p className="text-white/50 mt-2">
-            L2-29 & 30, The Link 2, Jalan Jalil Perkasa 3, Bukit Jalil, 57000 Kuala Lumpur, Malaysia
+            L2-29 & 30, The Link, 2, Jalan Jalil Perkasa 3, Bukit Jalil, 57000 Kuala Lumpur, Malaysia
           </p>
         </div>
       </div>
