@@ -27,8 +27,8 @@ const structuredData = {
   address: {
     '@type': 'PostalAddress',
     streetAddress: 'L2-29 & 30, The Link, 2, Jalan Jalil Perkasa 3',
-    addressLocality: 'Bukit Jalil',
-    addressRegion: 'Kuala Lumpur',
+    "addressLocality": "Kuala Lumpur",
+addressRegion: "Wilayah Persekutuan Kuala Lumpur",
     postalCode: '57000',
     addressCountry: 'MY',
   },

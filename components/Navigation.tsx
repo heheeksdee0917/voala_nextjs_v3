@@ -17,12 +17,31 @@ const services = [
   { label: 'Space Planning', href: '/services/space-planning' },
 ]
 
+const areas = [
+  { label: 'Kuala Lumpur', href: '/areas/kuala-lumpur' },
+  { label: 'KLCC', href: '/areas/klcc' },
+  { label: 'Bangsar', href: '/areas/bangsar' },
+  { label: 'Bangsar South', href: '/areas/bangsar-south' },
+  { label: 'Mont Kiara', href: '/areas/mont-kiara' },
+  { label: 'Bukit Bintang', href: '/areas/bukit-bintang' },
+  { label: 'Bukit Jalil', href: '/areas/bukit-jalil' },
+  { label: 'Bukit Tunku', href: '/areas/bukit-tunku' },
+  { label: 'Damansara Heights', href: '/areas/damansara-heights' },
+  { label: 'Desa Park City', href: '/areas/desa-park-city' },
+  { label: 'Sri Hartamas', href: '/areas/sri-hartamas' },
+  { label: 'Ampang Hilir', href: '/areas/ampang-hilir' },
+  { label: 'TTDI', href: '/areas/ttdi' },
+]
+
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false)
+  const [isMobileAreasOpen, setIsMobileAreasOpen] = useState(false)
+  const [isAreasDropdownOpen, setIsAreasDropdownOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [isOverDark, setIsOverDark] = useState(false)
   const navRef = useRef<HTMLElement>(null)
+  const areasDropdownRef = useRef<HTMLLIElement>(null)
   const router = useRouter()
   const pathname = usePathname()
 
@@ -32,6 +51,17 @@ export default function Navigation() {
     }
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  // Close areas dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (areasDropdownRef.current && !areasDropdownRef.current.contains(event.target as Node)) {
+        setIsAreasDropdownOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
   }, [])
 
   // Background detection
@@ -129,7 +159,9 @@ export default function Navigation() {
 
   const textColor = isOverDark ? 'text-white' : 'text-black'
   const underlineColor = isOverDark ? 'bg-white' : 'bg-black'
-  const dropdownBorder = isOverDark ? 'border-white/20' : 'border-black/10'
+  const dropdownBg = isOverDark ? 'bg-black/90 border-white/10' : 'bg-white border-black/10'
+  const dropdownText = isOverDark ? 'text-white/80 hover:text-white' : 'text-black/70 hover:text-black'
+  const dropdownHighlight = isOverDark ? 'text-white font-semibold' : 'text-black font-semibold'
 
   return (
     <>
@@ -149,8 +181,7 @@ export default function Navigation() {
               />
             </Link>
 
-
-            {/* Desktop Navigation — Left */}
+            {/* Desktop Navigation */}
             <ul className="hidden md:flex items-center gap-8 relative z-20">
               <li>
                 <Link
@@ -161,6 +192,7 @@ export default function Navigation() {
                   <span className={`absolute bottom-0 left-0 h-px transition-all duration-300 ease-out ${underlineColor} w-0 group-hover/link:w-full`}></span>
                 </Link>
               </li>
+
               <li>
                 <Link
                   href="/projects"
@@ -169,6 +201,53 @@ export default function Navigation() {
                   Projects
                   <span className={`absolute bottom-0 left-0 h-px transition-all duration-300 ease-out ${underlineColor} w-0 group-hover/link:w-full`}></span>
                 </Link>
+              </li>
+
+              {/* Areas Dropdown */}
+              <li ref={areasDropdownRef} className="relative">
+                <button
+                  onClick={() => setIsAreasDropdownOpen(!isAreasDropdownOpen)}
+                  className={`flex items-center gap-1 font-medium transition-all duration-300 ${textColor}`}
+                  aria-expanded={isAreasDropdownOpen}
+                  aria-haspopup="true"
+                >
+                  Areas
+                  <ChevronDown
+                    size={16}
+                    className={`transition-transform duration-300 ${isAreasDropdownOpen ? 'rotate-180' : ''}`}
+                  />
+                </button>
+
+                {isAreasDropdownOpen && (
+                  <div
+                    className={`absolute top-full left-1/2 -translate-x-1/2 mt-3 w-56 rounded-lg border shadow-xl backdrop-blur-xl ${dropdownBg} overflow-hidden`}
+                  >
+                    {/* KL pinned at top with visual separator */}
+                    <div className="px-4 pt-3 pb-2">
+                      <Link
+                        href="/areas/kuala-lumpur"
+                        onClick={() => setIsAreasDropdownOpen(false)}
+                        className={`block text-sm font-bold tracking-wide transition-colors duration-200 ${dropdownHighlight}`}
+                      >
+                        Kuala Lumpur
+                      </Link>
+                    </div>
+                    <div className={`mx-4 h-px mb-2 ${isOverDark ? 'bg-white/10' : 'bg-black/10'}`} />
+                    <ul className="px-2 pb-3 space-y-0.5">
+                      {areas.slice(1).map((area) => (
+                        <li key={area.href}>
+                          <Link
+                            href={area.href}
+                            onClick={() => setIsAreasDropdownOpen(false)}
+                            className={`block px-3 py-1.5 rounded-md text-sm transition-colors duration-200 ${dropdownText}`}
+                          >
+                            {area.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
               </li>
 
               <li>
@@ -182,8 +261,7 @@ export default function Navigation() {
               </li>
             </ul>
 
-
-            {/* Mobile Menu Button — Left */}
+            {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className={`md:hidden relative z-20 transition-colors duration-300 ${textColor}`}
@@ -199,11 +277,11 @@ export default function Navigation() {
       {/* Mobile Menu Overlay */}
       {isMenuOpen && (
         <div
-          className="md:hidden fixed inset-0 bg-white z-[95]"
+          className="md:hidden fixed inset-0 bg-white z-[95] overflow-y-auto"
           onClick={() => setIsMenuOpen(false)}
         >
           <div
-            className="h-full w-full flex items-center justify-center px-8"
+            className="min-h-full w-full flex items-center justify-center px-8 py-24"
             onClick={(e) => e.stopPropagation()}
           >
             <nav className="space-y-8 text-center w-full max-w-xs">
@@ -214,6 +292,7 @@ export default function Navigation() {
               >
                 Home
               </Link>
+
               <Link
                 href="/projects"
                 onClick={() => setIsMenuOpen(false)}
@@ -221,6 +300,47 @@ export default function Navigation() {
               >
                 Projects
               </Link>
+
+              {/* Mobile Areas Accordion */}
+              <div>
+                <button
+                  onClick={() => setIsMobileAreasOpen(!isMobileAreasOpen)}
+                  className="flex items-center justify-center gap-2 text-2xl text-black/70 hover:text-black font-medium transition-colors w-full"
+                >
+                  Areas
+                  <ChevronDown
+                    size={20}
+                    className={`transition-transform duration-300 ${isMobileAreasOpen ? 'rotate-180' : ''}`}
+                  />
+                </button>
+
+                {isMobileAreasOpen && (
+                  <ul className="mt-4 space-y-3">
+                    {/* KL pinned first and bold */}
+                    <li>
+                      <Link
+                        href="/areas/kuala-lumpur"
+                        onClick={() => setIsMenuOpen(false)}
+                        className="block text-lg text-black font-semibold transition-colors"
+                      >
+                        Interior Designer in KL
+                      </Link>
+                    </li>
+                    <li className="h-px bg-black/10 mx-8" />
+                    {areas.slice(1).map((area) => (
+                      <li key={area.href}>
+                        <Link
+                          href={area.href}
+                          onClick={() => setIsMenuOpen(false)}
+                          className="block text-lg text-black/50 hover:text-black transition-colors"
+                        >
+                          {area.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
 
               {/* Mobile Services Accordion */}
               <div>
