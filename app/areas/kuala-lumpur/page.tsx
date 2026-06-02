@@ -279,7 +279,7 @@ export default function KualaLumpurPage() {
                 amidst the city's energy.
               </p>
               <p className="text-lg leading-relaxed mb-6">
-                For over 15 years, we've been designing exceptional interiors for Kuala Lumpur
+                For over 10+, we've been designing exceptional interiors for Kuala Lumpur
                 families and businesses. Our studio in Bukit Jalil — just minutes from the National
                 Stadium and easily accessible from KLCC, Bangsar, and across KL — has become a
                 trusted name for those who want more than just beautiful spaces. We create homes and

@@ -74,8 +74,8 @@ const Footer: React.FC = () => {
                     <span itemProp="streetAddress">
                       L2-29 & 30, The Link, 2, Jalan Jalil Perkasa 3
                     </span><br />
-                    <span itemProp="addressLocality">Bukit Jalil</span>,{' '}
-                    <span itemProp="addressRegion">Kuala Lumpur</span><br />
+                    <span itemProp="addressLocality">Kuala Lumpur</span>,{' '}
+                    <span itemProp="addressRegion">Wilayah Persekutuan Kuala Lumpur</span><br />
                     <span itemProp="postalCode">57000</span>,{' '}
                     <span itemProp="addressCountry">Malaysia</span>
                   </address>

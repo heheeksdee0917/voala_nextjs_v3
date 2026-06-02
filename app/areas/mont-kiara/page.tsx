@@ -213,7 +213,7 @@ export default function MontKiaraPage() {
               </p>
 
               <p className="text-lg leading-relaxed mb-6">
-                For over 15 years, we've been the trusted interior design partner for Mont Kiara residents. From the penthouses of Arcoris Mont Kiara to family apartments in 11 Mont Kiara, from established condos like Plaza Mont Kiara to newer developments like Verticas Residensi – we understand the specific layouts, building regulations, and lifestyle needs unique to this neighborhood. Our studio in Bukit Jalil is just 20-25 minutes from Mont Kiara, making us easily accessible for site visits and consultations.
+                For over 10+, we've been the trusted interior design partner for Mont Kiara residents. From the penthouses of Arcoris Mont Kiara to family apartments in 11 Mont Kiara, from established condos like Plaza Mont Kiara to newer developments like Verticas Residensi – we understand the specific layouts, building regulations, and lifestyle needs unique to this neighborhood. Our studio in Bukit Jalil is just 20-25 minutes from Mont Kiara, making us easily accessible for site visits and consultations.
               </p>
 
               <p className="text-lg leading-relaxed">
