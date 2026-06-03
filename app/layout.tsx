@@ -28,10 +28,11 @@ const samsungSharpSans = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL('https://voalainterior.com'),
   title: {
-    default: 'Voala Interior | Best Interior Designer in Kuala Lumpur',
-    template: '%s - Best Interior Design in KL | Voala Interior',
+    // Exact Target Keyword Targeting Match
+    default: 'Interior Designer in KL | Award-Winning Interior Design KL | Voala Interior',
+    template: '%s - Interior Designer KL | Voala Interior',
   },
-  description: "Malaysia's award-winning interior designer in Kuala Lumpur – best one-stop service for luxury residential & commercial projects.",
+  description: "Voala Interior is Malaysia's award-winning interior designer in Kuala Lumpur. Premier one-stop design & build studio for luxury residential & commercial spaces.",
   openGraph: {
     siteName: 'Voala Interior',
     locale: 'en_MY',
@@ -59,14 +60,17 @@ export const metadata: Metadata = {
 const structuredData = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
-  '@id': 'https://voalainterior.com',
+  // Standard entity reference matching the verified map target node
+  '@id': 'https://voalainterior.com/#localbusiness',
   name: 'Voala Interior',
-  alternateName: 'Voala Interior Design',
+  alternateName: ['Voala Interior Design', 'Voala Interior KL'],
   description: "Malaysia‘s award-winning interior designer with over 10 years of heart-led experience. Specializing in residential and commercial interior design in Kuala Lumpur.",
   url: 'https://voalainterior.com',
   telephone: '+60125053395',
   email: 'askvoala@gmail.com',
   priceRange: '$$$-$$$$',
+  // Direct linkage injection mapping this code directly to your managed dashboard dashboard map node
+  hasMap: 'https://maps.google.com/?cid=10247622171370126871',
   image: [
     'https://voalainterior.com/Voala/Voala_OG.png',
     'https://voalainterior.com/Voala/ProjectSource/Logo/VOALA%20NEW_BLACK.png',
@@ -77,9 +81,9 @@ const structuredData = {
   },
   address: {
     '@type': 'PostalAddress',
-    streetAddress: 'L2-29 & 30, The Link, 2, Jalan Jalil Perkasa 3',
-    addressLocality: "Kuala Lumpur",
-addressRegion: "Wilayah Persekutuan Kuala Lumpur",
+    streetAddress: 'L2-29 & 30, The Link, 2, Jalan Jalil Perkasa 3, Bukit Jalil',
+    addressLocality: 'Kuala Lumpur',
+    addressRegion: 'Wilayah Persekutuan Kuala Lumpur',
     postalCode: '57000',
     addressCountry: 'MY',
   },
@@ -227,7 +231,7 @@ export default function RootLayout({
       <body className={`${samsungSharpSans.variable} min-h-screen bg-white font-sans antialiased`}>
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focusnpm :absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-black focus:text-white focus:rounded"
+          className="sr-only focus:not-sr-only focusnpm:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-black focus:text-white focus:rounded"
         >
           Skip to main
         </a>
