@@ -189,6 +189,12 @@ const structuredData = {
     'https://www.instagram.com/hellovoala/',
     'https://www.linkedin.com/company/voala-interior/',
     'https://www.youtube.com/@hellovoala9163',
+    'https://www.tiktok.com/@voalainterior',
+    'https://x.com/VoalaInterior',
+    'https://www.pinterest.com/askvoala/',
+    'https://www.recommend.my/businesses/voala-interior',
+    'https://www.homify.com.my/professionals/9979642/voala-interior',
+    'https://share.google/TOFw9PPtMRPLl1lQx',
   ],
   aggregateRating: {
     '@type': 'AggregateRating',

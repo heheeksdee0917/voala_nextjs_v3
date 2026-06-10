@@ -27,57 +27,33 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="text-lg font-semibold mb-5 uppercase tracking-wide">Quick Links</h4>
             <nav className="space-y-3">
-              <Link 
-                href="/" 
-                className="block text-white/80 hover:text-white transition-colors"
-              >
+              <Link href="/" className="block text-white/80 hover:text-white transition-colors">
                 Home
               </Link>
-              <Link 
-                href="/projects" 
-                className="block text-white/80 hover:text-white transition-colors"
-              >
+              <Link href="/projects" className="block text-white/80 hover:text-white transition-colors">
                 Projects
               </Link>
-              <Link 
-                href="/services" 
-                className="block text-white/80 hover:text-white transition-colors"
-              >
+              <Link href="/services" className="block text-white/80 hover:text-white transition-colors">
                 Services
               </Link>
-              <Link 
-                href="/contact" 
-                className="block text-white/80 hover:text-white transition-colors"
-              >
+              <Link href="/contact" className="block text-white/80 hover:text-white transition-colors">
                 Contact Us
               </Link>
             </nav>
           </div>
 
-          {/* Contact Information – NAP with microdata */}
-          <div itemScope itemType="https://schema.org/LocalBusiness">
+          {/* Contact Information */}
+          <div>
             <h4 className="text-lg font-semibold mb-5 uppercase tracking-wide">Contact Info</h4>
             <div className="space-y-4 text-sm">
-              {/* Business Name (repeated for microdata) */}
-              <meta itemProp="name" content="Voala Interior" />
-
-              {/* Address – full structured NAP */}
-              <div 
-                className="flex items-start gap-3"
-                itemProp="address"
-                itemScope
-                itemType="https://schema.org/PostalAddress"
-              >
+              {/* Address */}
+              <div className="flex items-start gap-3">
                 <MapPin size={18} className="text-white mt-1 flex-shrink-0" />
                 <div>
                   <address className="not-italic text-white/80 leading-relaxed">
-                    <span itemProp="streetAddress">
-                      L2-29 & 30, The Link, 2, Jalan Jalil Perkasa 3
-                    </span><br />
-                    <span itemProp="addressLocality">Kuala Lumpur</span>,{' '}
-                    <span itemProp="addressRegion">Wilayah Persekutuan Kuala Lumpur</span><br />
-                    <span itemProp="postalCode">57000</span>,{' '}
-                    <span itemProp="addressCountry">Malaysia</span>
+                    L2-29 & 30, The Link, 2, Jalan Jalil Perkasa 3<br />
+                    Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur<br />
+                    57000, Malaysia
                   </address>
                 </div>
               </div>
@@ -85,10 +61,9 @@ const Footer: React.FC = () => {
               {/* Phone */}
               <div className="flex items-center gap-3">
                 <Phone size={18} className="text-white flex-shrink-0" />
-                <a 
-                  href="tel:+60125053395" 
+                <a
+                  href="tel:+60125053395"
                   className="text-white/80 hover:text-white transition-colors"
-                  itemProp="telephone"
                 >
                   +60 12 505 3395
                 </a>
@@ -97,10 +72,9 @@ const Footer: React.FC = () => {
               {/* Email */}
               <div className="flex items-center gap-3">
                 <Mail size={18} className="text-white flex-shrink-0" />
-                <a 
-                  href="mailto:askvoala@gmail.com" 
+                <a
+                  href="mailto:askvoala@gmail.com"
                   className="text-white/80 hover:text-white transition-colors"
-                  itemProp="email"
                 >
                   askvoala@gmail.com
                 </a>
@@ -170,7 +144,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Google Map – full width, below the grid */}
+        {/* Google Map */}
         <div className="mt-12">
           <h4 className="text-lg font-semibold mb-4 uppercase tracking-wide">Find Us</h4>
           <div className="w-full overflow-hidden rounded-lg border border-white/10" style={{ height: '280px' }}>
