@@ -51,9 +51,16 @@ const Footer: React.FC = () => {
                 <MapPin size={18} className="text-white mt-1 flex-shrink-0" />
                 <div>
                   <address className="not-italic text-white/80 leading-relaxed">
-                    L2-29 & 30, The Link, 2, Jalan Jalil Perkasa 3<br />
-                    Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur<br />
-                    57000, Malaysia
+                    <a
+                      href="https://maps.app.goo.gl/zQUXXYt4yfJTmuZP8"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-white transition-colors"
+                    >
+                      L2-29 & 30, The Link, 2, Jalan Jalil Perkasa 3<br />
+                      Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur<br />
+                      57000, Malaysia
+                    </a>
                   </address>
                 </div>
               </div>
@@ -161,14 +168,27 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
+        {/* Designer Credit */}
+        <div className="mt-8 text-center text-sm">
+          <p className="text-white/50">
+            Proudly created by{' '}
+            <a
+              href="https://swayed.my"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:text-white transition-colors"
+            >
+              swayed - web designer in KL
+            </a>
+            .
+          </p>
+        </div>
+
         {/* Bottom Section */}
-        <div className="border-t border-white/20 mt-12 pt-8 text-center text-sm">
+        <div className="border-t border-white/20 mt-8 pt-8 text-center text-sm">
           <div className="h-px bg-gradient-to-r from-transparent via-white/30 to-transparent mb-6"></div>
           <p className="text-white/60">
             © 2026 Voala Interior. All rights reserved. | Award-winning Interior Design in KL
-          </p>
-          <p className="text-white/50 mt-2">
-            L2-29 & 30, The Link, 2, Jalan Jalil Perkasa 3, Bukit Jalil, 57000 Kuala Lumpur, Malaysia
           </p>
         </div>
       </div>
