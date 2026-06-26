@@ -7,15 +7,16 @@ const OurServicesSection: React.FC = () => {
       <div className="max-w-7xl mx-auto py-10 md:py-5 px-4 md:px-8 lg:px-10 text-center" style={{ paddingTop: '75px', paddingBottom: '75px' }}>
         <div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-black max-w-4xl font-linik gradient-highlight mx-auto">
-            KL's Interior Design Studio — Timeless Spaces, Made with Heart.
+            Award Winning Interior Designer KL — Timeless Spaces, Made with Heart.
           </h2>
-          <p className="text-gray-700 text-base md:text-lg lg:text-xl font-linik mx-auto">
-          Voala Interior is an award-winning interior designer in KL, Kuala Lumpur. We specialize in bespoke residential and commercial interior design across Malaysia.
+
+          <p className="text-gray-700 text-base md:text-lg lg:text-xl font-linik mx-auto max-w-4xl">
+            Voala Interior is an <strong>Award Winning Interior Designer KL</strong> based in Kuala Lumpur.
+            We specialize in bespoke residential and commercial interior design across Malaysia, delivering exceptional spaces that blend beauty with functionality.
           </p>
         </div>
       </div>
 
-      {/* Voala Intro Gallery - Full Width */}
       <div className="w-full">
         <VoalaIntroGallery slides={[]} />
       </div>

@@ -28,11 +28,10 @@ const samsungSharpSans = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL('https://voalainterior.com'),
   title: {
-    // Exact Target Keyword Targeting Match
-    default: 'Interior Designer in KL | Award-Winning Interior Design KL | Voala Interior',
-    template: '%s - Interior Designer KL | Voala Interior',
+    default: 'Award Winning Interior Designer KL | Interior Designer in KL | Voala Interior',
+    template: '%s | Award Winning Interior Designer KL | Voala Interior',
   },
-  description: "Voala Interior is Malaysia's award-winning interior designer in Kuala Lumpur. Premier one-stop design & build studio for luxury residential & commercial spaces.",
+  description: "Voala Interior is an Award Winning Interior Designer KL with over 10 years of experience. We are a premier one-stop design & build studio in Kuala Lumpur specialising in luxury residential and commercial interior design projects.",
   openGraph: {
     siteName: 'Voala Interior',
     locale: 'en_MY',
@@ -60,7 +59,6 @@ export const metadata: Metadata = {
 const structuredData = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
-  // Standard entity reference matching the verified map target node
   '@id': 'https://voalainterior.com/#localbusiness',
   name: 'Voala Interior',
   alternateName: ['Voala Interior Design', 'Voala Interior KL'],
@@ -69,7 +67,6 @@ const structuredData = {
   telephone: '+60125053395',
   email: 'askvoala@gmail.com',
   priceRange: '$$$-$$$$',
-  // Direct linkage injection mapping this code directly to your managed dashboard dashboard map node
   hasMap: 'https://maps.google.com/?cid=10247622171370126871',
   image: [
     'https://voalainterior.com/Voala/Voala_OG.png',

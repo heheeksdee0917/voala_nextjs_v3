@@ -2,6 +2,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { MapPin, Phone, Mail, Clock, ArrowRight, CheckCircle2, Star, Home, Building2 } from 'lucide-react';
+import SignatureProjects from '@/components/SignatureProjects';
 
 export const metadata: Metadata = {
   title: 'Interior Designer Mont Kiara | Luxury Condo & Apartment Design | Voala Interior',
@@ -223,6 +224,8 @@ export default function MontKiaraPage() {
           </div>
         </div>
       </section>
+
+      <SignatureProjects />
 
       {/* Why Mont Kiara Residents Choose Us */}
       <section className="py-16 md:py-24 bg-gray-50">

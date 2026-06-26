@@ -6,14 +6,14 @@ export interface Project {
   location: string;
   type: 'commercial' | 'residential';
   image: string;
-  alt: string;        // SEO alt text for the hero/cover image
+  alt: string;
   category: string;
   year: string;
   size: string;
   isAwardWinningFeatured?: boolean;
   galleryImages: Array<{
     src: string;
-    alt?: string;          // SEO alt text per gallery image (optional, falls back to alt)
+    alt?: string;
   }>;
   areaLabel?: string;
   areaLink?: string;
@@ -31,7 +31,7 @@ export const projectsData: Project[] = [
     description: 'Bold. Dark. Unforgettable.',
     location: 'Aria Luxury Residence, KLCC',
     areaLabel: 'KLCC',
-    areaLink: '/areas/kuala-lumpur',
+    areaLink: '/areas/klcc',
     type: 'residential',
     image: '/Voala/ProjectSource/Award-Winning-Projects/Aria/AriaCoverPhoto.avif',
     alt: 'Award-winning dark luxury condo interior design at Aria Luxury Residence KLCC by Voala Interior',
@@ -264,6 +264,7 @@ export const projectsData: Project[] = [
     name: 'The SESH',
     description: 'Once a Workshop. Now a Winning Shot.',
     location: 'Wisma KAH, Jalan Ipoh',
+    areaLink: '/areas/kuala-lumpur',
     type: 'commercial',
     image: '/Voala/ProjectSource/Signature-Projects/TheSesh/TheSeshCoverPhoto.avif',
     alt: "Malaysia's first auto-tennis training court interior design at Wisma KAH Jalan Ipoh KL by Voala Interior",
@@ -296,6 +297,7 @@ export const projectsData: Project[] = [
     name: 'The CARSOME ACADEMY',
     description: 'Not Your Typical Academy.',
     location: 'Wisma KAH, Jalan Ipoh',
+    areaLink: '/areas/kuala-lumpur',
     type: 'commercial',
     image: '/Voala/ProjectSource/Signature-Projects/Carsome/CarsomCoverPhoto.avif',
     alt: 'Carsome Academy commercial office interior design spanning 5 lots at Wisma KAH Jalan Ipoh KL by Voala Interior',
@@ -435,6 +437,7 @@ export const projectsData: Project[] = [
     name: 'The KAMI',
     description: 'A Home for Generations, Built on Togetherness',
     location: 'Wisma KAH, Jalan Ipoh',
+    areaLink: '/areas/kuala-lumpur',
     type: 'residential',
     image: '/Voala/ProjectSource/Signature-Projects/Kami/KamiCoverPhoto.avif',
     alt: 'Multi-generational dual-key condo interior design at Jalan Ipoh Kuala Lumpur by Voala Interior',

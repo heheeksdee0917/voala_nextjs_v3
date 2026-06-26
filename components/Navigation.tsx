@@ -38,10 +38,12 @@ export default function Navigation() {
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false)
   const [isMobileAreasOpen, setIsMobileAreasOpen] = useState(false)
   const [isAreasDropdownOpen, setIsAreasDropdownOpen] = useState(false)
+  const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [isOverDark, setIsOverDark] = useState(false)
   const navRef = useRef<HTMLElement>(null)
   const areasDropdownRef = useRef<HTMLLIElement>(null)
+  const servicesDropdownRef = useRef<HTMLLIElement>(null)
   const router = useRouter()
   const pathname = usePathname()
 
@@ -53,11 +55,14 @@ export default function Navigation() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  // Close areas dropdown when clicking outside
+  // Close dropdowns when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (areasDropdownRef.current && !areasDropdownRef.current.contains(event.target as Node)) {
         setIsAreasDropdownOpen(false)
+      }
+      if (servicesDropdownRef.current && !servicesDropdownRef.current.contains(event.target as Node)) {
+        setIsServicesDropdownOpen(false)
       }
     }
     document.addEventListener('mousedown', handleClickOutside)
@@ -203,6 +208,47 @@ export default function Navigation() {
                 </Link>
               </li>
 
+              {/* Services Dropdown */}
+              <li ref={servicesDropdownRef} className="relative">
+                <button
+                  onClick={() => setIsServicesDropdownOpen(!isServicesDropdownOpen)}
+                  className={`flex items-center gap-1 font-medium transition-all duration-300 ${textColor}`}
+                  aria-expanded={isServicesDropdownOpen}
+                  aria-haspopup="true"
+                >
+                  Services
+                  <ChevronDown
+                    size={16}
+                    className={`transition-transform duration-300 ${isServicesDropdownOpen ? 'rotate-180' : ''}`}
+                  />
+                </button>
+
+                {/* Always in DOM for crawler visibility, shown/hidden via CSS */}
+                <div
+                  className={`absolute top-full left-1/2 -translate-x-1/2 mt-3 w-64 rounded-lg border shadow-xl backdrop-blur-xl ${dropdownBg} overflow-hidden transition-all duration-200 ${
+                    isServicesDropdownOpen
+                      ? 'opacity-100 pointer-events-auto translate-y-0'
+                      : 'opacity-0 pointer-events-none -translate-y-1'
+                  }`}
+                  aria-hidden={!isServicesDropdownOpen}
+                >
+                  <ul className="px-2 py-3 space-y-0.5">
+                    {services.map((service) => (
+                      <li key={service.href}>
+                        <Link
+                          href={service.href}
+                          onClick={() => setIsServicesDropdownOpen(false)}
+                          className={`block px-3 py-1.5 rounded-md text-sm transition-colors duration-200 ${dropdownText}`}
+                          tabIndex={isServicesDropdownOpen ? 0 : -1}
+                        >
+                          {service.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </li>
+
               {/* Areas Dropdown */}
               <li ref={areasDropdownRef} className="relative">
                 <button
@@ -218,36 +264,42 @@ export default function Navigation() {
                   />
                 </button>
 
-                {isAreasDropdownOpen && (
-                  <div
-                    className={`absolute top-full left-1/2 -translate-x-1/2 mt-3 w-56 rounded-lg border shadow-xl backdrop-blur-xl ${dropdownBg} overflow-hidden`}
-                  >
-                    {/* KL pinned at top with visual separator */}
-                    <div className="px-4 pt-3 pb-2">
-                      <Link
-                        href="/areas/kuala-lumpur"
-                        onClick={() => setIsAreasDropdownOpen(false)}
-                        className={`block text-sm font-bold tracking-wide transition-colors duration-200 ${dropdownHighlight}`}
-                      >
-                        Kuala Lumpur
-                      </Link>
-                    </div>
-                    <div className={`mx-4 h-px mb-2 ${isOverDark ? 'bg-white/10' : 'bg-black/10'}`} />
-                    <ul className="px-2 pb-3 space-y-0.5">
-                      {areas.slice(1).map((area) => (
-                        <li key={area.href}>
-                          <Link
-                            href={area.href}
-                            onClick={() => setIsAreasDropdownOpen(false)}
-                            className={`block px-3 py-1.5 rounded-md text-sm transition-colors duration-200 ${dropdownText}`}
-                          >
-                            {area.label}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
+                {/* Always in DOM for crawler visibility, shown/hidden via CSS */}
+                <div
+                  className={`absolute top-full left-1/2 -translate-x-1/2 mt-3 w-56 rounded-lg border shadow-xl backdrop-blur-xl ${dropdownBg} overflow-hidden transition-all duration-200 ${
+                    isAreasDropdownOpen
+                      ? 'opacity-100 pointer-events-auto translate-y-0'
+                      : 'opacity-0 pointer-events-none -translate-y-1'
+                  }`}
+                  aria-hidden={!isAreasDropdownOpen}
+                >
+                  {/* KL pinned at top with visual separator */}
+                  <div className="px-4 pt-3 pb-2">
+                    <Link
+                      href="/areas/kuala-lumpur"
+                      onClick={() => setIsAreasDropdownOpen(false)}
+                      className={`block text-sm font-bold tracking-wide transition-colors duration-200 ${dropdownHighlight}`}
+                      tabIndex={isAreasDropdownOpen ? 0 : -1}
+                    >
+                      Kuala Lumpur
+                    </Link>
                   </div>
-                )}
+                  <div className={`mx-4 h-px mb-2 ${isOverDark ? 'bg-white/10' : 'bg-black/10'}`} />
+                  <ul className="px-2 pb-3 space-y-0.5">
+                    {areas.slice(1).map((area) => (
+                      <li key={area.href}>
+                        <Link
+                          href={area.href}
+                          onClick={() => setIsAreasDropdownOpen(false)}
+                          className={`block px-3 py-1.5 rounded-md text-sm transition-colors duration-200 ${dropdownText}`}
+                          tabIndex={isAreasDropdownOpen ? 0 : -1}
+                        >
+                          {area.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </li>
 
               <li>

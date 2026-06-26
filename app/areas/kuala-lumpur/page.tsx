@@ -4,6 +4,7 @@ import {
   MapPin, Phone, ArrowRight, CheckCircle2,
   Star, Clock, Mail
 } from 'lucide-react';
+import SignatureProjects from '@/components/SignatureProjects';
 
 export const metadata: Metadata = {
   title: 'Award-Winning Interior Designer in Kuala Lumpur | Voala Interior',
@@ -295,6 +296,8 @@ export default function KualaLumpurPage() {
           </div>
         </div>
       </section>
+
+      <SignatureProjects />
 
       {/* ── WHY US ───────────────────────────────────────────── */}
       <section className="py-16 md:py-24 bg-gray-50">

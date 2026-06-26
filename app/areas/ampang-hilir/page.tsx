@@ -6,6 +6,8 @@ import {
   ArrowRight, Mail 
 } from 'lucide-react';
 import type { Metadata } from 'next';
+import SignatureProjects from '@/components/SignatureProjects';
+
 
 export const metadata: Metadata = {
   title: 'Interior Designer Ampang Hilir | Luxury Condos & Homes KL – Voala Interior',
@@ -268,6 +270,8 @@ export default function AmpangHilirPage() {
           </div>
         </div>
       </section>
+
+      <SignatureProjects />
 
       {/* ── WHY US ───────────────────────────────────────────── */}
       <section className="py-16 md:py-24 bg-gray-50">

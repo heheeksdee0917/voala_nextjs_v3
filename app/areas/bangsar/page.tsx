@@ -1,4 +1,3 @@
-// app/areas/bangsar/page.tsx
 import React from 'react';
 import Link from 'next/link';
 import {
@@ -6,6 +5,7 @@ import {
   Home, ChevronRight, MessageCircle, Award, Trees, Mail, ArrowRight, Building2
 } from 'lucide-react';
 import type { Metadata } from 'next';
+import SignatureProjects from '@/components/SignatureProjects';
 
 export const metadata: Metadata = {
   title: 'Interior Designer Bangsar | Best Interior Design KL – Voala Interior',
@@ -296,6 +296,8 @@ export default function BangsarPage() {
           </div>
         </div>
       </section>
+
+      <SignatureProjects />
 
       {/* ── WHY US ───────────────────────────────────────────── */}
       <section className="py-16 md:py-24 bg-gray-50">
