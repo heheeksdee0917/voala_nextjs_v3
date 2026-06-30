@@ -1,7 +1,6 @@
 "use client"
 
 import React, { useState, useEffect, useRef } from 'react';
-import Link from 'next/link';
 import { Quote, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useFadeInOnScroll } from '../hooks/useFadeInOnScroll';
 
@@ -12,24 +11,24 @@ const TestimonialCarousel: React.FC = () => {
 
   const testimonials = [
     {
-      text: "We are unpacking gradually now. Very happy with everything. <3 <3 <3. Thank you for your team/'s great work. I noticed the carpentry quality of your company is excellent. Very detail and meticulous.",
+      text: "We are unpacking gradually now. Very happy with everything. <3 <3 <3. Thank you for your team/’s great work. I noticed the carpentry quality of your company is excellent. Very detail and meticulous.",
       author: "Ellie",
       position: "Bukit Jalil",
+      image: "/Voala/ProjectSource/Signature-Projects/Rimba/RimbaInfo/1.jpg"
     },
     {
       text: "Yes big pleasure and very happy with the outcome (-: . As well as the journey! Anna was especially helpful - answering all our questions almost anytime of the day. :P",
       author: "Lewis",
       position: "Mont Kiara",
+      image: "/Voala/ProjectSource/Signature-Projects/Rimba/RimbaInfo/1.jpg"
     },
     {
-      text: "Thanks so much once again for making my home a heaven! Not only the design is good, it is also very functional! Super well done once again. Let's catch up again next month when I am back. <3 SUPER GRATEFUL AND THANKFUL! Voala is the SUPER BEST!!! Love you all!!! <3",
+      text: "Thanks so much once again for making my home a heaven! Not only the design is good, it is also very functional! Super well done once again. Let’s catch up again next month when I am back. <3 SUPER GRATEFUL AND THANKFUL! Voala is the SUPER BEST!!! Love you all!!! <3",
       author: "Susan",
       position: "Bukit Jalil",
+      image: "/Voala/ProjectSource/Signature-Projects/Rimba/RimbaInfo/1.jpg"
     }
   ];
-
-  const toSlug = (text: string) =>
-    text.toLowerCase().replace(/\s+/g, '-');
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -65,11 +64,20 @@ const TestimonialCarousel: React.FC = () => {
   };
 
   return (
-    <div className="py-20 bg-white">
+    <section className="py-20 bg-white">
       <div className="container mx-auto px-8">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 font-linik gradient-highlight">
+            Client Testimonials
+          </h2>
+          <p className="text-xl text-gray-700 max-w-2xl mx-auto font-linik">
+            Hear from our satisfied clients about their experience with Voala Interior
+          </p>
+        </div>
+        
         <div ref={carouselRef} className="relative max-w-4xl mx-auto">
           <div className="overflow-hidden rounded-lg shadow-lg border border-gray-200">
-            <div
+            <div 
               className="flex transition-transform duration-500 ease-in-out"
               style={{ transform: `translateX(-${currentIndex * 100}%)` }}
             >
@@ -79,57 +87,50 @@ const TestimonialCarousel: React.FC = () => {
                   <blockquote className="text-2xl text-black leading-relaxed mb-8 italic font-linik">
                     "{testimonial.text.split(' ').map((word, i) => {
                       const highlightWords = ['impressed', 'flawless', 'detail', 'exceeded', 'impeccable', 'unforgettable'];
-                      return highlightWords.includes(word.toLowerCase().replace(/[.,]/g, '')) ?
-                        <span key={i} className="gradient-highlight">{word} </span> :
+                      return highlightWords.includes(word.toLowerCase().replace(/[.,]/g, '')) ? 
+                        <span key={i} className="gradient-highlight">{word} </span> : 
                         <span key={i}>{word} </span>
                     })}"
                   </blockquote>
                   <div className="flex items-center justify-center gap-4">
                     <div className="text-center">
                       <p className="font-bold text-black font-linik gradient-highlight">{testimonial.author}</p>
-                      <Link
-                        href={`/areas/${toSlug(testimonial.position)}`}
-                        className="block text-gray-600 font-linik hover:text-black transition-colors duration-200 underline-offset-2 hover:underline"
-                      >
-                        {testimonial.position}
-                      </Link>
+                      <p className="text-gray-600 font-linik">{testimonial.position}</p>
                     </div>
                   </div>
                 </div>
               ))}
             </div>
           </div>
-
-          <button
+          
+          <button 
             onClick={prevTestimonial}
             className="absolute left-4 top-1/2 -translate-y-1/2 bg-black hover:bg-gray-800 text-white p-3 rounded-full transition-all duration-300 shadow-lg"
-            aria-label="Previous testimonial"
           >
             <ChevronLeft size={24} />
           </button>
-
-          <button
+          
+          <button 
             onClick={nextTestimonial}
             className="absolute right-4 top-1/2 -translate-y-1/2 bg-black hover:bg-gray-800 text-white p-3 rounded-full transition-all duration-300 shadow-lg"
-            aria-label="Next testimonial"
           >
             <ChevronRight size={24} />
           </button>
-
+          
           <div className="flex justify-center mt-8 gap-2">
             {testimonials.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentIndex ? 'bg-black' : 'bg-gray-300'
-                  }`}
-                aria-label={`Go to testimonial ${index + 1}`}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  index === currentIndex ? 'bg-black' : 'bg-gray-300'
+                }`}
               />
             ))}
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

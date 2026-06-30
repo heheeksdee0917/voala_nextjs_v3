@@ -1,57 +1,32 @@
 "use client"
 
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import { ArrowLeft, MapPin, Calendar, Maximize2 } from 'lucide-react';
 import { useRouter } from 'next/navigation';
-import Link from 'next/link';
 import BackToTop from '@/components/BackToTop';
 import { projectsData } from '@/data/projectsData';
 import StandardButton from '@/components/ui/standard-button';
 import { useFadeInOnScroll } from '@/hooks/useFadeInOnScroll';
 import ImageGalleryModal from '@/components/ui/ImageGalleryModal';
 import GalleryImageCard from '@/components/GalleryImageCard';
-import { ArrowLeft, MapPin, Calendar, Maximize2, ExternalLink } from 'lucide-react';
 
 interface ProjectDetailContentProps {
   projectId: string;
 }
 
-const BATCH_SIZE = 6;
-
 const ProjectDetailContent: React.FC<ProjectDetailContentProps> = ({ projectId }) => {
   const router = useRouter();
+
   const { ref: imageRef, isInView } = useFadeInOnScroll();
   const [isGalleryModalOpen, setIsGalleryModalOpen] = useState(false);
   const [currentGalleryImageIndex, setCurrentGalleryImageIndex] = useState(0);
 
-  const [visibleCount, setVisibleCount] = useState(BATCH_SIZE);
-  const [loadedCount, setLoadedCount] = useState(0);
-
   const project = projectsData.find(p => p.id === projectId);
-  const services = project?.services ?? [];
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  useEffect(() => {
-    setVisibleCount(BATCH_SIZE);
-    setLoadedCount(0);
-  }, [projectId]);
-
-  const totalImages = project?.galleryImages.length ?? 0;
-  const currentBatchSize = Math.min(visibleCount, totalImages);
-
-  const handleImageSettled = useCallback(() => {
-    setLoadedCount(prev => {
-      const next = prev + 1;
-      if (next >= currentBatchSize && visibleCount < totalImages) {
-        setVisibleCount(v => Math.min(v + BATCH_SIZE, totalImages));
-        return 0;
-      }
-      return next;
-    });
-  }, [currentBatchSize, visibleCount, totalImages]);
 
   const handleImageClick = (index: number) => {
     setCurrentGalleryImageIndex(index);
@@ -78,9 +53,7 @@ const ProjectDetailContent: React.FC<ProjectDetailContentProps> = ({ projectId }
 
   return (
     <div className="min-h-screen bg-white font-linik">
-
-      {/* Hero */}
-      <section className="relative h-screen overflow-hidden z-0">
+      <section className="relative h-screen overflow-hidden">
         <div
           ref={imageRef as React.RefObject<HTMLDivElement>}
           className={`w-full h-full ${isInView ? 'fadeInUpAnimated' : 'fadeInUpTrigger'}`}
@@ -111,7 +84,6 @@ const ProjectDetailContent: React.FC<ProjectDetailContentProps> = ({ projectId }
               transition={{ duration: 0.8, delay: 0.2 }}
               className="max-w-4xl"
             >
-              {/* Category + Type pills */}
               <div className="flex flex-wrap items-center gap-2 md:gap-3 mb-3 md:mb-4">
                 <span className="px-2 md:px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full text-xs md:text-sm font-medium">
                   {project.category}
@@ -129,81 +101,37 @@ const ProjectDetailContent: React.FC<ProjectDetailContentProps> = ({ projectId }
                 <span dangerouslySetInnerHTML={{ __html: project.description }} />
               </p>
 
-              {/* Meta row: Location, Completed, Size + Services */}
-              <div className="flex flex-wrap items-start gap-6 md:gap-8">
-
-                {/* Location */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
                 <div className="flex items-center gap-2 md:gap-3 text-white">
-                  <MapPin size={16} className="md:w-5 md:h-5 text-white/80 shrink-0" />
+                  <MapPin size={16} className="md:w-5 md:h-5 text-white/80" />
                   <div>
                     <p className="text-xs md:text-sm text-white/80">Location</p>
-                    <p className="font-semibold text-sm md:text-base">
-                      {project.areaLink && project.areaLabel ? (
-                        <>
-                          {project.location.replace(project.areaLabel, '')}
-                          <Link
-                            href={project.areaLink}
-                            className="inline-flex items-center gap-1 hover:underline underline-offset-2"
-                          >
-                            {project.areaLabel}
-                            <ExternalLink className="w-3 h-3" />
-                          </Link>
-                        </>
-                      ) : (
-                        project.location
-                      )}
-                    </p>
+                    <p className="font-semibold text-sm md:text-base">{project.location}</p>
                   </div>
                 </div>
-
-                {/* Completed */}
                 <div className="flex items-center gap-2 md:gap-3 text-white">
-                  <Calendar size={16} className="md:w-5 md:h-5 text-white/80 shrink-0" />
+                  <Calendar size={16} className="md:w-5 md:h-5 text-white/80" />
                   <div>
                     <p className="text-xs md:text-sm text-white/80">Completed</p>
                     <p className="font-semibold text-sm md:text-base">{project.year}</p>
                   </div>
                 </div>
-
-                {/* Size */}
                 <div className="flex items-center gap-2 md:gap-3 text-white">
-                  <Maximize2 size={16} className="md:w-5 md:h-5 text-white/80 shrink-0" />
+                  <Maximize2 size={16} className="md:w-5 md:h-5 text-white/80" />
                   <div>
                     <p className="text-xs md:text-sm text-white/80">Size</p>
                     <p className="font-semibold text-sm md:text-base">{project.size}</p>
                   </div>
                 </div>
-
-                {/* Services — visually distinct, right of Size */}
-                {services.length > 0 && (
-                  <div>
-                    <p className="text-xs md:text-sm text-white/80 mb-1.5">Services</p>
-                    <div className="flex flex-wrap gap-2">
-                      {services.map((service) => (
-                        <button
-                          key={service.slug}
-                          onClick={() => router.push(`/services/${service.slug}`)}
-                          className="px-2.5 py-1 rounded-full text-xs md:text-sm font-medium border border-white/60 text-white bg-transparent hover:bg-white hover:text-black transition-all duration-300"
-                        >
-                          {service.label}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-                )}
-
               </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Content */}
-      <section className="py-16 md:py-20 bg-white relative z-10">
+      <section className="py-16 md:py-20 bg-white">
         <div className="container mx-auto px-4 md:px-8">
           <div className="max-w-4xl mx-auto">
-
-            {/* Overview */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -218,7 +146,6 @@ const ProjectDetailContent: React.FC<ProjectDetailContentProps> = ({ projectId }
               </p>
             </motion.div>
 
-            {/* Gallery */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -229,19 +156,16 @@ const ProjectDetailContent: React.FC<ProjectDetailContentProps> = ({ projectId }
                 Project <span className="gradient-highlight">Gallery</span>
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-                {project.galleryImages.slice(0, visibleCount).map((image, index) => (
+                {project.galleryImages.map((image, index) => (
                   <GalleryImageCard
                     key={index}
                     imageSrc={image.src}
-                    alt={image.alt ?? project.alt}
                     onClick={() => handleImageClick(index)}
-                    onSettled={handleImageSettled}
                   />
                 ))}
               </div>
             </motion.div>
 
-            {/* CTA */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -260,7 +184,6 @@ const ProjectDetailContent: React.FC<ProjectDetailContentProps> = ({ projectId }
                 </StandardButton>
               </div>
             </motion.div>
-
           </div>
         </div>
       </section>

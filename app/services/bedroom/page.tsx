@@ -1,29 +1,9 @@
+"use client"
+
 import React from 'react';
 import { Droplets, ShowerHead, Lightbulb, Package, Wind, Shield, CheckCircle } from 'lucide-react';
 import Link from 'next/link';
-import StandardButton from '../../../components/ui/standard-button';
-import type { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: 'Master Bedroom Design KL - Waterproofing, Storage & Lighting | Voala Interior',
-  description: 'Master bedroom design in Kuala Lumpur: waterproofing to stop mould, smart storage, layered lighting, anti-slip flooring & ventilation. Real KL condo & house examples.',
-  alternates: {
-    canonical: 'https://voalainterior.com/services/bedroom',
-  },
-  openGraph: {
-    title: 'Master Bedroom Design KL - Humidity-Proof Solutions',
-    description: 'Expert bedroom design for KL homes: waterproofing, storage, lighting & ventilation solutions that last.',
-    url: 'https://voalainterior.com/services/bedroom-design',
-    images: [
-      {
-        url: 'https://voalainterior.com/Voala/Voala_OG.png',
-        width: 1200,
-        height: 630,
-      },
-    ],
-  },
-};
-
+import StandardButton from '@/components/ui/standard-button';
 
 const Bedroom: React.FC = () => {
   const coreElements = [

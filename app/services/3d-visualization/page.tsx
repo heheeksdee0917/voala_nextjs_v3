@@ -1,67 +1,8 @@
+// pages/services/ThreeDVisualizationPage.tsx
 import React from 'react';
 import { Box, Eye, Rotate3D, Palette, Sun, RefreshCw, CheckCircle, Sparkles } from 'lucide-react';
 import Link from 'next/link';
 import StandardButton from '../../../components/ui/standard-button';
-import type { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: '3D Visualisation KL - Photorealistic Renders & Walkthroughs | Voala Interior',
-  description: '3D visualisation & photorealistic renderings in Kuala Lumpur: see your condo or house before renovation. High-quality renders, 360° walkthroughs & mood boards.',
-  alternates: {
-    canonical: 'https://voalainterior.com/services/3d-visualization',
-  },
-  openGraph: {
-    title: "3D Visualisation KL - See Your Home Before It's Built",
-    description: 'Professional 3D visualization services in Kuala Lumpur. Photorealistic renders, 360° walkthroughs, and VR experiences.',
-    url: 'https://voalainterior.com/services/3d-visualization',
-    images: [
-      {
-        url: 'https://voalainterior.com/Voala/Voala_OG.png',
-        width: 1200,
-        height: 630,
-      },
-    ],
-  },
-};
-
-const faqSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'Are the renders 100% accurate?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'With proper modelling and material mapping—yes, very close (95%+). Lighting and minor finishes may vary slightly.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Can I see the space in VR?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Yes—we offer VR files for Oculus/Meta Quest or phone-based VR mode.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'How realistic is KL humidity lighting in renders?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'We use tropical HDRI maps and real KL daylight settings so marble, wood, and paint look true-to-life.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'What software do you use for 3D visualisation?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: '3ds Max + V-Ray, Lumion, Twinmotion, Enscape – depending on project needs.',
-      },
-    },
-  ],
-};
 
 const ThreeDVisualizationPage: React.FC = () => {
   const visualServices = [
@@ -125,11 +66,6 @@ const ThreeDVisualizationPage: React.FC = () => {
   ];
 
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
       <div className="min-h-screen bg-white">
         <div className="max-w-7xl mx-auto px-4 py-16 md:py-24">
           <div className="bg-white rounded-2xl border border-gray-200 p-8 md:p-12 shadow-lg">
@@ -199,7 +135,7 @@ const ThreeDVisualizationPage: React.FC = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {[
                   'Whether the island blocks walkways',
-                  "How marble reflects KL's warm afternoon light",
+                  'How marble reflects KL’s warm afternoon light',
                   'If the accent wall overpowers the room',
                   'How storage fits without shrinking living space',
                   'Door swing conflicts and circulation issues',
@@ -320,7 +256,7 @@ const ThreeDVisualizationPage: React.FC = () => {
                   Stop imagining—start seeing your future home clearly.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                  <Link href="/contact">
+                  <Link href  ="/contact">
                     <StandardButton variant="primary" showArrow>
                       Book 3D Visualisation
                     </StandardButton>
@@ -340,7 +276,6 @@ const ThreeDVisualizationPage: React.FC = () => {
           </div>
         </div>
       </div>
-    </>
   );
 };
 

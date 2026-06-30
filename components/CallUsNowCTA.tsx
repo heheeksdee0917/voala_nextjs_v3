@@ -3,17 +3,11 @@
 import React, { useEffect, useRef } from 'react';
 import { Phone } from 'lucide-react';
 import StandardButton from './ui/standard-button';
-import { useRouter } from 'next/navigation';
 
 const CallUsNowCTA: React.FC = () => {
   const ctaRef = useRef<HTMLDivElement>(null);
-  const router = useRouter();
-  const handleGetDesign = () => {
-    router.push('/contact');
-  };
 
   useEffect(() => {
-
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -36,19 +30,21 @@ const CallUsNowCTA: React.FC = () => {
         <div ref={ctaRef} className="flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="text-center md:text-left">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 font-linik gradient-highlight">
-              Let's start building
+              Need help? Call us now →
             </h2>
             <p className="text-xl text-gray-700 font-linik">
               Our design consultants are ready to discuss your project requirements
             </p>
           </div>
-
+          
           <StandardButton
-            onClick={handleGetDesign}
+            onClick={() => window.location.href = 'tel:+60125053395'}
             variant="primary"
             className="inline-flex items-center gap-3"
+            showArrow
           >
-            Talk to us
+            <Phone size={20} />
+            Call Us Now
           </StandardButton>
         </div>
       </div>

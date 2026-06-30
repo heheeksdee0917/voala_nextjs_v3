@@ -2,28 +2,6 @@ import React from 'react';
 import { Ruler, Users, Grid3x3, Sofa, Package, Hammer, CheckCircle, AlertTriangle } from 'lucide-react';
 import Link from 'next/link';
 import StandardButton from '@/components/ui/standard-button';
-import type { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: 'Space Planning KL | Layout Reconfiguration & Floor Plan Design – Voala Interior',
-  description: 'Space planning & layout reconfiguration in Kuala Lumpur: complete floor-plan redesign, room flow optimization, furniture placement, storage solutions & structural changes for condos, terraces & homes.',
-  alternates: {
-    canonical: 'https://voalainterior.com/services/space-planning',
-  },
-  openGraph: {
-    title: 'Space Planning KL | Layout Reconfiguration & Floor Plan Design – Voala Interior',
-    description: 'Expert space planning & layout reconfiguration in Kuala Lumpur: optimize room flow, furniture placement, storage & structural changes for better living in condos, terraces & landed homes.',
-    url: 'https://voalainterior.com/services/space-planning',
-    images: [
-      {
-        url: 'https://voalainterior.com/Voala/Voala_OG.png',
-        width: 1200,
-        height: 630,
-        alt: 'Before and after space planning floor plan redesign for Kuala Lumpur condo by Voala Interior',
-      },
-    ],
-  },
-};
 
 const SpacePlanning: React.FC = () => {
   const planningProcess = [
