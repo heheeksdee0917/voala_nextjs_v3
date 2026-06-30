@@ -11,7 +11,7 @@ import React from 'react'
 const services = [
   { label: '3D Visualization', href: '/services/3d-visualization' },
   { label: 'Residential Interior Design & Built', href: '/services/residential-interior-design' },
-  { label: 'Commercial Interior Design', href: '/services/commercial' },
+  { label: 'Commercial Interior Design', href: '/services/commercial-interior-design' },
   { label: 'Consultation', href: '/services/consultation' },
   { label: 'Material Selection', href: '/services/material-selection' },
   { label: 'Space Planning', href: '/services/space-planning' },

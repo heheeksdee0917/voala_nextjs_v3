@@ -1,13 +1,12 @@
 "use client"
 
-import React, { useEffect, useRef, memo } from 'react';
+import React, { memo } from 'react';
 import { MapPin } from 'lucide-react';
 import { projectsData } from '../data/projectsData';
 import { useFadeInOnScroll } from '../hooks/useFadeInOnScroll';
 import { useRouter } from 'next/navigation';
 
 const SignatureProjects: React.FC = () => {
-  const projectsRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
 
   // Use first 6 projects from projectsData
@@ -18,23 +17,6 @@ const SignatureProjects: React.FC = () => {
     image: project.image,
     alt: project.alt,
   }));
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animate-fade-in');
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (projectsRef.current) {
-      observer.observe(projectsRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
 
   const handleProjectClick = (projectId: string) => {
     router.push(`/projects/${projectId}`);
@@ -59,7 +41,7 @@ const SignatureProjects: React.FC = () => {
           </p>
         </div>
         
-        <div ref={projectsRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => (
             <ProjectCard
               key={project.id}
