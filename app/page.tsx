@@ -1,4 +1,6 @@
 import { Suspense } from 'react';
+import type { Metadata } from 'next';
+import React from 'react';
 import HeroSection from '@/components/HeroSection';
 import VoalaAwardProjects from '@/components/VoalaAwardProjects';
 import ServicesSection from '@/components/ServicesSection';
@@ -13,44 +15,85 @@ import {
   LazyService,
 } from '@/components/LazyComponents';
 
-const ComponentLoader = () => (
-  <div className="py-20 flex justify-center">
-    <div className="animate-pulse bg-gray-200 h-64 w-full max-w-4xl rounded-lg"></div>
-  </div>
-);
+export const metadata: Metadata = {
+  title: 'Award-Winning Interior Designer in KL | Voala Interior Kuala Lumpur',
+  description: 'Voala Interior – Award-winning interior designer in KL specialising in luxury residential & commercial projects. One-stop design & build studio in Kuala Lumpur.',
+  alternates: {
+    canonical: 'https://voalainterior.com',
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_MY',
+    url: 'https://voalainterior.com',
+    siteName: 'Voala Interior',
+    title: 'Award-Winning Interior Designer in KL | Voala Interior Kuala Lumpur',
+    description: 'Award-winning interior designer in KL. Voala Interior offers luxury residential & commercial interior design in Kuala Lumpur. One-stop design & build studio from concept to handover.',
+    images: [
+      {
+        url: 'https://voalainterior.com/Voala/Voala_OG.png',
+        width: 1200,
+        height: 630,
+        alt: 'Award-winning interior design studio Voala Interior in Kuala Lumpur – residential & commercial projects',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Award-Winning Interior Designer in KL | Voala Interior Kuala Lumpur',
+    description: 'Award-winning interior designer in KL. Voala Interior offers luxury residential & commercial interior design in Kuala Lumpur. One-stop design & build studio from concept to handover.',
+    images: ['https://voalainterior.com/Voala/Voala_OG.png'],
+  },
+};
 
 export default function HomePage() {
   return (
     <>
-      {/* SEO-friendly content (hidden but crawlable) */}
-      <div className="sr-only">
-        <h1>Best Interior Design in KL</h1>
-        <p>At Voala Interior, we craft bespoke environments that speak to who you are and how you live, work, and connect — all guided by our signature heartwork.</p>
-      </div>
-      
-      {/* Visual hero section */}
+
       <HeroSection />
-      <ServicesSection />
-      <TimelineSection />
-      <VoalaAwardProjects />
-      <Suspense fallback={<ComponentLoader />}>
-        <LazySignatureProjects />
+
+      <section id="services-overview">
+        <ServicesSection />
+      </section>
+
+      <section id="timeline-section">
+        <TimelineSection />
+      </section>
+
+      <section id="award-projects">
+        <VoalaAwardProjects />
+      </section>
+
+      <Suspense fallback={<div className="h-screen" />}>
+        <section id="signature-projects">
+          <LazySignatureProjects />
+        </section>
       </Suspense>
-      <Suspense fallback={<ComponentLoader />}>
-        <LazyAboutSection />
+
+      <Suspense fallback={<div className="h-screen" />}>
+        <section id="about">
+          <LazyAboutSection />
+        </section>
       </Suspense>
-      <Suspense fallback={<ComponentLoader />}>
-        <LazyTestimonialCarousel />
+
+      <Suspense fallback={<div className="h-screen" />}>
+        <section id="testimonials">
+          <LazyTestimonialCarousel />
+        </section>
       </Suspense>
-      <Suspense fallback={<ComponentLoader />}>
-        <LazyService />
+
+
+      <Suspense fallback={<div className="h-screen" />}>
+        <section id="cta">
+          <LazyCallUsNowCTA />
+        </section>
       </Suspense>
-      <Suspense fallback={<ComponentLoader />}>
-        <LazyCallUsNowCTA />
+
+      <Suspense fallback={<div className="h-screen" />}>
+        <section id="recognition">
+          <LazyRecognitionGrid />
+        </section>
       </Suspense>
-      <Suspense fallback={<ComponentLoader />}>
-        <LazyRecognitionGrid />
-      </Suspense>
+
       <BackToTop />
     </>
   );

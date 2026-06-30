@@ -39,27 +39,19 @@ export const ImagesSlider = ({
   useEffect(() => {
     const loadImages = async () => {
       setLoading(true);
-      console.log("Starting to load images:", images);
-      
+
       const loadPromises = images.map((image) => {
         return new Promise<string | null>((resolve) => {
           const img = new Image();
           img.src = image;
-          img.onload = () => {
-            console.log(`✅ Image loaded successfully: ${image}`);
-            resolve(image);
-          };
-          img.onerror = () => {
-            console.warn(`❌ Failed to load image: ${image}`);
-            resolve(null);
-          };
+          img.onload = () => resolve(image);
+          img.onerror = () => resolve(null);
         });
       });
 
       try {
         const results = await Promise.all(loadPromises);
         const validImages = results.filter(image => image !== null) as string[];
-        console.log("✅ Valid images loaded:", validImages.length, "out of", images.length);
         setLoadedImages(validImages);
         setLoading(false);
       } catch (error) {
@@ -75,11 +67,8 @@ export const ImagesSlider = ({
 
   useEffect(() => {
     if (loading || loadedImages.length === 0) {
-      console.log("⏳ Skipping autoplay setup - loading:", loading, "images:", loadedImages.length);
       return;
     }
-
-    console.log("🎬 Setting up autoplay and keyboard controls");
 
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "ArrowRight") {
@@ -94,7 +83,6 @@ export const ImagesSlider = ({
     let interval: NodeJS.Timeout;
     if (autoplay) {
       interval = setInterval(() => {
-        console.log("🔄 Auto-advancing to next image");
         handleNext();
       }, 5000);
     }
@@ -106,13 +94,6 @@ export const ImagesSlider = ({
   }, [autoplay, handleNext, handlePrevious, loading, loadedImages.length]);
 
   const areImagesLoaded = !loading && loadedImages.length > 0;
-
-  console.log("🎨 Render state:", {
-    areImagesLoaded,
-    currentIndex,
-    totalImages: loadedImages.length,
-    loading
-  });
 
   if (loading) {
     return (
@@ -148,18 +129,20 @@ export const ImagesSlider = ({
   return (
     <div
       className={cn(
-        "overflow-hidden h-full w-full relative flex items-center justify-center",
+        "overflow-hidden h-full w-full relative",
         className
       )}
       style={{
         perspective: "1000px",
       }}
     >
-      {/* Children content (text overlay) */}
-      <div className="relative z-30">
+      {/* Children content (text overlay) — spans full slider height so
+          absolutely-positioned children (e.g. a scroll indicator) can
+          anchor to the true bottom edge instead of a content-sized box */}
+      <div className="absolute inset-0 z-30 flex items-center justify-center px-4 md:px-8">
         {children}
       </div>
-      
+
       {/* Overlay */}
       {overlay && (
         <div
@@ -174,9 +157,9 @@ export const ImagesSlider = ({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ 
-            duration: 0.8, 
-            ease: "easeInOut" 
+          transition={{
+            duration: 0.8,
+            ease: "easeInOut"
           }}
           className="absolute inset-0 w-full h-full z-10"
           style={{

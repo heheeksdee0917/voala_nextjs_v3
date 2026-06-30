@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowLeft, MapPin, Calendar, Maximize2 } from 'lucide-react';
-import { useRouter } from 'next/navigation'; // ← added this
+import { useRouter } from 'next/navigation';
 import Footer from '@/components/Footer';
 import BackToTop from '@/components/BackToTop';
 import { projectsData } from '@/data/projectsData';
@@ -23,12 +23,41 @@ const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ params }) => {
   const { ref: imageRef, isInView } = useFadeInOnScroll();
   const [isGalleryModalOpen, setIsGalleryModalOpen] = useState(false);
   const [currentGalleryImageIndex, setCurrentGalleryImageIndex] = useState(0);
+  const [heroImageLoaded, setHeroImageLoaded] = useState(false);
+  const [isPageReady, setIsPageReady] = useState(false);
 
   const project = projectsData.find(p => p.id === projectId);
+  const services = project?.services ?? [];
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  // Preload hero image
+  useEffect(() => {
+    if (!project?.image) return;
+
+    const img = new Image();
+    img.src = project.image;
+
+    img.onload = () => {
+      setHeroImageLoaded(true);
+      setTimeout(() => setIsPageReady(true), 100);
+    };
+
+    img.onerror = () => {
+      console.error('Failed to load hero image');
+      setHeroImageLoaded(true);
+      setIsPageReady(true);
+    };
+
+    const timeout = setTimeout(() => {
+      setHeroImageLoaded(true);
+      setIsPageReady(true);
+    }, 3000);
+
+    return () => clearTimeout(timeout);
+  }, [project?.image]);
 
   const handleImageClick = (index: number) => {
     setCurrentGalleryImageIndex(index);
@@ -53,13 +82,24 @@ const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ params }) => {
     );
   }
 
+  if (!heroImageLoaded) {
+    return (
+      <div className="min-h-screen bg-white font-linik flex items-center justify-center">
+        <div className="text-center">
+          <div className="w-16 h-16 border-4 border-gray-200 border-t-black rounded-full animate-spin mx-auto mb-4"></div>
+          <p className="text-gray-600">Loading project...</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <div className="min-h-screen bg-white font-linik">
+    <div className={`min-h-screen bg-white font-linik transition-opacity duration-500 ${isPageReady ? 'opacity-100' : 'opacity-0'}`}>
       {/* Hero Section */}
       <section className="relative h-screen overflow-hidden">
         <div
           ref={imageRef as React.RefObject<HTMLDivElement>}
-          className={`w-full h-full ${isInView ? 'fadeInUpAnimated' : 'fadeInUpTrigger'}`}
+          className="w-full h-full"
           style={{
             backgroundImage: `url(${project.image})`,
             backgroundSize: 'cover',
@@ -89,6 +129,7 @@ const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ params }) => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="max-w-4xl"
             >
+              {/* Category + Type pills */}
               <div className="flex flex-wrap items-center gap-2 md:gap-3 mb-3 md:mb-4">
                 <span className="px-2 md:px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full text-xs md:text-sm font-medium">
                   {project.category}
@@ -106,28 +147,54 @@ const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ params }) => {
                 <span dangerouslySetInnerHTML={{ __html: project.description }} />
               </p>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+              {/* Meta row: Location, Completed, Size + Services */}
+              <div className="flex flex-wrap items-start gap-6 md:gap-8">
+
+                {/* Location */}
                 <div className="flex items-center gap-2 md:gap-3 text-white">
-                  <MapPin size={16} className="md:w-5 md:h-5 text-white/80" />
+                  <MapPin size={16} className="md:w-5 md:h-5 text-white/80 shrink-0" />
                   <div>
                     <p className="text-xs md:text-sm text-white/80">Location</p>
                     <p className="font-semibold text-sm md:text-base">{project.location}</p>
                   </div>
                 </div>
+
+                {/* Completed */}
                 <div className="flex items-center gap-2 md:gap-3 text-white">
-                  <Calendar size={16} className="md:w-5 md:h-5 text-white/80" />
+                  <Calendar size={16} className="md:w-5 md:h-5 text-white/80 shrink-0" />
                   <div>
                     <p className="text-xs md:text-sm text-white/80">Completed</p>
                     <p className="font-semibold text-sm md:text-base">{project.year}</p>
                   </div>
                 </div>
+
+                {/* Size */}
                 <div className="flex items-center gap-2 md:gap-3 text-white">
-                  <Maximize2 size={16} className="md:w-5 md:h-5 text-white/80" />
+                  <Maximize2 size={16} className="md:w-5 md:h-5 text-white/80 shrink-0" />
                   <div>
                     <p className="text-xs md:text-sm text-white/80">Size</p>
                     <p className="font-semibold text-sm md:text-base">{project.size}</p>
                   </div>
                 </div>
+
+                {/* Services — visually distinct, right of Size */}
+                {services.length > 0 && (
+                  <div>
+                    <p className="text-xs md:text-sm text-white/80 mb-1.5">Services</p>
+                    <div className="flex flex-wrap gap-2">
+                      {services.map((service) => (
+                        <button
+                          key={service.slug}
+                          onClick={() => router.push(`/services/${service.slug}`)}
+                          className="px-2.5 py-1 rounded-full text-xs md:text-sm font-medium border border-white/60 text-white bg-transparent hover:bg-white hover:text-black transition-all duration-300"
+                        >
+                          {service.label}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
               </div>
             </motion.div>
           </div>
@@ -167,6 +234,7 @@ const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ params }) => {
                   <GalleryImageCard
                     key={index}
                     imageSrc={image.src}
+                    alt={image.alt ?? project.alt}
                     onClick={() => handleImageClick(index)}
                   />
                 ))}
