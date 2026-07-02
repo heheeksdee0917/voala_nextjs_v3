@@ -28,10 +28,10 @@ const samsungSharpSans = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL('https://voalainterior.com'),
   title: {
-    default: 'Award Winning Interior Designer KL | Interior Designer in KL | Voala Interior',
-    template: '%s | Award Winning Interior Designer KL | Voala Interior',
+    default: 'Interior Designer KL | Renovation Company | Voala Interior',
+    template: '%s | Voala Interior',
   },
-  description: "Voala Interior is an Award Winning Interior Designer KL with over 10 years of experience. We are a premier one-stop design & build studio in Kuala Lumpur specialising in luxury residential and commercial interior design projects.",
+  description: "Voala Interior is a multi-award-winning interior design and renovation company in Kuala Lumpur. Specialising in residential and commercial interior design across the Klang Valley. Designs You'll Love. Heartwork You'll Feel.",
   openGraph: {
     siteName: 'Voala Interior',
     locale: 'en_MY',
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     shortcut: '/favicon.ico',
     apple: '/favicon.ico',
   },
-};
+}
 
 const structuredData = {
   '@context': 'https://schema.org',
@@ -62,10 +62,11 @@ const structuredData = {
   '@id': 'https://voalainterior.com/#localbusiness',
   name: 'Voala Interior',
   alternateName: ['Voala Interior Design', 'Voala Interior KL'],
-  description: "Malaysia‘s award-winning interior designer with over 10 years of heart-led experience. Specializing in residential and commercial interior design in Kuala Lumpur.",
+  description:
+    "Malaysia's award-winning interior design and renovation company with over 10 years of experience. Specialising in residential and commercial interior design in Kuala Lumpur.",
   url: 'https://voalainterior.com',
   telephone: '+60125053395',
-  email: 'askvoala@gmail.com',
+  email: 'gracelee@voalainterior.com',
   priceRange: '$$$-$$$$',
   hasMap: 'https://maps.google.com/?cid=10247622171370126871',
   image: [
@@ -96,6 +97,12 @@ const structuredData = {
       opens: '10:00',
       closes: '19:00',
     },
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Saturday', 'Sunday'],
+      opens: '00:00',
+      closes: '00:00',
+    },
   ],
   areaServed: [
     { '@type': 'City', name: 'Kuala Lumpur' },
@@ -112,7 +119,8 @@ const structuredData = {
         itemOffered: {
           '@type': 'Service',
           name: 'Residential Interior Design',
-          description: 'Custom home interior design for condos, apartments, and landed properties in Kuala Lumpur',
+          description:
+            'Custom home interior design for condos, apartments, and landed properties in Kuala Lumpur',
           areaServed: 'Kuala Lumpur',
         },
       },
@@ -121,7 +129,8 @@ const structuredData = {
         itemOffered: {
           '@type': 'Service',
           name: 'Commercial Interior Design',
-          description: 'Professional office and commercial space interior design services in Kuala Lumpur',
+          description:
+            'Professional office and commercial space interior design services in Kuala Lumpur',
           areaServed: 'Kuala Lumpur',
         },
       },
@@ -130,7 +139,8 @@ const structuredData = {
         itemOffered: {
           '@type': 'Service',
           name: 'Space Planning',
-          description: 'Complete renovation and build services for homes and offices in Kuala Lumpur',
+          description:
+            'Complete renovation and build services for homes and offices in Kuala Lumpur',
           areaServed: 'Kuala Lumpur',
         },
       },
@@ -139,7 +149,8 @@ const structuredData = {
         itemOffered: {
           '@type': 'Service',
           name: 'Design Consultation',
-          description: 'Professional interior design consultation services in Kuala Lumpur',
+          description:
+            'Professional interior design consultation services in Kuala Lumpur',
           areaServed: 'Kuala Lumpur',
         },
       },
@@ -148,7 +159,8 @@ const structuredData = {
         itemOffered: {
           '@type': 'Service',
           name: '3D Visualization',
-          description: 'Photorealistic 3D rendering and visualization services to help you visualize your space before renovation begins',
+          description:
+            'Photorealistic 3D rendering and visualization services to help you visualize your space before renovation begins',
           areaServed: 'Kuala Lumpur',
         },
       },
@@ -157,7 +169,8 @@ const structuredData = {
         itemOffered: {
           '@type': 'Service',
           name: 'Bedroom Interior Design',
-          description: 'Custom bedroom design tailored to your lifestyle, from master suites to children rooms in Kuala Lumpur',
+          description:
+            'Custom bedroom design tailored to your lifestyle, from master suites to children rooms in Kuala Lumpur',
           areaServed: 'Kuala Lumpur',
         },
       },
@@ -166,7 +179,8 @@ const structuredData = {
         itemOffered: {
           '@type': 'Service',
           name: 'Living Room Interior Design',
-          description: 'Bespoke living room design that balances aesthetics and comfort for modern Malaysian homes',
+          description:
+            'Bespoke living room design that balances aesthetics and comfort for modern Malaysian homes',
           areaServed: 'Kuala Lumpur',
         },
       },
@@ -175,7 +189,8 @@ const structuredData = {
         itemOffered: {
           '@type': 'Service',
           name: 'Material Selection',
-          description: 'Expert material and finishes selection including tiles, flooring, wallpaper, and furnishings for your interior space',
+          description:
+            'Expert material and finishes selection including tiles, flooring, wallpaper, and furnishings for your interior space',
           areaServed: 'Kuala Lumpur',
         },
       },
@@ -201,7 +216,7 @@ const structuredData = {
     worstRating: '1',
   },
   foundingDate: '2016',
-  slogan: 'Award-winning interior design with heart-led experience',
+  slogan: "Designs You'll Love. Heartwork You'll Feel.",
   paymentAccepted: 'Cash, Credit Card, Bank Transfer',
   currenciesAccepted: 'MYR',
   knowsAbout: [
@@ -214,7 +229,7 @@ const structuredData = {
     '3D Visualization',
     'Material Selection',
   ],
-};
+}
 
 export default function RootLayout({
   children,
@@ -231,19 +246,19 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${samsungSharpSans.variable} min-h-screen bg-white font-sans antialiased`}>
+      <body
+        className={`${samsungSharpSans.variable} min-h-screen bg-white font-sans antialiased`}
+      >
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focusnpm:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-black focus:text-white focus:rounded"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-black focus:text-white focus:rounded"
         >
           Skip to main
         </a>
 
         <Navigation />
 
-        <main id="main-content">
-          {children}
-        </main>
+        <main id="main-content">{children}</main>
 
         <Footer />
       </body>
