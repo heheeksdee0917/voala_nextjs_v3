@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -18,8 +18,8 @@ const ImageGalleryModal: React.FC<ImageGalleryModalProps> = ({
   initialIndex
 }) => {
   const [currentIndex, setCurrentIndex] = useState(initialIndex);
+  const thumbRefs = useRef<Array<HTMLButtonElement | null>>([]);
 
-  // Update current index when initial index changes
   useEffect(() => {
     setCurrentIndex(initialIndex);
   }, [initialIndex]);
@@ -56,20 +56,32 @@ const ImageGalleryModal: React.FC<ImageGalleryModalProps> = ({
     } else {
       document.body.style.overflow = 'unset';
     }
-
     return () => {
       document.body.style.overflow = 'unset';
     };
   }, [isOpen]);
 
+  // Keep the active thumbnail scrolled into view whenever currentIndex changes
+  useEffect(() => {
+    if (!isOpen) return;
+    const activeThumb = thumbRefs.current[currentIndex];
+    if (activeThumb) {
+      activeThumb.scrollIntoView({
+        behavior: 'smooth',
+        inline: 'center',
+        block: 'nearest',
+      });
+    }
+  }, [currentIndex, isOpen]);
+
   const goToPrevious = () => {
-    setCurrentIndex((prevIndex) => 
+    setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? images.length - 1 : prevIndex - 1
     );
   };
 
   const goToNext = () => {
-    setCurrentIndex((prevIndex) => 
+    setCurrentIndex((prevIndex) =>
       prevIndex === images.length - 1 ? 0 : prevIndex + 1
     );
   };
@@ -88,31 +100,28 @@ const ImageGalleryModal: React.FC<ImageGalleryModalProps> = ({
       >
         {/* Close Button */}
         <button
-          onClick={onClose}
-          className="absolute top-4 right-4 z-60 text-white hover:text-gray-300 transition-colors duration-200 p-2"
+          onClick={(e) => { e.stopPropagation(); onClose(); }}
+          className="absolute top-4 right-4 z-20 text-white hover:text-gray-300 transition-colors duration-200 p-2"
           aria-label="Close gallery"
         >
           <X size={32} />
         </button>
 
         {/* Image Counter */}
-        <div className="absolute top-4 left-4 z-60 text-white font-louis-george-cafe">
+        <div className="absolute top-4 left-4 z-20 text-white font-louis-george-cafe pointer-events-none">
           <span className="text-lg">
             {currentIndex + 1} / {images.length}
           </span>
         </div>
 
-        {/* Main Image Container */}
-        <div 
-          className="flex items-center justify-center h-full p-4 md:p-8"
-          onClick={(e) => e.stopPropagation()}
-        >
+        {/* Main Image Container — no click handler here, clicks pass through to backdrop */}
+        <div className="relative z-10 flex items-center justify-center h-full p-4 md:p-8">
           <div className="relative max-w-7xl max-h-full w-full h-full flex items-center justify-center">
-            
+
             {/* Previous Button */}
             <button
-              onClick={goToPrevious}
-              className="absolute left-4 top-1/2 -translate-y-1/2 z-60 text-white hover:text-gray-300 transition-colors duration-200 p-3 rounded-full bg-black/30 hover:bg-black/50"
+              onClick={(e) => { e.stopPropagation(); goToPrevious(); }}
+              className="absolute left-4 top-1/2 -translate-y-1/2 z-20 text-white hover:text-gray-300 transition-colors duration-200 p-3 rounded-full bg-black/30 hover:bg-black/50"
               aria-label="Previous image"
             >
               <ChevronLeft size={32} />
@@ -120,14 +129,14 @@ const ImageGalleryModal: React.FC<ImageGalleryModalProps> = ({
 
             {/* Next Button */}
             <button
-              onClick={goToNext}
-              className="absolute right-4 top-1/2 -translate-y-1/2 z-60 text-white hover:text-gray-300 transition-colors duration-200 p-3 rounded-full bg-black/30 hover:bg-black/50"
+              onClick={(e) => { e.stopPropagation(); goToNext(); }}
+              className="absolute right-4 top-1/2 -translate-y-1/2 z-20 text-white hover:text-gray-300 transition-colors duration-200 p-3 rounded-full bg-black/30 hover:bg-black/50"
               aria-label="Next image"
             >
               <ChevronRight size={32} />
             </button>
 
-            {/* Image Display */}
+            {/* Image Display — stopPropagation so clicking the photo itself doesn't close */}
             <AnimatePresence mode="wait">
               <motion.img
                 key={currentIndex}
@@ -138,24 +147,32 @@ const ImageGalleryModal: React.FC<ImageGalleryModalProps> = ({
                 transition={{ duration: 0.3 }}
                 className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
                 loading="lazy"
+                onClick={(e) => e.stopPropagation()}
               />
             </AnimatePresence>
           </div>
         </div>
 
-        {/* Thumbnail Strip (Optional - for better UX) */}
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-60">
-          <div className="flex gap-2 max-w-screen-lg overflow-x-auto px-4 py-2 bg-black/30 rounded-full backdrop-blur-sm">
+        {/* Thumbnail Strip */}
+        <div
+          className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 w-[92vw] max-w-screen-lg"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <div
+            className="flex gap-2 overflow-x-auto px-4 py-2 bg-black/30 rounded-full backdrop-blur-sm"
+            style={{ WebkitOverflowScrolling: 'touch', touchAction: 'pan-x' }}
+          >
             {images.map((image, index) => (
               <button
                 key={index}
+                ref={(el) => { thumbRefs.current[index] = el; }}
                 onClick={(e) => {
                   e.stopPropagation();
                   setCurrentIndex(index);
                 }}
                 className={`flex-shrink-0 w-12 h-12 rounded-lg overflow-hidden border-2 transition-all duration-200 ${
-                  index === currentIndex 
-                    ? 'border-white scale-110' 
+                  index === currentIndex
+                    ? 'border-white scale-110'
                     : 'border-transparent hover:border-gray-400'
                 }`}
               >
@@ -171,7 +188,7 @@ const ImageGalleryModal: React.FC<ImageGalleryModalProps> = ({
         </div>
 
         {/* Instructions */}
-        <div className="absolute bottom-20 left-1/2 -translate-x-1/2 z-60 text-white/70 text-sm font-louis-george-cafe text-center">
+        <div className="absolute bottom-20 left-1/2 -translate-x-1/2 z-20 text-white/70 text-sm font-louis-george-cafe text-center pointer-events-none">
           <p>Use arrow keys or click buttons to navigate • Press ESC to close</p>
         </div>
       </motion.div>
